@@ -1,0 +1,1649 @@
+/*
+Navicat MySQL Data Transfer
+
+Source Server         : localhost
+Source Server Version : 50505
+Source Host           : localhost:3306
+Source Database       : happycms
+
+Target Server Type    : MYSQL
+Target Server Version : 50505
+File Encoding         : 65001
+
+Date: 2024-11-22 10:05:42
+*/
+
+SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for `categories`
+-- ----------------------------
+DROP TABLE IF EXISTS `categories`;
+CREATE TABLE `categories` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `parent` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `type` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `show_index` tinyint(4) DEFAULT 1,
+  `order` double(8,2) DEFAULT 9999.00,
+  `theme` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `desc` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `desc_full` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `img` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `img_other` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `img_thumb` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `img_cover` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `img_cover_xs` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `keyword` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `link` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `menulink` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `menulinkin` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `menuchild` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `menunewtab` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `menufollow` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `khoatruycap` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `active` tinyint(4) DEFAULT 1,
+  `facebook_img` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `facebook_title` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `facebook_desc` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `google_title` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `google_desc` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `google_priority` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `f1` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `f2` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `f3` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `f4` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `f5` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_by` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `edited_by` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `edited_ip` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- ----------------------------
+-- Records of categories
+-- ----------------------------
+INSERT INTO `categories` VALUES ('1', '', 'Trang', 'page', '1', '1.00', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '1', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
+INSERT INTO `categories` VALUES ('2', '', 'Sản phẩm', 'product', '1', '2.00', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '1', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
+INSERT INTO `categories` VALUES ('3', '', 'Bài viết', 'post', '1', '3.00', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '1', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
+INSERT INTO `categories` VALUES ('4', '', 'Thư viện', 'gallery', '1', '4.00', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '1', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
+INSERT INTO `categories` VALUES ('5', '3', 'Giới thiệu', 'post', '1', '5.00', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '1', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
+INSERT INTO `categories` VALUES ('6', '3', 'Tin tức', 'post', '1', '6.00', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '1', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
+INSERT INTO `categories` VALUES ('7', '3', 'Tuyển dụng', 'post', '1', '7.00', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '1', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
+INSERT INTO `categories` VALUES ('8', '3', 'Cảm nhận khách hàng', 'post', '1', '8.00', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '1', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '2024-11-22 10:05:20');
+INSERT INTO `categories` VALUES ('9', '3', 'Chính sách & quy định', 'post', '1', '9.00', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '1', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '2024-11-22 10:05:20');
+INSERT INTO `categories` VALUES ('10', '', 'Menu', '', '1', '10.00', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '1', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
+INSERT INTO `categories` VALUES ('11', '10', 'Trang chủ', '', '1', '1.00', null, null, null, null, null, null, null, null, null, null, '/', null, null, null, null, null, '1', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
+INSERT INTO `categories` VALUES ('12', '10', 'Giới thiệu', '', '1', '2.00', null, null, null, null, null, null, null, null, null, null, null, 'p4', null, null, null, null, '1', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
+INSERT INTO `categories` VALUES ('13', '10', 'Sản phẩm', '', '1', '3.00', null, null, null, null, null, null, null, null, null, null, null, 'c2', '2', null, null, null, '1', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
+INSERT INTO `categories` VALUES ('14', '10', 'Tin tức', '', '1', '4.00', null, null, null, null, null, null, null, null, null, null, null, 'c6', null, null, null, null, '1', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
+INSERT INTO `categories` VALUES ('15', '10', 'Liên hệ', '', '1', '5.00', null, null, null, null, null, null, null, null, null, null, null, 'p1', null, null, null, null, '1', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
+
+-- ----------------------------
+-- Table structure for `comments`
+-- ----------------------------
+DROP TABLE IF EXISTS `comments`;
+CREATE TABLE `comments` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `post` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `parent` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `rating` double(8,2) DEFAULT 4.50,
+  `name` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `comment` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `gender` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `jsondata` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `active` tinyint(4) DEFAULT 0,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- ----------------------------
+-- Records of comments
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `customers`
+-- ----------------------------
+DROP TABLE IF EXISTS `customers`;
+CREATE TABLE `customers` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `phone` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `address` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `password` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `admin_note` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `field1` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `field2` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `field3` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `field4` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `field5` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `field6` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `field7` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `field8` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `field9` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `field10` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `active` tinyint(4) DEFAULT 0,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- ----------------------------
+-- Records of customers
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `faqs`
+-- ----------------------------
+DROP TABLE IF EXISTS `faqs`;
+CREATE TABLE `faqs` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `customer` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `note` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `answer` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `admin_note` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `jsondata` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `field1` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `field2` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `field3` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `field4` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `field5` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `field6` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `field7` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `field8` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `field9` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `field10` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `active` tinyint(4) DEFAULT 0,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- ----------------------------
+-- Records of faqs
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `kryptonit3_counter_page`
+-- ----------------------------
+DROP TABLE IF EXISTS `kryptonit3_counter_page`;
+CREATE TABLE `kryptonit3_counter_page` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `page` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `kryptonit3_counter_page_page_unique` (`page`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- ----------------------------
+-- Records of kryptonit3_counter_page
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `kryptonit3_counter_page_visitor`
+-- ----------------------------
+DROP TABLE IF EXISTS `kryptonit3_counter_page_visitor`;
+CREATE TABLE `kryptonit3_counter_page_visitor` (
+  `page_id` bigint(20) unsigned NOT NULL,
+  `visitor_id` bigint(20) unsigned NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  KEY `kryptonit3_counter_page_visitor_page_id_index` (`page_id`),
+  KEY `kryptonit3_counter_page_visitor_visitor_id_index` (`visitor_id`),
+  CONSTRAINT `kryptonit3_counter_page_visitor_page_id_foreign` FOREIGN KEY (`page_id`) REFERENCES `kryptonit3_counter_page` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `kryptonit3_counter_page_visitor_visitor_id_foreign` FOREIGN KEY (`visitor_id`) REFERENCES `kryptonit3_counter_visitor` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- ----------------------------
+-- Records of kryptonit3_counter_page_visitor
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `kryptonit3_counter_visitor`
+-- ----------------------------
+DROP TABLE IF EXISTS `kryptonit3_counter_visitor`;
+CREATE TABLE `kryptonit3_counter_visitor` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `visitor` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `kryptonit3_counter_visitor_visitor_unique` (`visitor`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- ----------------------------
+-- Records of kryptonit3_counter_visitor
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `languages`
+-- ----------------------------
+DROP TABLE IF EXISTS `languages`;
+CREATE TABLE `languages` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `vi` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `en` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `ja` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `ko` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `zh` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `active` tinyint(4) DEFAULT 0,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=923 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- ----------------------------
+-- Records of languages
+-- ----------------------------
+INSERT INTO `languages` VALUES ('1', 'Tìm kiếm cho từ khóa', 'Search for keywords', 'キーワードを検索', '키워드 검색', '搜索关键词', '0', null, '2020-04-26 15:55:55', null);
+INSERT INTO `languages` VALUES ('2', 'Giá liên hệ', 'Price: contact', '連絡先', '접촉', '联系', '0', null, null, null);
+INSERT INTO `languages` VALUES ('3', 'Tìm thấy', 'Find', '探す', '찾기', '找', '0', null, null, null);
+INSERT INTO `languages` VALUES ('4', 'kết quả cho từ khóa', 'results for the keyword', 'キーワードの結果', '키워드 결과', '关键字的结果', '0', null, null, null);
+INSERT INTO `languages` VALUES ('5', 'Không tìm thấy kết quả nào', 'No result is found', '結果が見つかりません', '결과가 없습니다', '找不到结果', '0', null, null, null);
+INSERT INTO `languages` VALUES ('6', 'Không tìm thấy kết quả nào cho từ khóa', 'No results found for keyword', 'キーワードに一致する結果は見つかりませんでした', '키워드에 대한 결과가 없습니다', '找不到关键字的结果', '0', null, null, null);
+INSERT INTO `languages` VALUES ('7', 'Trang chủ', 'Home page', 'ホームページ', '홈페이지', '网站', '0', null, null, null);
+INSERT INTO `languages` VALUES ('8', 'Tìm kiếm', 'Search', '探す', '검색', '搜索', '0', null, null, null);
+INSERT INTO `languages` VALUES ('9', 'Vui lòng điền thông tin dưới đây, chúng tôi sẽ liên hệ lại báo giá cho quý khách.', 'Please fill in the information below, we will contact you for a quote.', '以下の情報を入力してください。見積もりについてご連絡します。', '아래 정보를 입력하십시오, 견적을 위해 연락 드리겠습니다.', '请填写以下信息，我们将与您联系以获取报价。', '0', null, null, null);
+INSERT INTO `languages` VALUES ('10', 'Họ và tên', 'First and last name', '名前と苗字', '이름과 성', '名字和姓氏', '0', null, null, null);
+INSERT INTO `languages` VALUES ('11', 'Email/Facebook nếu có', 'Email/Facebook if available', '可能であればメール/ Facebook', '가능한 경우 이메일 / 페이스 북', '电子邮件/ Facebook（如果有）', '0', null, null, null);
+INSERT INTO `languages` VALUES ('12', 'Điền thông tin nhận tư vấn và báo giá ngay', 'Get advice and the latest quotes', 'アドバイスと最新の見積もりを入手する', '조언과 최신 견적을 받아보십시오', '获取建议和最新报价', '0', null, null, null);
+INSERT INTO `languages` VALUES ('13', 'Đăng ký nhận tư vấn dịch vụ miễn phí', 'Sign up for a free consultation', '無料相談にサインアップ', '무료 상담 가입', '注册免费咨询', '0', null, null, null);
+INSERT INTO `languages` VALUES ('14', 'Đăng ký báo giá', 'Sign up for a quote', '見積もりを申し込む', '견적 신청', '注册报价', '0', null, null, null);
+INSERT INTO `languages` VALUES ('15', 'Xem chi tiết', 'View details', '詳細を見る', '세부 정보보기', '查看详情', '0', null, null, null);
+INSERT INTO `languages` VALUES ('16', 'Gõ từ khóa và bấm enter để tìm kiếm', 'Type a keyword and press enter to search', 'キーワードを入力し、Enterキーを押して検索します', '키워드를 입력하고 Enter 키를 눌러 검색', '输入关键字，然后按Enter键进行搜索', '0', null, null, null);
+INSERT INTO `languages` VALUES ('17', 'Gõ để tìm kiếm', 'Type to search', '入力して検索', '검색 할 유형', '输入搜索', '0', null, null, null);
+INSERT INTO `languages` VALUES ('18', 'Thông tin liên hệ', 'Contact information', '連絡先', '연락 정보', '联系方式', '0', null, null, null);
+INSERT INTO `languages` VALUES ('19', 'Đăng ký nhận báo giá', 'Get the latest quotes', '最新の見積もりを入手', '최신 따옴표를 얻으십시오', '获取最新报价', '0', null, null, null);
+INSERT INTO `languages` VALUES ('20', 'Hãy đăng ký để nhận báo giá mới nhất của chúng tôi', 'Please fill this form to receive our latest quotes', '最新の見積もりを受け取るには、このフォームに入力してください', '최신 견적을 받으려면이 양식을 작성하십시오', '请填写此表格以接收我们的最新报价', '0', null, null, null);
+INSERT INTO `languages` VALUES ('21', 'Số điện thoại', 'Phone number', '電話番号', '전화 번호', '电话号码', '0', null, null, null);
+INSERT INTO `languages` VALUES ('22', 'Điền thông tin đăng kí nhận tin ở cuối trang', 'Enter your newsletter registration information at the bottom of the page', 'ページ下部にニュースレターの登録情報を入力してください', '페이지 하단에 뉴스 레터 등록 정보를 입력하십시오', '在页面底部输入新闻通讯注册信息', '0', null, null, null);
+INSERT INTO `languages` VALUES ('23', 'Điền thông tin đăng kí nhận tin', 'Enter the information to receive news', 'ニュースを受け取るための情報を入力してください', '뉴스를 수신 할 정보를 입력하십시오', '输入信息以接收新闻', '0', null, null, null);
+INSERT INTO `languages` VALUES ('24', 'Đăng ký', 'Send', '送る', '보내다', '发送', '0', null, null, null);
+INSERT INTO `languages` VALUES ('25', 'Bản quyền nội dung thuộc về chủ sở hữu của website. Copyright @2018', 'Content copyright belongs to the owner of the website. Copyright @ 2018', 'コンテンツの著作権はウェブサイトの所有者に帰属します。 Copyright @ 2018', '콘텐츠 저작권은 웹 사이트 소유자에게 있습니다. 저작권 @ 2018', '内容版权归网站所有者所有。版权@ 2018', '0', null, null, null);
+INSERT INTO `languages` VALUES ('26', 'Sử dụng nội dung trên trang nghĩa là bạn đồng ý với Điều khoản sử dụng và Chính sách bảo mật của chúng tôi.', 'Using content on the site means you agree to our Terms of Use and Privacy Policy.', 'サイトのコンテンツを使用すると、利用規約とプライバシーポリシーに同意したことになります。', '사이트에서 컨텐츠를 사용한다는 것은 귀하가 당사의 이용 약관 및 개인 정보 보호 정책에 동의한다는 의미입니다.', '使用网站上的内容表示您同意我们的使用条款和隐私政策。', '0', null, null, null);
+INSERT INTO `languages` VALUES ('27', 'Khách hàng bấm nút hotline', 'Customer press hotline button', 'お客様がホットラインボタンを押す', '고객 프레스 핫라인 버튼', '客户按热线按钮', '0', null, null, null);
+INSERT INTO `languages` VALUES ('28', 'HOTLINE', 'HOTLINE', 'ホットライン', '핫라인', '热线', '0', null, null, null);
+INSERT INTO `languages` VALUES ('29', 'Hotline:', 'Hotline:', 'ホットライン：', '핫라인 :', '热线：', '0', null, null, null);
+INSERT INTO `languages` VALUES ('30', 'Miễn phí vận chuyển', 'Free shipping', '送料無料', '무료 배송', '免费送货', '0', null, null, null);
+INSERT INTO `languages` VALUES ('31', 'Yêu cầu báo giá', 'Request a quote', '引用を要求', '조회를 요청하다', '请求报价', '0', null, null, null);
+INSERT INTO `languages` VALUES ('32', 'Tên sản phẩm/dịch vụ', 'Name of product/service', '製品/サービスの名前', '제품 / 서비스 이름', '产品/服务名称', '0', null, null, null);
+INSERT INTO `languages` VALUES ('33', 'Tên của bạn', 'Your name', 'あなたの名前', '당신의 이름', '姓名', '0', null, null, null);
+INSERT INTO `languages` VALUES ('34', 'Email', 'Email', 'Eメール', '이메일', '电子邮件', '0', null, null, null);
+INSERT INTO `languages` VALUES ('35', 'Địa chỉ', 'Address', '住所', '주소', '地址', '0', null, null, null);
+INSERT INTO `languages` VALUES ('36', 'Ghi chú', 'Note', '注意', '노트', '注意', '0', null, null, null);
+INSERT INTO `languages` VALUES ('37', 'Cảm ơn bạn, chúng tôi sẽ liên hệ lại ngay khi nhận được thông tin.', 'Thank you, we will get back to you shortly after receiving the information.', 'ありがとうございます。情報を受け取り次第、折り返しご連絡いたします。', '감사합니다. 정보를받은 후 곧 연락 드리겠습니다.', '谢谢您，我们会在收到信息后尽快与您联系。', '0', null, null, null);
+INSERT INTO `languages` VALUES ('38', 'Đặt hàng trên form đặt hàng nhanh', 'Order on fast order form', '高速注文フォームで注文する', '빠른 주문 양식으로 주문', '在快速订购单上订购', '0', null, null, null);
+INSERT INTO `languages` VALUES ('39', 'Khách hàng yêu cầu báo giá', 'Customers request a quote', '顧客は見積もりを要求します', '고객이 견적을 요청합니다', '客户要求报价', '0', null, null, null);
+INSERT INTO `languages` VALUES ('40', 'Gửi', 'Send', '送る', '보내다', '发送', '0', null, null, null);
+INSERT INTO `languages` VALUES ('41', 'Vào trang quản lý', 'Go to the administration page', '管理ページに移動', '관리 페이지로 이동', '转到管理页面', '0', null, null, null);
+INSERT INTO `languages` VALUES ('42', 'Sửa trang chủ', 'Edit the homepage', 'ホームページを編集する', '홈페이지 편집', '编辑首页', '0', null, null, null);
+INSERT INTO `languages` VALUES ('43', 'Vui lòng điền tên của bạn', 'Please enter your name', 'お名前を入力してください', '당신의 이름을 입력하세요', '请输入你的名字', '0', null, null, null);
+INSERT INTO `languages` VALUES ('44', 'Vui lòng điền số điện thoại của bạn', 'Please enter your phone number', '電話番号を入力してください', '전화 번호를 입력하십시오', '请输入您的电话号码', '0', null, null, null);
+INSERT INTO `languages` VALUES ('45', 'Vui lòng kiểm tra lại số điện thoại, có thể bạn điền chưa đúng', 'Please check your phone number, you may have entered it incorrectly', '電話番号を確認してください。間違って入力した可能性があります', '전화 번호를 확인하십시오. 잘못 입력했을 수 있습니다', '请检查您的电话号码，您可能输入错误', '0', null, null, null);
+INSERT INTO `languages` VALUES ('46', 'Vui lòng điền địa chỉ email của bạn', 'Please enter your email address', 'メールアドレスを入力してください', '당신의 이메일 주소를 입력하십시오', '请输入您的电子邮件地址', '0', null, null, null);
+INSERT INTO `languages` VALUES ('47', 'Vui lòng kiểm tra lại địa chỉ email, có thể bạn điền chưa đúng', 'Please check your email address, you may have entered it incorrectly', 'メールアドレスを確認してください。間違って入力した可能性があります', '이메일 주소를 확인하십시오. 잘못 입력했을 수 있습니다', '请检查您的电子邮件地址，您可能输入了错误的地址', '0', null, null, null);
+INSERT INTO `languages` VALUES ('48', 'Đang gửi', 'Sending', '送信', '배상', '正在发送', '0', null, null, null);
+INSERT INTO `languages` VALUES ('49', 'Đang thêm', 'Adding', '追加', '첨가', '新增中', '0', null, null, null);
+INSERT INTO `languages` VALUES ('50', 'Đã thêm vào giỏ hàng', 'Added to cart', 'カートに追加', '장바구니에 추가', '已加入购物车', '0', null, null, null);
+INSERT INTO `languages` VALUES ('51', 'Điện thoại', 'Phone', '電話', '전화', '电话', '0', null, null, null);
+INSERT INTO `languages` VALUES ('52', 'Máy tính', 'Computer', 'コンピューター', '컴퓨터', '电脑', '0', null, null, null);
+INSERT INTO `languages` VALUES ('53', 'Sửa', 'Edit', '編集する', '편집하다', '编辑', '0', null, null, null);
+INSERT INTO `languages` VALUES ('54', 'Tạo mới', 'Create new', '新しく作る', '새로 만들기', '创建新的', '0', null, null, null);
+INSERT INTO `languages` VALUES ('55', 'Danh mục sản phẩm', 'Product categories', '製品カテゴリ', '제품 카테고리', '产品类别', '0', null, null, null);
+INSERT INTO `languages` VALUES ('56', 'Hỗ trợ mua hàng', 'Online support', 'オンラインサポート', '온라인 지원', '在线支持', '0', null, null, null);
+INSERT INTO `languages` VALUES ('57', 'Sửa danh mục này', 'Edit this category', 'このカテゴリを編集', '이 카테고리 수정', '编辑这个类别', '0', null, null, null);
+INSERT INTO `languages` VALUES ('58', 'Bài viết mới', 'New posts', '新しい投稿', '새로운 게시물', '新职位', '0', null, null, null);
+INSERT INTO `languages` VALUES ('59', 'Hiện chưa có bài viết nào!', 'There are no posts yet!', 'まだ投稿はありません！', '아직 게시물이 없습니다!', '还没有帖子！', '0', null, null, null);
+INSERT INTO `languages` VALUES ('60', 'Gửi tin nhắn và góp ý', 'Send messages and suggestions', 'メッセージと提案を送信する', '메시지 및 제안 보내기', '发送消息和建议', '0', null, null, null);
+INSERT INTO `languages` VALUES ('61', 'Lời nhắn', 'Message', 'メッセージ', '메시지', '信息', '0', null, null, null);
+INSERT INTO `languages` VALUES ('62', 'Liên hệ và góp ý', 'Contact and suggestions', '連絡先と提案', '연락 및 제안', '联系和建议', '0', null, null, null);
+INSERT INTO `languages` VALUES ('63', 'Khách hàng gửi thông tin từ trang liên hệ', 'Customers send information from the contact page', '顧客は連絡先ページから情報を送信します', '고객은 연락처 페이지에서 정보를 보냅니다.', '客户从联系页面发送信息', '0', null, null, null);
+INSERT INTO `languages` VALUES ('64', 'Gửi tin nhắn', 'Send Message', 'メッセージを送る', '문자 보내', '发信息', '0', null, null, null);
+INSERT INTO `languages` VALUES ('65', 'Khách hàng bấm nút gọi hotline trên trang:', 'Customers click the hotline call button on the page:', 'お客様はページのホットラインコールボタンをクリックします。', '고객은 페이지에서 핫라인 통화 버튼을 클릭하십시오.', '客户单击页面上的热线电话按钮：', '0', null, null, null);
+INSERT INTO `languages` VALUES ('66', 'Khách hàng bấm nút đặt hàng trên trang:', 'Customers click the order button on the page:', '顧客はページの注文ボタンをクリックします。', '고객은 페이지에서 주문 버튼을 클릭하십시오.', '客户单击页面上的订购按钮：', '0', null, null, null);
+INSERT INTO `languages` VALUES ('67', 'Chọn số lượng', 'Choose quantity', '数量を選択', '수량을 선택하십시오', '选择数量', '0', null, null, null);
+INSERT INTO `languages` VALUES ('68', 'Giỏ hàng', 'Cart', 'カート', '카트', '大车', '0', null, null, null);
+INSERT INTO `languages` VALUES ('69', 'Thêm vào giỏ hàng', 'Add to cart', 'カートに追加', '장바구니에 담기', '添加到购物车', '0', null, null, null);
+INSERT INTO `languages` VALUES ('70', 'Xem giỏ hàng', 'View cart', 'かごの中身を見る', '장바구니보기', '查看购物车', '0', null, null, null);
+INSERT INTO `languages` VALUES ('71', 'Sản phẩm khác', 'Other products', 'その他の商品', '다른 제품들', '其他产品', '0', null, null, null);
+INSERT INTO `languages` VALUES ('72', 'Chưa có sản phẩm nào trong giỏ.', 'No product in your shopping cart.', 'ショッピングカートに商品はありません。', '장바구니에 제품이 없습니다.', '您的购物车中没有商品。', '0', null, null, null);
+INSERT INTO `languages` VALUES ('73', 'Quay lại Shop', 'Back to Shop', 'ショップに戻る', '쇼핑으로 돌아 가기', '回到商店', '0', null, null, null);
+INSERT INTO `languages` VALUES ('74', 'Số lượng', 'Amount', '量', '양', '量', '0', null, null, null);
+INSERT INTO `languages` VALUES ('75', 'Giá bán', 'Price', '価格', '가격', '价钱', '0', null, null, null);
+INSERT INTO `languages` VALUES ('76', 'Tổng cộng', 'Total', '合計', '합계', '总', '0', null, null, null);
+INSERT INTO `languages` VALUES ('77', 'Tổng thanh toán', 'Total payment', '支払い合計額', '총 결제', '总付款', '0', null, null, null);
+INSERT INTO `languages` VALUES ('78', 'Email nếu có', 'Email if available', '可能な場合はメール', '가능한 경우 이메일', '电子邮件（如果有）', '0', null, null, null);
+INSERT INTO `languages` VALUES ('79', 'Địa chỉ nhận hàng', 'Shipping Address', 'お届け先の住所', '배송 주소', '送货地址', '0', null, null, null);
+INSERT INTO `languages` VALUES ('80', 'Hình thức thanh toán', 'Payments', 'お支払い', '지불', '付款方式', '0', null, null, null);
+INSERT INTO `languages` VALUES ('81', 'Thanh toán khi nhận hàng (COD)', 'Payment on delivery (COD)', '代金引換（代金引換）', '대금 상환 (COD)', '货到付款（COD）', '0', null, null, null);
+INSERT INTO `languages` VALUES ('82', 'Thanh toán chuyển khoản', 'Transfer payments via banks', '銀行振込', '은행을 통한 송금', '通过银行转账', '0', null, null, null);
+INSERT INTO `languages` VALUES ('83', 'Thanh toán online bằng thẻ', 'Pay online by card', 'カードでオンラインで支払う', '카드로 온라인 결제', '通过卡在线支付', '0', null, null, null);
+INSERT INTO `languages` VALUES ('84', 'Đặt hàng trên trang giỏ hàng', 'Place an order on the shopping cart page', 'ショッピングカートページで注文する', '장바구니 페이지에서 주문하십시오', '在购物车页面下订单', '0', null, null, null);
+INSERT INTO `languages` VALUES ('85', 'Khách hàng đặt hàng trên form đặt hàng', 'Customers place an order on the order form', '顧客が注文フォームで注文する', '고객이 주문 양식에 주문', '客户在订单上下订单', '0', null, null, null);
+INSERT INTO `languages` VALUES ('86', 'Đặt hàng', 'Submit an order', '注文を送信する', '주문 제출', '提交订单', '0', null, null, null);
+INSERT INTO `languages` VALUES ('87', 'Bài viết liên quan', 'Related posts', '関連記事', '관련 게시물', '相关文章', '0', null, null, null);
+INSERT INTO `languages` VALUES ('88', 'Bình luận', 'Comment', 'コメント', '논평', '评论', '0', null, null, null);
+INSERT INTO `languages` VALUES ('89', 'Hiện chưa có bình luận nào', 'There are currently no comments yet', '現在コメントはまだありません', '현재 댓글이 없습니다', '目前尚无评论', '0', null, null, null);
+INSERT INTO `languages` VALUES ('90', 'Lời bình luận', 'Comment', 'コメント', '논평', '评论', '0', null, null, null);
+INSERT INTO `languages` VALUES ('91', 'Quý khách sẽ được tự động chuyển về trang trước trong', 'You will be automatically redirected to the previous page in', 'の前のページに自動的にリダイレクトされます', '에서 이전 페이지로 자동 리디렉션됩니다', '您将被自动重定向到中的上一页', '0', null, null, null);
+INSERT INTO `languages` VALUES ('92', 'giây', 'seconds', '秒', '초', '秒', '0', null, null, null);
+INSERT INTO `languages` VALUES ('93', 'Quay lại', 'Come back', '戻って', '돌아와', '回来', '0', null, null, null);
+INSERT INTO `languages` VALUES ('94', 'Xem bài viết này', 'View this article', 'この記事を見る', '이 기사보기', '查看这篇文章', '0', null, null, null);
+INSERT INTO `languages` VALUES ('95', 'Nhân bản thành bài viết mới', 'Duplicate to the new article', '新しい記事に複製', '새 기사와 중복', '复制到新文章', '0', null, null, null);
+INSERT INTO `languages` VALUES ('96', 'Danh mục', 'Category', 'カテゴリー', '범주', '类别', '0', null, null, null);
+INSERT INTO `languages` VALUES ('97', 'Tùy chỉnh Google', 'Customize Google', 'Googleをカスタマイズ', 'Google 맞춤 설정', '自订Google', '0', null, null, null);
+INSERT INTO `languages` VALUES ('98', 'Mặc định Google sẽ lấy thông tin trong bài viết, còn nếu muốn tùy chỉnh bạn có thể điền vào các trường sau:', 'By default, Google will take the information in the article, but if you want to customize you can fill in the following fields:', 'デフォルトでは、Googleが記事の情報を取得しますが、カスタマイズしたい場合は、次のフィールドに入力できます。', '기본적으로 Google은 기사의 정보를 사용하지만 사용자 정의하려는 경우 다음 필드를 채울 수 있습니다.', '默认情况下，Google将获取本文中的信息，但是如果您要自定义，则可以填写以下字段：', '0', null, null, null);
+INSERT INTO `languages` VALUES ('99', 'Tùy chỉnh Facebook', 'Customize Facebook', 'Facebookをカスタマイズする', 'Facebook 사용자 정의', '自订Facebook', '0', null, null, null);
+INSERT INTO `languages` VALUES ('100', 'Mặc định khi chia sẻ Facebook sẽ lấy thông tin trong bài viết, còn nếu muốn tùy chỉnh bạn có thể điền vào các trường sau:', 'By default, when sharing Facebook, you will get information in the article, but if you want to customize, you can fill in the following fields:', 'デフォルトでは、Facebookを共有すると記事に情報が表示されますが、カスタマイズする場合は、次のフィールドに入力できます。', '기본적으로 Facebook을 공유 할 때 기사에 정보가 표시되지만 사용자 정의하려는 경우 다음 필드를 채울 수 있습니다.', '默认情况下，共享Facebook时，您会在文章中获得信息，但如果要自定义，可以填写以下字段：', '0', null, null, null);
+INSERT INTO `languages` VALUES ('101', 'Từ khóa chính của bài viết (từ/cụm từ dài 2-10 chữ)', 'Keyword main article (words / phrases long 2-10 words)', 'キーワードの主要な記事（長い単語/フレーズ2-10単語）', '키워드 주요 기사 (단어 / 구문 2-10 단어)', '关键字主要文章（单词/词组长2-10个字）', '0', null, null, null);
+INSERT INTO `languages` VALUES ('102', 'Kiểm tra SEO', 'Check SEO', 'SEOを確認する', 'SEO 확인', '检查SEO', '0', null, null, null);
+INSERT INTO `languages` VALUES ('103', 'Điểm SEO:', 'SEO Score:', 'SEOスコア：', 'SEO 점수 :', 'SEO分数：', '0', null, null, null);
+INSERT INTO `languages` VALUES ('104', 'Chưa kiểm tra', 'Unchecked', '未チェック', '미확인', '未检查', '0', null, null, null);
+INSERT INTO `languages` VALUES ('105', 'Tuyệt vời', 'Great', 'すごい', '큰', '大', '0', null, null, null);
+INSERT INTO `languages` VALUES ('106', 'Tốt', 'Good', '良い', '좋은', '好', '0', null, null, null);
+INSERT INTO `languages` VALUES ('107', 'Trung bình', 'Medium', '中', '매질', '介质', '0', null, null, null);
+INSERT INTO `languages` VALUES ('108', 'Kém', 'Weak', '弱い', '약한', '弱', '0', null, null, null);
+INSERT INTO `languages` VALUES ('109', 'Có từ khóa chính', 'Has the main keyword', '主なキーワードがあります', '주요 키워드가 있습니다', '有主关键字', '0', null, null, null);
+INSERT INTO `languages` VALUES ('110', 'Từ khóa chính có trong tiêu đề', 'The main keyword is in the title', '主なキーワードはタイトルにあります', '주요 키워드는 제목에 있습니다', '主关键字在标题中', '0', null, null, null);
+INSERT INTO `languages` VALUES ('111', 'Từ khóa chính có trong mô tả ngắn', 'The main keyword is in the short description', '主なキーワードは簡単な説明にあります', '주요 키워드는 간단한 설명입니다', '主要关键字在简短说明中', '0', null, null, null);
+INSERT INTO `languages` VALUES ('112', 'Từ khóa chính có trong bài viết', 'The main keyword is in the article', '主なキーワードは記事にあります', '주요 키워드는 기사에 있습니다', '主要关键字在文章中', '0', null, null, null);
+INSERT INTO `languages` VALUES ('113', 'Bài viết có ít nhất 01 hình ảnh', 'The article has at least 01 image', '記事には少なくとも01の画像が含まれています', '기사에 01 개 이상의 이미지가 있습니다.', '文章至少有01张图片', '0', null, null, null);
+INSERT INTO `languages` VALUES ('114', 'Bài viết có link sang ít nhất 01 bài khác', 'The article has links to at least 01 other post', '記事には少なくとも01の他の投稿へのリンクがあります', '기사에 적어도 01 개의 다른 게시물에 대한 링크가 있습니다', '该文章具有指向至少01个其他帖子的链接', '0', null, null, null);
+INSERT INTO `languages` VALUES ('115', 'Đã điền mục các từ khóa tìm kiếm liên quan và bao gồm cả từ khóa chính', 'Filled in the \"Related search keywords\" and also includes the main keyword', '「関連検索キーワード」に記入し、メインキーワードも含む', '관련 검색 키워드를 작성하고 기본 키워드도 포함', '填写了“相关搜索关键字”，还包括主关键字', '0', null, null, null);
+INSERT INTO `languages` VALUES ('116', 'Để bài viết được Google đánh giá cao (chuẩn SEO), bạn cần xác định một từ khóa chính cho bài viết, ví dụ \"học quay video bằng điện thoại\", từ này phải xuất hiện 1 lần trong tiêu đề, 1 lần trong mô tả ngắn, và xuất hiện 3-4 lần trong nội dung bài viết.<br>Cụ thể cách viết bài, vui lòng tham khảo link sau:', 'In order for the article to be highly rated by Google (standard SEO), you need to define a key keyword for the article, for example \'learn to shoot videos by phone\', this word must appear 1 time in the title, 1 time in Short description, and appears 3-4 times in the content of the article. For specific writing, please refer to the following link:', '記事がGoogle（標準SEO）によって高い評価を受けるためには、記事のキーキーワードを定義する必要があります。たとえば、「電話で動画を撮る方法を学ぶ」のように、この単語がタイトルに1回、1回出現する必要があります。短い説明で、記事のコンテンツに3〜4回表示されます。具体的な記述については、次のリンクを参照してください。', '기사가 Google (표준 SEO)에 의해 높은 평가를 받으려면 기사에 대한 키워드를 정의해야합니다 (예 : \'전화로 동영상 촬영 배우기\').이 단어는 제목에 1 회, 1 회 나타나야합니다 간단한 설명으로 기사 내용에 3-4 번 나타납니다. 구체적인 내용은 다음 링크를 참조하십시오.', '为了使该文章获得Google的高度评价（标准SEO），您需要为该文章定义一个关键关键字，例如“学习通过电话拍摄视频”，该单词在标题中必须出现1次，出现1次在简短说明中，并在文章内容中出现3-4次。有关具体的写作，请参考以下链接：', '0', null, null, null);
+INSERT INTO `languages` VALUES ('117', 'Xem thử', 'Preview', 'プレビュー', '시사', '预习', '0', null, null, null);
+INSERT INTO `languages` VALUES ('118', 'Chưa có ảnh nào', 'No photos yet', '写真はまだありません', '아직 사진이 없습니다', '暂无照片', '0', null, null, null);
+INSERT INTO `languages` VALUES ('119', 'Chọn ảnh', 'Choose photo', '写真を選んでください', '사진을 선택하십시오', '选择照片', '0', null, null, null);
+INSERT INTO `languages` VALUES ('120', 'Định dạng .jpg .png hoặc .gif', 'Format .jpg .png or .gif', '形式.jpg .pngまたは.gif', '.jpg .png 또는 .gif 형식', '格式为.jpg .png或.gif', '0', null, null, null);
+INSERT INTO `languages` VALUES ('121', 'Đăng', 'Publish', '公開する', '게시', '发布', '0', null, null, null);
+INSERT INTO `languages` VALUES ('122', 'Lưu nháp', 'Save draft', '下書きを保存', '임시 보관함에 저장', '保存草稿', '0', null, null, null);
+INSERT INTO `languages` VALUES ('123', 'Xóa', 'Delete', '削除する', '지우다', '删除', '0', null, null, null);
+INSERT INTO `languages` VALUES ('124', 'MENU CHỨC NĂNG', 'MENU', 'メニュー', '메뉴', '菜单', '0', null, null, null);
+INSERT INTO `languages` VALUES ('125', 'Trang tổng quan', 'Dashboard', 'ダッシュボード', '계기반', '仪表板', '0', null, null, null);
+INSERT INTO `languages` VALUES ('126', 'Danh sách đơn hàng', 'List of orders', '注文一覧', '주문 목록', '订单清单', '0', null, null, null);
+INSERT INTO `languages` VALUES ('127', 'Tất cả sản phẩm', 'All products', 'すべての製品', '모든 생산품', '所有产品', '0', null, null, null);
+INSERT INTO `languages` VALUES ('128', 'Thêm sản phẩm', 'New product', '新製品', '새로운 제품', '新产品', '0', null, null, null);
+INSERT INTO `languages` VALUES ('129', 'Tất cả bình luận', 'All comments', 'すべてのコメント', '모든 의견', '全部评论', '0', null, null, null);
+INSERT INTO `languages` VALUES ('130', 'Tất cả bài viết', 'All posts', 'すべての投稿', '모든 게시물', '所有帖子', '0', null, null, null);
+INSERT INTO `languages` VALUES ('131', 'Thêm bài viết', 'New post', '新しい投稿', '새로운 게시물', '最新帖子', '0', null, null, null);
+INSERT INTO `languages` VALUES ('132', 'Danh mục bài viết', 'Post category', '投稿カテゴリ', '게시물 카테고리', '帖子类别', '0', null, null, null);
+INSERT INTO `languages` VALUES ('133', 'Tất cả trang riêng', 'All pages', 'すべてのページ', '모든 페이지에', '所有页面', '0', null, null, null);
+INSERT INTO `languages` VALUES ('134', 'Quản lý ảnh', 'Photo management', '写真管理', '사진 관리', '照片管理', '0', null, null, null);
+INSERT INTO `languages` VALUES ('135', 'Tất cả thư viện', 'All galleries', 'すべてのギャラリー', '모든 갤러리', '所有画廊', '0', null, null, null);
+INSERT INTO `languages` VALUES ('136', 'Giao diện chung', 'Interface setup', 'インターフェース設定', '인터페이스 설정', '介面设定', '0', null, null, null);
+INSERT INTO `languages` VALUES ('137', 'Giao diện trang chủ', 'Home page setup', 'ホームページ設定', '홈페이지 설정', '主页设置', '0', null, null, null);
+INSERT INTO `languages` VALUES ('138', 'Tính năng nâng cao', 'Advanced setting', '詳細設定', '고급 설정', '高级设置', '0', null, null, null);
+INSERT INTO `languages` VALUES ('139', 'TÀI KHOẢN', 'ACCOUNT', 'アカウント', '계정', '帐户', '0', null, null, null);
+INSERT INTO `languages` VALUES ('140', 'Đổi mật khẩu', 'Change Password', 'パスワードを変更する', '비밀번호 변경', '更改密码', '0', null, null, null);
+INSERT INTO `languages` VALUES ('141', 'Đăng xuất', 'Log out', 'ログアウト', '로그 아웃', '登出', '0', null, null, null);
+INSERT INTO `languages` VALUES ('142', 'Website được thiết kế bởi', 'Website designed by', 'によって設計されたウェブサイト', '에 의해 설계된 웹 사이트', '网站设计者', '0', null, null, null);
+INSERT INTO `languages` VALUES ('143', 'Thiết kế web iHappy', 'IHappy web design', 'IHappy Webデザイン', 'IHappy 웹 디자인', 'iHappy网页设计', '0', null, null, null);
+INSERT INTO `languages` VALUES ('144', 'sử dụng phần mềm iHappyCMS - Điện thoại/Zalo hỗ trợ:', 'use iHappyCMS software - Phone / Zalo support:', 'iHappyCMSソフトウェアを使用-電話/ Zaloサポート：', 'iHappyCMS 소프트웨어 사용-전화 / Zalo 지원 :', '使用iHappyCMS软件-电话/ Zalo支持：', '0', null, null, null);
+INSERT INTO `languages` VALUES ('145', '(Google) Tiêu đề trang', '(Google) Page title', '（Google）ページのタイトル', '(Google) 페이지 제목', '（Google）页面标题', '0', null, null, null);
+INSERT INTO `languages` VALUES ('146', '(Google) Giới thiệu trang', '(Google) Description', '（Google）説明', '(Google) 설명', '（Google）说明', '0', null, null, null);
+INSERT INTO `languages` VALUES ('147', '(Google) Từ khóa (ngăn cách bởi dấu phẩy)', '(Google) Keywords (separated by commas)', '（Google）キーワード（カンマ区切り）', '(Google) 키워드 (쉼표로 구분)', '（Google）关键字（以逗号分隔）', '0', null, null, null);
+INSERT INTO `languages` VALUES ('148', 'Số Hotline', 'Hotline number', 'ホットライン番号', '핫라인 번호', '咨询电话', '0', null, null, null);
+INSERT INTO `languages` VALUES ('149', 'Số Hotline 2 nếu có', 'Hotline 2 number if applicable', 'ホットライン2番号（該当する場合）', '해당되는 경우 핫라인 2 번호', '热线2号（如果有）', '0', null, null, null);
+INSERT INTO `languages` VALUES ('150', 'Số Zalo nếu có', 'Zalo number if available', '可能であればザロ番号', '가능한 경우 Zalo 번호', 'Zalo号码（如果有）', '0', null, null, null);
+INSERT INTO `languages` VALUES ('151', 'Số Wechat nếu có', 'Wechat number if available', '可能な場合はチャット番号', '이용 가능한 경우 위챗 번호', '微信号码（如果有）', '0', null, null, null);
+INSERT INTO `languages` VALUES ('152', 'Địa chỉ mail liên hệ', 'Contact email address', '連絡先メールアドレス', '담당자 이메일 주소', '联络电子邮件地址', '0', null, null, null);
+INSERT INTO `languages` VALUES ('153', 'Địa chỉ mail nhận thông báo khi có đơn hàng (có thể điền nhiều email, ngăn cách bằng dấu phẩy)', 'Email address for receiving notifications when an order is made (can be filled with multiple emails, separated by commas)', '注文が行われたときに通知を受け取るための電子メールアドレス（複数の電子メールをコンマで区切って入力できます）', '주문시 알림을 받기위한 이메일 주소 (쉼표로 구분하여 여러 이메일로 채울 수 있음)', '下订单时接收通知的电子邮件地址（可以用多封电子邮件填充，用逗号分隔）', '0', null, null, null);
+INSERT INTO `languages` VALUES ('154', 'Ảnh Logo', 'Logo image', 'ロゴイメージ', '로고 이미지', '形象标识', '0', null, null, null);
+INSERT INTO `languages` VALUES ('155', 'Ảnh icon nhỏ trên tiêu đề trang (100x100px)', 'Small icon image on the page title (100x100px)', 'ページタイトルの小さいアイコン画像（100x100px）', '페이지 제목에 작은 아이콘 이미지 (100x100px)', '页面标题上的小图标图片（100x100px）', '0', null, null, null);
+INSERT INTO `languages` VALUES ('156', 'Ảnh nền cuối trang (nếu có)', 'Bottom background image (if applicable)', '下の背景画像（該当する場合）', '하단 배경 이미지 (해당되는 경우)', '底部背景图片（如果有）', '0', null, null, null);
+INSERT INTO `languages` VALUES ('157', 'Ảnh logo cuối trang (nếu có)', 'Bottom logo image (if applicable)', '下のロゴ画像（該当する場合）', '하단 로고 이미지 (해당되는 경우)', '底部徽标图像（如果有）', '0', null, null, null);
+INSERT INTO `languages` VALUES ('158', 'Tiêu đề cuối trang', 'Title on footer', 'フッターのタイトル', '바닥 글 제목', '页脚标题', '0', null, null, null);
+INSERT INTO `languages` VALUES ('159', 'Giới thiệu cuối trang', 'Introduce at footer', 'フッターで紹介', '바닥 글에서 소개', '在页脚介绍', '0', null, null, null);
+INSERT INTO `languages` VALUES ('160', 'Đoạn thông tin liên hệ', 'Paragraph contact information', '段落の連絡先情報', '단락 연락처 정보', '段落联系信息', '0', null, null, null);
+INSERT INTO `languages` VALUES ('161', 'Đoạn thông tin liên hệ dưới mỗi sản phẩm', 'Paragraph contact information under each product', '各製品の下の段落の連絡先情報', '각 제품의 단락 연락처 정보', '每个产品下的段落联系信息', '0', null, null, null);
+INSERT INTO `languages` VALUES ('162', 'Link Fanpage Facebook', 'Facebook Fanpage Link', 'Facebookファンページリンク', '페이스 북 팬 페이지 링크', 'Facebook粉丝专页链接', '0', null, null, null);
+INSERT INTO `languages` VALUES ('163', 'Link youtube', 'Youtube link', 'YouTubeリンク', '유튜브 링크', 'YouTube链接', '0', null, null, null);
+INSERT INTO `languages` VALUES ('164', 'Link twitter', 'Twitter link', 'Twitterリンク', '트위터 링크', 'Twitter链接', '0', null, null, null);
+INSERT INTO `languages` VALUES ('165', 'Link instagram', 'Instagram link', 'Instagramリンク', 'Instagram 링크', 'Instagram链接', '0', null, null, null);
+INSERT INTO `languages` VALUES ('166', 'Link pinterest', 'Link pinterest', 'リンク集', '링크 관심사', '链接pinterest', '0', null, null, null);
+INSERT INTO `languages` VALUES ('167', 'Link skype', 'Skype link', 'Skypeリンク', '스카이프 링크', 'Skype链接', '0', null, null, null);
+INSERT INTO `languages` VALUES ('168', 'Link chuyển đến khi click vào banner 1', 'Link to click on banner 1', 'バナーをクリックするためのリンク1', '배너 1을 클릭하여 링크', '链接点击横幅1', '0', null, null, null);
+INSERT INTO `languages` VALUES ('169', 'Ảnh banner 1', 'Photo banner 1', '写真バナー1', '사진 배너 1', '照片横幅1', '0', null, null, null);
+INSERT INTO `languages` VALUES ('170', 'Dòng Tiêu đề 1 trên banner 1', 'Headline 1 on banner 1', 'バナー1の見出し1', '배너 1의 제목 1', '横幅1的标题1', '0', null, null, null);
+INSERT INTO `languages` VALUES ('171', 'Dòng Tiêu đề 2 trên banner 1', 'Headline 2 on banner 1', 'バナー1の見出し2', '배너 1의 제목 2', '标题1上的标题2', '0', null, null, null);
+INSERT INTO `languages` VALUES ('172', 'Màu chữ trên banner 1', 'Font color on banner 1', 'バナー1のフォント色', '배너 1의 글꼴 색', '横幅1上的字体颜色', '0', null, null, null);
+INSERT INTO `languages` VALUES ('173', 'Link chuyển đến khi click vào banner 2', 'The link goes to click on banner 2', 'リンクはバナー2をクリックします', '링크는 배너 2를 클릭합니다.', '链接单击横幅2', '0', null, null, null);
+INSERT INTO `languages` VALUES ('174', 'Ảnh banner 2', 'Photo banner 2', '写真バナー2', '사진 배너 2', '照片横幅2', '0', null, null, null);
+INSERT INTO `languages` VALUES ('175', 'Dòng Tiêu đề 1 trên banner 2', 'Headline 1 on banner 2', 'バナー2の見出し1', '배너 2의 제목 1', '横幅1的标题1', '0', null, null, null);
+INSERT INTO `languages` VALUES ('176', 'Dòng Tiêu đề 2 trên banner 2', 'Headline 2 on banner 2', 'バナー2の見出し2', '배너 2의 제목 2', '横幅2的标题2', '0', null, null, null);
+INSERT INTO `languages` VALUES ('177', 'Màu chữ trên banner 2', 'Font color on banner 2', 'バナー2のフォント色', '배너 2의 글꼴 색', '横幅2上的字体颜色', '0', null, null, null);
+INSERT INTO `languages` VALUES ('178', 'Link chuyển đến khi click vào banner 3', 'Link to click on banner 3', 'バナー3をクリックするためのリンク', '배너 3을 클릭하기위한 링크', '链接单击横幅3', '0', null, null, null);
+INSERT INTO `languages` VALUES ('179', 'Ảnh banner 3', 'Photo banner 3', '写真バナー3', '사진 배너 3', '照片横幅3', '0', null, null, null);
+INSERT INTO `languages` VALUES ('180', 'Dòng Tiêu đề 1 trên banner 3', 'Headline 1 on banner 3', 'バナー3の見出し1', '배너 3의 제목 1', '横幅1的标题1', '0', null, null, null);
+INSERT INTO `languages` VALUES ('181', 'Dòng Tiêu đề 2 trên banner 3', 'Headline 2 on banner 3', 'バナー3の見出し2', '배너 3의 제목 2', '标题3上的标题2', '0', null, null, null);
+INSERT INTO `languages` VALUES ('182', 'Màu chữ trên banner 3', 'Font color on banner 3', 'バナー3のフォント色', '배너 3의 글꼴 색', '横幅3上的字体颜色', '0', null, null, null);
+INSERT INTO `languages` VALUES ('183', 'Link chuyển đến khi click vào banner 4', 'The link goes to when clicking on banner 4', 'バナー4をクリックするとリンクに移動します', '배너 4를 클릭하면 링크로 이동합니다', '单击横幅4时，链接转到', '0', null, null, null);
+INSERT INTO `languages` VALUES ('184', 'Ảnh banner 4', 'Photo banner 4', '写真バナー4', '사진 배너 4', '照片横幅4', '0', null, null, null);
+INSERT INTO `languages` VALUES ('185', 'Dòng Tiêu đề 1 trên banner 4', 'Headline 1 on banner 4', 'バナー4の見出し1', '배너 4의 제목 1', '横幅1的标题1', '0', null, null, null);
+INSERT INTO `languages` VALUES ('186', 'Dòng Tiêu đề 2 trên banner 4', 'Headline 2 on banner 4', 'バナー4の見出し2', '배너 4의 제목 2', '标题4上的标题2', '0', null, null, null);
+INSERT INTO `languages` VALUES ('187', 'Màu chữ trên banner 4', 'Font color on banner 4', 'バナー4のフォント色', '배너 4의 글꼴 색', '横幅4上的字体颜色', '0', null, null, null);
+INSERT INTO `languages` VALUES ('188', 'Link chuyển đến khi click vào banner 5', 'Link to click on the banner 5', 'バナーをクリックするためのリンク5', '배너 클릭 링크 5', '链接单击横幅5', '0', null, null, null);
+INSERT INTO `languages` VALUES ('189', 'Ảnh banner 5', 'Photo banner 5', '写真バナー5', '사진 배너 5', '照片横幅5', '0', null, null, null);
+INSERT INTO `languages` VALUES ('190', 'Dòng Tiêu đề 1 trên banner 5', 'Headline 1 on banner 5', 'バナー5の見出し1', '배너 5의 제목 1', '横幅5的标题1', '0', null, null, null);
+INSERT INTO `languages` VALUES ('191', 'Dòng Tiêu đề 2 trên banner 5', 'Headline 2 on banner 5', 'バナー5の見出し2', '배너 5의 제목 2', '标题5上的标题2', '0', null, null, null);
+INSERT INTO `languages` VALUES ('192', 'Màu chữ trên banner 5', 'Font color on banner 5', 'バナー5のフォント色', '배너 5의 글꼴 색', '横幅5的字体颜色', '0', null, null, null);
+INSERT INTO `languages` VALUES ('193', 'Link chuyển đến khi click vào banner 6', 'Link to click on the banner 6', 'バナーをクリックするためのリンク6', '배너 클릭 링크 6', '链接点击横幅6', '0', null, null, null);
+INSERT INTO `languages` VALUES ('194', 'Ảnh banner 6', 'Photo banner 6', '写真バナー6', '사진 배너 6', '照片横幅6', '0', null, null, null);
+INSERT INTO `languages` VALUES ('195', 'Dòng Tiêu đề 1 trên banner 6', 'Headline 1 on banner 6', 'バナー6の見出し1', '배너 6의 제목 1', '横幅1的标题1', '0', null, null, null);
+INSERT INTO `languages` VALUES ('196', 'Dòng Tiêu đề 2 trên banner 6', 'Headline 2 on banner 6', 'バナー6の見出し2', '배너 6의 제목 2', '标题6上的标题2', '0', null, null, null);
+INSERT INTO `languages` VALUES ('197', 'Màu chữ trên banner 6', 'Font color on banner 6', 'バナー6のフォント色', '배너 6의 글꼴 색상', '横幅6上的字体颜色', '0', null, null, null);
+INSERT INTO `languages` VALUES ('198', 'Link chuyển đến khi click vào banner 7', 'The link goes to click on banner 7', 'リンクはバナー7をクリックします', '링크는 배너 7을 클릭합니다.', '链接单击横幅7', '0', null, null, null);
+INSERT INTO `languages` VALUES ('199', 'Ảnh banner 7', 'Photo banner 7', '写真バナー7', '사진 배너 7', '照片横幅7', '0', null, null, null);
+INSERT INTO `languages` VALUES ('200', 'Dòng Tiêu đề 1 trên banner 7', 'Headline 1 on banner 7', 'バナー7の見出し1', '배너 7의 제목 1', '横幅1的标题1', '0', null, null, null);
+INSERT INTO `languages` VALUES ('201', 'Dòng Tiêu đề 2 trên banner 7', 'Headline 2 on banner 7', 'バナー7の見出し2', '배너 7의 제목 2', '标题7上的标题2', '0', null, null, null);
+INSERT INTO `languages` VALUES ('202', 'Màu chữ trên banner 7', 'Font color on banner 7', 'バナー7のフォント色', '배너 7의 글꼴 색', '横幅7上的字体颜色', '0', null, null, null);
+INSERT INTO `languages` VALUES ('203', 'Link chuyển đến khi click vào banner 8', 'The link goes to when you click on the banner 8', 'バナーをクリックするとリンク先へ8', '배너를 클릭하면 링크가 나타납니다. 8', '当您单击横幅8时，链接将转到', '0', null, null, null);
+INSERT INTO `languages` VALUES ('204', 'Ảnh banner 8', 'Photo banner 8', '写真バナー8', '사진 배너 8', '照片横幅8', '0', null, null, null);
+INSERT INTO `languages` VALUES ('205', 'Dòng Tiêu đề 1 trên banner 8', 'Headline 1 on banner 8', 'バナー8の見出し1', '배너 8의 제목 1', '标题8上的标题1', '0', null, null, null);
+INSERT INTO `languages` VALUES ('206', 'Dòng Tiêu đề 2 trên banner 8', 'Headline 2 on banner 8', 'バナー8の見出し2', '배너 8의 제목 2', '标题8上的标题2', '0', null, null, null);
+INSERT INTO `languages` VALUES ('207', 'Màu chữ trên banner 8', 'Font color on banner 8', 'バナー8のフォント色', '배너 8의 글꼴 색', '横幅8上的字体颜色', '0', null, null, null);
+INSERT INTO `languages` VALUES ('208', 'Link chuyển đến khi click vào banner 9', 'Link to click on the banner 9', 'バナーをクリックするためのリンク9', '배너를 클릭하여 링크 9', '链接单击横幅9', '0', null, null, null);
+INSERT INTO `languages` VALUES ('209', 'Ảnh banner 9', 'Photo banner 9', '写真バナー9', '사진 배너 9', '照片横幅9', '0', null, null, null);
+INSERT INTO `languages` VALUES ('210', 'Dòng Tiêu đề 1 trên banner 9', 'Headline 1 on banner 9', 'バナー9の見出し1', '배너 9의 제목 1', '标题9上的标题1', '0', null, null, null);
+INSERT INTO `languages` VALUES ('211', 'Dòng Tiêu đề 2 trên banner 9', 'Headline 2 on banner 9', 'バナー9の見出し2', '배너 9의 제목 2', '标题2上的标题2', '0', null, null, null);
+INSERT INTO `languages` VALUES ('212', 'Màu chữ trên banner 9', 'Font color on banner 9', 'バナー9のフォント色', '배너 9의 글꼴 색', '横幅9上的字体颜色', '0', null, null, null);
+INSERT INTO `languages` VALUES ('213', 'Link chuyển đến khi click vào banner 10', 'The link goes to when clicking on the banner 10', 'バナーをクリックするとリンク先へ移動します10', '배너 10을 클릭하면 링크로 이동합니다', '单击横幅10时，链接转到', '0', null, null, null);
+INSERT INTO `languages` VALUES ('214', 'Ảnh banner 10', 'Photo banner 10', '写真バナー10', '사진 배너 10', '照片横幅10', '0', null, null, null);
+INSERT INTO `languages` VALUES ('215', 'Dòng Tiêu đề 1 trên banner 10', 'Headline 1 on banner 10', 'バナー10の見出し1', '배너 10의 제목 1', '标题10上的标题1', '0', null, null, null);
+INSERT INTO `languages` VALUES ('216', 'Dòng Tiêu đề 2 trên banner 10', 'Headline 2 on banner 10', 'バナー10の見出し2', '배너 10의 제목 2', '标题10上的标题2', '0', null, null, null);
+INSERT INTO `languages` VALUES ('217', 'Màu chữ trên banner 10', 'Font color on banner 10', 'バナー10のフォント色', '배너 10의 글꼴 색', '横幅10上的字体颜色', '0', null, null, null);
+INSERT INTO `languages` VALUES ('218', 'Link chuyển đến khi click vào banner 11', 'The link goes to click on banner 11', 'リンクをクリックすると、バナー11がクリックされます。', '링크는 배너 11을 클릭합니다.', '链接单击横幅11', '0', null, null, null);
+INSERT INTO `languages` VALUES ('219', 'Ảnh banner 11', 'Photo banner 11', '写真バナー11', '사진 배너 11', '照片横幅11', '0', null, null, null);
+INSERT INTO `languages` VALUES ('220', 'Dòng Tiêu đề 1 trên banner 11', 'Headline 1 on banner 11', 'バナー11の見出し1', '배너 11의 제목 1', '标题11上的标题1', '0', null, null, null);
+INSERT INTO `languages` VALUES ('221', 'Dòng Tiêu đề 2 trên banner 11', 'Headline 2 on banner 11', 'バナー11の見出し2', '배너 11의 제목 2', '标题11上的标题2', '0', null, null, null);
+INSERT INTO `languages` VALUES ('222', 'Màu chữ trên banner 11', 'Font color on banner 11', 'バナー11のフォント色', '배너 11의 글꼴 색', '横幅11上的字体颜色', '0', null, null, null);
+INSERT INTO `languages` VALUES ('223', 'Link chuyển đến khi click vào banner 12', 'Link to click on the banner 12', 'バナーをクリックするためのリンク12', '배너 클릭 링크 12', '链接点击横幅12', '0', null, null, null);
+INSERT INTO `languages` VALUES ('224', 'Ảnh banner 12', 'Photo banner 12', '写真バナー12', '사진 배너 12', '照片横幅12', '0', null, null, null);
+INSERT INTO `languages` VALUES ('225', 'Dòng Tiêu đề 1 trên banner 12', 'Headline 1 on banner 12', 'バナー12の見出し1', '배너 12의 제목 1', '标题12的标题1', '0', null, null, null);
+INSERT INTO `languages` VALUES ('226', 'Dòng Tiêu đề 2 trên banner 12', 'Headline 2 on banner 12', 'バナー12の見出し2', '배너 12의 제목 2', '标题12上的标题2', '0', null, null, null);
+INSERT INTO `languages` VALUES ('227', 'Màu chữ trên banner 12', 'Font color on the banner 12', 'バナー12のフォント色', '배너의 글꼴 색상 12', '横幅上的字体颜色12', '0', null, null, null);
+INSERT INTO `languages` VALUES ('228', 'Link chuyển đến khi click vào banner 13', 'The link goes to when click on banner 13', 'バナー13をクリックするとリンクに移動します', '배너 13을 클릭하면 링크로 이동합니다', '单击横幅13时，链接转到', '0', null, null, null);
+INSERT INTO `languages` VALUES ('229', 'Ảnh banner 13', 'Photo banner 13', '写真バナー13', '사진 배너 13', '照片横幅13', '0', null, null, null);
+INSERT INTO `languages` VALUES ('230', 'Dòng Tiêu đề 1 trên banner 13', 'Headline 1 on banner 13', 'バナー13の見出し1', '배너 13의 제목 1', '标题13上的标题1', '0', null, null, null);
+INSERT INTO `languages` VALUES ('231', 'Dòng Tiêu đề 2 trên banner 13', 'Headline 2 on banner 13', 'バナー13の見出し2', '배너 13의 제목 2', '标题13上的标题2', '0', null, null, null);
+INSERT INTO `languages` VALUES ('232', 'Màu chữ trên banner 13', 'Font color on banner 13', 'バナー13のフォントの色', '배너 13의 글꼴 색', '横幅13上的字体颜色', '0', null, null, null);
+INSERT INTO `languages` VALUES ('233', 'Link chuyển đến khi click vào banner 14', 'The link goes to click on banner 14', 'リンクはバナー14をクリックします', '링크는 배너 14를 클릭합니다.', '链接单击横幅14', '0', null, null, null);
+INSERT INTO `languages` VALUES ('234', 'Ảnh banner 14', 'Photo banner 14', '写真バナー14', '사진 배너 14', '照片横幅14', '0', null, null, null);
+INSERT INTO `languages` VALUES ('235', 'Dòng Tiêu đề 1 trên banner 14', 'Headline 1 on banner 14', 'バナー14の見出し1', '배너 14의 제목 1', '横幅14的标题1', '0', null, null, null);
+INSERT INTO `languages` VALUES ('236', 'Dòng Tiêu đề 2 trên banner 14', 'Headline 2 on banner 14', 'バナー14の見出し2', '배너 14의 제목 2', '标题14上的标题2', '0', null, null, null);
+INSERT INTO `languages` VALUES ('237', 'Màu chữ trên banner 14', 'Font color on banner 14', 'バナー14のフォント色', '배너 14의 글꼴 색', '横幅14上的字体颜色', '0', null, null, null);
+INSERT INTO `languages` VALUES ('238', 'Link chuyển đến khi click vào banner 15', 'The link goes to when you click on the banner 15', 'バナーをクリックするとリンク先に移動します15', '배너를 클릭하면 링크가 이동합니다 15', '当您单击横幅15时，链接将转到', '0', null, null, null);
+INSERT INTO `languages` VALUES ('239', 'Ảnh banner 15', 'Photo banner 15', '写真バナー15', '사진 배너 15', '照片横幅15', '0', null, null, null);
+INSERT INTO `languages` VALUES ('240', 'Dòng Tiêu đề 1 trên banner 15', 'Headline 1 on banner 15', 'バナー15の見出し1', '배너 15의 제목 1', '横幅15的标题1', '0', null, null, null);
+INSERT INTO `languages` VALUES ('241', 'Dòng Tiêu đề 2 trên banner 15', 'Headline 2 on banner 15', 'バナー15の見出し2', '배너 15의 제목 2', '标题15上的标题2', '0', null, null, null);
+INSERT INTO `languages` VALUES ('242', 'Màu chữ trên banner 15', 'Font color on banner 15', 'バナー15のフォント色', '배너 15의 글꼴 색', '标语15上的字体颜色', '0', null, null, null);
+INSERT INTO `languages` VALUES ('243', 'Link chuyển đến khi click vào banner 16', 'The link goes to when you click on the banner 16', 'バナーをクリックするとリンク先に移動します16', '배너를 클릭하면 링크가 나타납니다. 16', '当您单击横幅16时，链接将转到', '0', null, null, null);
+INSERT INTO `languages` VALUES ('244', 'Ảnh banner 16', 'Photo banner 16', '写真バナー16', '사진 배너 16', '照片横幅16', '0', null, null, null);
+INSERT INTO `languages` VALUES ('245', 'Dòng Tiêu đề 1 trên banner 16', 'Headline 1 on banner 16', 'バナー16の見出し1', '배너 16의 제목 1', '横幅16的标题1', '0', null, null, null);
+INSERT INTO `languages` VALUES ('246', 'Dòng Tiêu đề 2 trên banner 16', 'Headline 2 on banner 16', 'バナー16の見出し2', '배너 16의 제목 2', '横幅2的标题2', '0', null, null, null);
+INSERT INTO `languages` VALUES ('247', 'Màu chữ trên banner 16', 'Font color on banner 16', 'バナー16のフォント色', '배너 16의 글꼴 색', '横幅16上的字体颜色', '0', null, null, null);
+INSERT INTO `languages` VALUES ('248', 'Link chuyển đến khi click vào banner 17', 'The link goes to click on banner 17', 'リンクはバナー17をクリックするために行きます', '링크는 배너 17을 클릭합니다.', '链接点击横幅17', '0', null, null, null);
+INSERT INTO `languages` VALUES ('249', 'Ảnh banner 17', 'Photo banner 17', '写真バナー17', '사진 배너 17', '照片横幅17', '0', null, null, null);
+INSERT INTO `languages` VALUES ('250', 'Dòng Tiêu đề 1 trên banner 17', 'Headline 1 on banner 17', 'バナー17の見出し1', '배너 17의 제목 1', '横幅1的标题1', '0', null, null, null);
+INSERT INTO `languages` VALUES ('251', 'Dòng Tiêu đề 2 trên banner 17', 'Headline 2 on banner 17', 'バナー17の見出し2', '배너 17의 제목 2', '横幅17的标题2', '0', null, null, null);
+INSERT INTO `languages` VALUES ('252', 'Màu chữ trên banner 17', 'Font color on banner 17', 'バナー17のフォント色', '배너 17의 글꼴 색', '横幅17上的字体颜色', '0', null, null, null);
+INSERT INTO `languages` VALUES ('253', 'Link chuyển đến khi click vào banner 18', 'The link goes to when you click on the banner 18', 'バナーをクリックするとリンク先に移動します18', '배너를 클릭하면 링크가 나타납니다. 18', '当您单击横幅18时，链接转到', '0', null, null, null);
+INSERT INTO `languages` VALUES ('254', 'Ảnh banner 18', 'Photo banner 18', '写真バナー18', '사진 배너 18', '照片横幅18', '0', null, null, null);
+INSERT INTO `languages` VALUES ('255', 'Dòng Tiêu đề 1 trên banner 18', 'Headline 1 on banner 18', 'バナー18の見出し1', '배너 18의 제목 1', '横幅18的标题1', '0', null, null, null);
+INSERT INTO `languages` VALUES ('256', 'Dòng Tiêu đề 2 trên banner 18', 'Headline 2 on banner 18', 'バナー18の見出し2', '배너 18의 제목 2', '标题18上的标题2', '0', null, null, null);
+INSERT INTO `languages` VALUES ('257', 'Màu chữ trên banner 18', 'Font color on the banner 18', 'バナー18のフォント色', '배너의 글꼴 색 18', '横幅上的字体颜色18', '0', null, null, null);
+INSERT INTO `languages` VALUES ('258', 'Link chuyển đến khi click vào banner 19', 'The link goes to when you click on the banner 19', 'バナーをクリックするとリンク先に移動します19', '배너를 클릭하면 링크가 나타납니다. 19', '当您单击横幅19时，链接转到', '0', null, null, null);
+INSERT INTO `languages` VALUES ('259', 'Ảnh banner 19', 'Photo banner 19', '写真バナー19', '사진 배너 19', '照片横幅19', '0', null, null, null);
+INSERT INTO `languages` VALUES ('260', 'Dòng Tiêu đề 1 trên banner 19', 'Headline 1 on banner 19', 'バナー19の見出し1', '배너 19의 제목 1', '横幅19的标题1', '0', null, null, null);
+INSERT INTO `languages` VALUES ('261', 'Dòng Tiêu đề 2 trên banner 19', 'Headline 2 on banner 19', 'バナー19の見出し2', '배너 19의 제목 2', '标题19上的标题2', '0', null, null, null);
+INSERT INTO `languages` VALUES ('262', 'Màu chữ trên banner 19', 'Font color on banner 19', 'バナー19のフォント色', '배너 19의 글꼴 색', '横幅19上的字体颜色', '0', null, null, null);
+INSERT INTO `languages` VALUES ('263', 'Link chuyển đến khi click vào banner 20', 'The link goes to when you click on the banner 20', 'バナーをクリックするとリンク先に移動します20', '배너를 클릭하면 링크가 나타납니다. 20', '当您单击横幅20时，链接将转到', '0', null, null, null);
+INSERT INTO `languages` VALUES ('264', 'Ảnh banner 20', 'Photo banner 20', '写真バナー20', '사진 배너 20', '照片横幅20', '0', null, null, null);
+INSERT INTO `languages` VALUES ('265', 'Dòng Tiêu đề 1 trên banner 20', 'Headline 1 on banner 20', 'バナー20の見出し1', '배너 20의 제목 1', '横幅20的标题1', '0', null, null, null);
+INSERT INTO `languages` VALUES ('266', 'Dòng Tiêu đề 2 trên banner 20', 'Headline 2 on banner 20', 'バナー20の見出し2', '배너 20의 제목 2', '标题20上的标题2', '0', null, null, null);
+INSERT INTO `languages` VALUES ('267', 'Màu chữ trên banner 20', 'Font color on banner 20', 'バナー20のフォント色', '배너 20의 글꼴 색', '横幅20上的字体颜色', '0', null, null, null);
+INSERT INTO `languages` VALUES ('268', 'Link chuyển đến khi click vào banner 21', 'The link goes to click on banner 21', 'リンクはバナー21をクリックするために行きます', '링크는 배너 21을 클릭합니다.', '链接点击横幅21', '0', null, null, null);
+INSERT INTO `languages` VALUES ('269', 'Ảnh banner 21', 'Photo banner 21', 'フォトバナー21', '사진 배너 21', '照片横幅21', '0', null, null, null);
+INSERT INTO `languages` VALUES ('270', 'Dòng Tiêu đề 1 trên banner 21', 'Headline 1 on banner 21', 'バナー21の見出し1', '배너 21의 제목 1', '横幅1的标题1', '0', null, null, null);
+INSERT INTO `languages` VALUES ('271', 'Dòng Tiêu đề 2 trên banner 21', 'Headline 2 on banner 21', 'バナー21の見出し2', '배너 21의 제목 2', '横幅2的标题2', '0', null, null, null);
+INSERT INTO `languages` VALUES ('272', 'Màu chữ trên banner 21', 'Text color on banner 21', 'バナー21のテキストの色', '배너 21의 텍스트 색상', '横幅21上的文字颜色', '0', null, null, null);
+INSERT INTO `languages` VALUES ('273', 'Link chuyển đến khi click vào banner 22', 'Link to click on the banner 22', 'バナーをクリックするためのリンク22', '배너 클릭 링크 22', '链接单击横幅22', '0', null, null, null);
+INSERT INTO `languages` VALUES ('274', 'Ảnh banner 22', 'Photo banner 22', '写真バナー22', '사진 배너 22', '照片横幅22', '0', null, null, null);
+INSERT INTO `languages` VALUES ('275', 'Dòng Tiêu đề 1 trên banner 22', 'Headline 1 on banner 22', 'バナー22の見出し1', '배너 22의 제목 1', '横幅22的标题1', '0', null, null, null);
+INSERT INTO `languages` VALUES ('276', 'Dòng Tiêu đề 2 trên banner 22', 'Headline 2 on banner 22', 'バナー22の見出し2', '배너 22의 제목 2', '标题22上的标题2', '0', null, null, null);
+INSERT INTO `languages` VALUES ('277', 'Màu chữ trên banner 22', 'Font color on banner 22', 'バナー22のフォント色', '배너 22의 글꼴 색', '横幅广告上的字体颜色22', '0', null, null, null);
+INSERT INTO `languages` VALUES ('278', 'Link chuyển đến khi click vào banner 23', 'The link goes to when you click on the banner 23', 'バナーをクリックするとリンク先に移動します23', '배너를 클릭하면 링크가 나타납니다. 23', '当您单击横幅23时，链接将转到', '0', null, null, null);
+INSERT INTO `languages` VALUES ('279', 'Ảnh banner 23', 'Photo banner 23', '写真バナー23', '사진 배너 23', '照片横幅23', '0', null, null, null);
+INSERT INTO `languages` VALUES ('280', 'Dòng Tiêu đề 1 trên banner 23', 'Headline 1 on banner 23', 'バナー23の見出し1', '배너 23의 제목 1', '横幅23的标题1', '0', null, null, null);
+INSERT INTO `languages` VALUES ('281', 'Dòng Tiêu đề 2 trên banner 23', 'Headline 2 on banner 23', 'バナー23の見出し2', '배너 23의 제목 2', '标题23上的标题2', '0', null, null, null);
+INSERT INTO `languages` VALUES ('282', 'Màu chữ trên banner 23', 'Font color on banner 23', 'バナー23のフォント色', '배너 23의 글꼴 색상', '横幅23上的字体颜色', '0', null, null, null);
+INSERT INTO `languages` VALUES ('283', 'Link chuyển đến khi click vào banner 24', 'The link goes to click on banner 24', 'リンクをクリックすると、バナー24がクリックされます。', '링크는 배너 24를 클릭합니다.', '链接单击横幅24', '0', null, null, null);
+INSERT INTO `languages` VALUES ('284', 'Ảnh banner 24', 'Photo banner 24', '写真バナー24', '사진 배너 24', '照片横幅24', '0', null, null, null);
+INSERT INTO `languages` VALUES ('285', 'Dòng Tiêu đề 1 trên banner 24', 'Headline 1 on banner 24', 'バナー24の見出し1', '배너 24의 제목 1', '横幅1的标题1', '0', null, null, null);
+INSERT INTO `languages` VALUES ('286', 'Dòng Tiêu đề 2 trên banner 24', 'Headline 2 on banner 24', 'バナー24の見出し2', '배너 24의 제목 2', '横幅24的标题2', '0', null, null, null);
+INSERT INTO `languages` VALUES ('287', 'Màu chữ trên banner 24', 'Font color on banner 24', 'バナー24のフォント色', '배너 24의 글꼴 색상', '横幅24上的字体颜色', '0', null, null, null);
+INSERT INTO `languages` VALUES ('288', 'Link chuyển đến khi click vào banner 25', 'The link goes to when clicking on the banner 25', 'バナーをクリックするとリンク先に移動します25', '배너를 클릭하면 링크가 이동합니다 25', '单击横幅25时，链接转到', '0', null, null, null);
+INSERT INTO `languages` VALUES ('289', 'Ảnh banner 25', 'Photo banner 25', '写真バナー25', '사진 배너 25', '照片横幅25', '0', null, null, null);
+INSERT INTO `languages` VALUES ('290', 'Dòng Tiêu đề 1 trên banner 25', 'Headline 1 on banner 25', 'バナー25の見出し1', '배너 25의 제목 1', '横幅25的标题1', '0', null, null, null);
+INSERT INTO `languages` VALUES ('291', 'Dòng Tiêu đề 2 trên banner 25', 'Headline 2 on banner 25', 'バナー25の見出し2', '배너 25의 제목 2', '标题25上的标题2', '0', null, null, null);
+INSERT INTO `languages` VALUES ('292', 'Màu chữ trên banner 25', 'Font color on banner 25', 'バナー25のフォント色', '배너 25의 글꼴 색', '横幅25上的字体颜色', '0', null, null, null);
+INSERT INTO `languages` VALUES ('293', 'Link chuyển đến khi click vào banner 26', 'The link goes to click on the banner 26', 'リンクをクリックすると、バナーがクリックされます26', '링크는 배너를 클릭합니다 26', '链接转到点击横幅26', '0', null, null, null);
+INSERT INTO `languages` VALUES ('294', 'Ảnh banner 26', 'Photo banner 26', '写真バナー26', '사진 배너 26', '照片横幅26', '0', null, null, null);
+INSERT INTO `languages` VALUES ('295', 'Dòng Tiêu đề 1 trên banner 26', 'Headline 1 on banner 26', 'バナー26の見出し1', '배너 26의 제목 1', '横幅1的标题1', '0', null, null, null);
+INSERT INTO `languages` VALUES ('296', 'Dòng Tiêu đề 2 trên banner 26', 'Headline 2 on banner 26', 'バナー26の見出し2', '배너 26의 제목 2', '横幅2的标题2', '0', null, null, null);
+INSERT INTO `languages` VALUES ('297', 'Màu chữ trên banner 26', 'Font color on banner 26', 'バナー26のフォント色', '배너 26의 글꼴 색', '横幅广告上的字体颜色26', '0', null, null, null);
+INSERT INTO `languages` VALUES ('298', 'Link chuyển đến khi click vào banner 27', 'The link goes to when you click on banner 27', 'バナー27をクリックするとリンクに移動します', '배너 27을 클릭하면 링크가 나타납니다.', '单击横幅27时，链接转到', '0', null, null, null);
+INSERT INTO `languages` VALUES ('299', 'Ảnh banner 27', 'Photo banner 27', '写真バナー27', '사진 배너 27', '照片横幅27', '0', null, null, null);
+INSERT INTO `languages` VALUES ('300', 'Dòng Tiêu đề 1 trên banner 27', 'Headline 1 on banner 27', 'バナー27の見出し1', '배너 27의 제목 1', '横幅27的标题1', '0', null, null, null);
+INSERT INTO `languages` VALUES ('301', 'Dòng Tiêu đề 2 trên banner 27', 'Headline 2 on banner 27', 'バナー27の見出し2', '배너 27의 제목 2', '横幅27的标题2', '0', null, null, null);
+INSERT INTO `languages` VALUES ('302', 'Màu chữ trên banner 27', 'Font color on banner 27', 'バナー27のフォント色', '배너 27의 글꼴 색', '横幅27的字体颜色', '0', null, null, null);
+INSERT INTO `languages` VALUES ('303', 'Link chuyển đến khi click vào banner 28', 'The link goes to click on the banner 28', 'リンクをクリックすると、バナーがクリックされます28', '링크는 배너를 클릭합니다 28', '链接点击了横幅28', '0', null, null, null);
+INSERT INTO `languages` VALUES ('304', 'Ảnh banner 28', 'Photo banner 28', '写真バナー28', '사진 배너 28', '照片横幅28', '0', null, null, null);
+INSERT INTO `languages` VALUES ('305', 'Dòng Tiêu đề 1 trên banner 28', 'Headline 1 on banner 28', 'バナー28の見出し1', '배너 28의 제목 1', '横幅28的标题1', '0', null, null, null);
+INSERT INTO `languages` VALUES ('306', 'Dòng Tiêu đề 2 trên banner 28', 'Headline 2 on banner 28', 'バナー28の見出し2', '배너 28의 제목 2', '标题28上的标题2', '0', null, null, null);
+INSERT INTO `languages` VALUES ('307', 'Màu chữ trên banner 28', 'Font color on the banner 28', 'バナー28のフォント色', '배너의 글꼴 색상 28', '横幅上的字体颜色28', '0', null, null, null);
+INSERT INTO `languages` VALUES ('308', 'Link chuyển đến khi click vào banner 29', 'The link goes to click on banner 29', 'リンクをクリックすると、バナー29をクリックします', '링크는 배너 29를 클릭합니다.', '链接进入点击横幅29', '0', null, null, null);
+INSERT INTO `languages` VALUES ('309', 'Ảnh banner 29', 'Photo banner 29', '写真バナー29', '사진 배너 29', '照片横幅29', '0', null, null, null);
+INSERT INTO `languages` VALUES ('310', 'Dòng Tiêu đề 1 trên banner 29', 'Headline 1 on banner 29', 'バナー29の見出し1', '배너 29의 제목 1', '横幅1的标题1', '0', null, null, null);
+INSERT INTO `languages` VALUES ('311', 'Dòng Tiêu đề 2 trên banner 29', 'Headline 2 on banner 29', 'バナー29の見出し2', '배너 29의 제목 2', '横幅2的标题2', '0', null, null, null);
+INSERT INTO `languages` VALUES ('312', 'Màu chữ trên banner 29', 'Font color on banner 29', 'バナー29のフォント色', '배너 29의 글꼴 색', '横幅29上的字体颜色', '0', null, null, null);
+INSERT INTO `languages` VALUES ('313', 'Link chuyển đến khi click vào banner 30', 'The link goes to when you click on banner 30', 'バナー30をクリックするとリンクに移動します', '배너 30을 클릭하면 링크가 나타납니다.', '当您单击横幅30时，链接将转到', '0', null, null, null);
+INSERT INTO `languages` VALUES ('314', 'Ảnh banner 30', 'Photo banner 30', '写真バナー30', '사진 배너 30', '照片横幅30', '0', null, null, null);
+INSERT INTO `languages` VALUES ('315', 'Dòng Tiêu đề 1 trên banner 30', 'Headline 1 on banner 30', 'バナー30の見出し1', '배너 30의 제목 1', '标题30上的标题1', '0', null, null, null);
+INSERT INTO `languages` VALUES ('316', 'Dòng Tiêu đề 2 trên banner 30', 'Headline 2 on banner 30', 'バナー30の見出し2', '배너 30의 제목 2', '标题30上的标题2', '0', null, null, null);
+INSERT INTO `languages` VALUES ('317', 'Màu chữ trên banner 30', 'Font color on banner 30', 'バナー30のフォント色', '배너 30의 글꼴 색', '横幅30上的字体颜色', '0', null, null, null);
+INSERT INTO `languages` VALUES ('318', 'Tiêu đề phần ô nổi bật', 'Header section highlights', 'ヘッダーセクションのハイライト', '헤더 섹션 하이라이트', '标头部分突出显示', '0', null, null, null);
+INSERT INTO `languages` VALUES ('319', 'Link chuyển đến khi click ảnh icon ô nổi bật 1', 'Link to click on the highlighted icon image 1', '強調表示されたアイコン画像をクリックするためのリンク1', '강조 표시된 아이콘 이미지를 클릭하여 링크 1', '链接以单击突出显示的图标图像1', '0', null, null, null);
+INSERT INTO `languages` VALUES ('320', 'Ảnh icon ô nổi bật 1', 'Image of highlighted cell icon 1', '強調表示されたセルアイコン1の画像', '강조 표시된 셀 아이콘 1의 이미지', '高亮显示的单元格图标1的图像', '0', null, null, null);
+INSERT INTO `languages` VALUES ('321', 'Tiêu đề ô nổi bật 1', 'Highlight cell title 1', 'セルのタイトルを強調表示1', '셀 제목 강조 표시 1', '突出显示单元格标题1', '0', null, null, null);
+INSERT INTO `languages` VALUES ('322', 'Nội dung ô nổi bật 1', 'Highlight cell content 1', 'セルの内容を強調表示1', '셀 내용 강조 1', '突出显示单元格内容1', '0', null, null, null);
+INSERT INTO `languages` VALUES ('323', 'Link chuyển đến khi click ảnh icon ô nổi bật 2', 'Link to click on the image of the highlighted cell icon 2', '強調表示されたセルアイコン2の画像をクリックするためのリンク', '강조 표시된 셀 아이콘의 이미지를 클릭하려면 링크 2', '链接以单击突出显示的单元格图标的图像2', '0', null, null, null);
+INSERT INTO `languages` VALUES ('324', 'Ảnh icon ô nổi bật 2', 'Image of highlighted cell icon 2', 'ハイライトされたセルアイコン2の画像', '강조 표시된 셀 아이콘 2의 이미지', '高亮显示的单元格图标2的图像', '0', null, null, null);
+INSERT INTO `languages` VALUES ('325', 'Tiêu đề ô nổi bật 2', 'Highlight cell title 2', 'セルのタイトル2を強調表示', '셀 제목 강조 표시 2', '突出显示单元格标题2', '0', null, null, null);
+INSERT INTO `languages` VALUES ('326', 'Nội dung ô nổi bật 2', 'Highlight cell content 2', 'セルコンテンツ2を強調表示', '셀 내용 강조 2', '突出显示单元格内容2', '0', null, null, null);
+INSERT INTO `languages` VALUES ('327', 'Link chuyển đến khi click ảnh icon ô nổi bật 3', 'Link to click on the highlighted cell icon image 3', '強調表示されたセルアイコン画像3をクリックするためのリンク', '강조 표시된 셀 아이콘 이미지를 클릭하여 링크 3', '链接以单击突出显示的单元格图标图像3', '0', null, null, null);
+INSERT INTO `languages` VALUES ('328', 'Ảnh icon ô nổi bật 3', 'Highlight icon image 3', 'ハイライトのアイコン画像3', '아이콘 이미지 3 강조', '高亮显示图标图像3', '0', null, null, null);
+INSERT INTO `languages` VALUES ('329', 'Tiêu đề ô nổi bật 3', 'Highlight cell title 3', 'セルのタイトル3を強調表示', '셀 제목 강조 표시 3', '突出显示单元格标题3', '0', null, null, null);
+INSERT INTO `languages` VALUES ('330', 'Nội dung ô nổi bật 3', 'Highlight cell content 3', 'セルコンテンツ3を強調表示', '셀 내용 강조 3', '突出显示单元格内容3', '0', null, null, null);
+INSERT INTO `languages` VALUES ('331', 'Link chuyển đến khi click ảnh icon ô nổi bật 4', 'The link goes to when clicking the highlighted image icon 4', '強調表示された画像アイコン4をクリックするとリンクに移動します。', '강조 표시된 이미지 아이콘을 클릭하면 링크가 나타납니다. 4', '单击突出显示的图像图标4时，链接指向', '0', null, null, null);
+INSERT INTO `languages` VALUES ('332', 'Ảnh icon ô nổi bật 4', 'Image of highlighted cell icon 4', 'ハイライトされたセルアイコン4の画像', '강조 표시된 셀 아이콘 4의 이미지', '高亮显示的单元格图标4的图像', '0', null, null, null);
+INSERT INTO `languages` VALUES ('333', 'Tiêu đề ô nổi bật 4', 'Highlight cell title 4', 'セルのタイトル4を強調表示する', '셀 제목 강조 표시 4', '突出显示单元格标题4', '0', null, null, null);
+INSERT INTO `languages` VALUES ('334', 'Nội dung ô nổi bật 4', 'Highlight cell content 4', 'セルの内容をハイライト4', '셀 내용 강조 4', '突出显示单元格内容4', '0', null, null, null);
+INSERT INTO `languages` VALUES ('335', 'Tiêu đề giới thiệu trang chủ', 'The title introduces the homepage', 'タイトルはホームページを紹介しています', '제목은 홈페이지를 소개합니다', '标题介绍首页', '0', null, null, null);
+INSERT INTO `languages` VALUES ('336', 'Đoạn giới thiệu trang chủ', 'Homepage trailer', 'ホームページトレーラー', '홈페이지 예고편', '主页预告片', '0', null, null, null);
+INSERT INTO `languages` VALUES ('337', 'Ảnh giới thiệu trang chủ 1000x700px', 'Home page introduction picture 1000x700px', 'ホームページ紹介画像1000x700px', '홈페이지 소개 그림 1000x700px', '首页介绍图片1000x700px', '0', null, null, null);
+INSERT INTO `languages` VALUES ('338', 'Link video youtube giới thiệu trang chủ (Nếu điền sẽ không hiện ảnh nữa)', 'Youtube video link to introduce the homepage (If you fill out it will not show images)', 'ホームページを紹介するYoutubeビデオリンク（入力しても画像は表示されません）', '홈페이지를 소개하는 Youtube 비디오 링크 (채우면 이미지가 표시되지 않음)', '用于介绍首页的YouTube视频链接（如果填写，则不会显示图片）', '0', null, null, null);
+INSERT INTO `languages` VALUES ('339', 'Ảnh logo đối tác 1 300x200px', 'Partner logo image 1 300x200px', 'パートナーのロゴ画像1 300x200ピクセル', '파트너 로고 이미지 1 300x200px', '合作伙伴徽标图片1 300x200px', '0', null, null, null);
+INSERT INTO `languages` VALUES ('340', 'Tên đối tác 1', 'Partner\'s name 1', 'パートナーの名前1', '파트너 이름 1', '合伙人姓名1', '0', null, null, null);
+INSERT INTO `languages` VALUES ('341', 'Link chuyến đến khi click logo đối tác 1', 'Link to click on partner logo 1', 'パートナーのロゴをクリックするためのリンク1', '파트너 로고를 클릭하여 링크 1', '链接以点击合作伙伴徽标1', '0', null, null, null);
+INSERT INTO `languages` VALUES ('342', 'Ảnh logo đối tác 2 300x200px', 'Image of partner logo 2 300x200px', 'パートナーロゴ2の画像300x200px', '파트너 로고 2 300x200px의 이미지', '合作伙伴徽标2的图片300x200px', '0', null, null, null);
+INSERT INTO `languages` VALUES ('343', 'Tên đối tác 2', 'Partner\'s name 2', 'パートナーの名前2', '파트너 이름 2', '合伙人姓名2', '0', null, null, null);
+INSERT INTO `languages` VALUES ('344', 'Link chuyến đến khi click logo đối tác 2', 'Link to click on partner logo 2', 'パートナーのロゴをクリックするためのリンク2', '파트너 로고 2를 클릭하려면 링크', '链接以点击合作伙伴徽标2', '0', null, null, null);
+INSERT INTO `languages` VALUES ('345', 'Ảnh logo đối tác 3 300x200px', 'Partner logo image 3 300x200px', 'パートナーのロゴ画像3 300x200ピクセル', '파트너 로고 이미지 3 300x200px', '合作伙伴徽标图片3 300x200px', '0', null, null, null);
+INSERT INTO `languages` VALUES ('346', 'Tên đối tác 3', 'Partner\'s name 3', 'パートナーの名前3', '파트너 이름 3', '合伙人姓名3', '0', null, null, null);
+INSERT INTO `languages` VALUES ('347', 'Link chuyến đến khi click logo đối tác 3', 'Link to click on partner logo 3', 'パートナーのロゴをクリックするためのリンク3', '파트너 로고 3을 클릭하려면 링크', '链接以点击合作伙伴徽标3', '0', null, null, null);
+INSERT INTO `languages` VALUES ('348', 'Ảnh logo đối tác 4 300x200px', 'Image of partner logo 4 300x200px', 'パートナーロゴ4の画像300x200px', '파트너 로고 이미지 4300x200px', '合作伙伴徽标4 300x200px的图片', '0', null, null, null);
+INSERT INTO `languages` VALUES ('349', 'Tên đối tác 4', 'Partner\'s name 4', 'パートナーの名前4', '파트너 이름 4', '合伙人姓名4', '0', null, null, null);
+INSERT INTO `languages` VALUES ('350', 'Link chuyến đến khi click logo đối tác 4', 'Link to click on partner logo 4', 'パートナーのロゴをクリックするためのリンク4', '파트너 로고를 클릭하여 링크 4', '链接以点击合作伙伴徽标4', '0', null, null, null);
+INSERT INTO `languages` VALUES ('351', 'Ảnh logo đối tác 5 300x200px', 'Image of partner logo 5 300x200px', 'パートナーロゴ5の画像300x200px', '파트너 로고 5 300x200px의 이미지', '合作伙伴徽标5 300x200px的图片', '0', null, null, null);
+INSERT INTO `languages` VALUES ('352', 'Tên đối tác 5', 'Partner\'s name 5', 'パートナーの名前5', '파트너 이름 5', '合伙人姓名5', '0', null, null, null);
+INSERT INTO `languages` VALUES ('353', 'Link chuyến đến khi click logo đối tác 5', 'Link to click on partner logo 5', 'パートナーのロゴをクリックするためのリンク5', '파트너 로고를 클릭하여 링크 5', '链接以点击合作伙伴徽标5', '0', null, null, null);
+INSERT INTO `languages` VALUES ('354', 'Ảnh logo đối tác 6 300x200px', 'Photo of partner logo 6 300x200px', 'パートナーロゴの写真6 300x200px', '파트너 로고 6 300x200px의 사진', '合作伙伴徽标6 300x200px的照片', '0', null, null, null);
+INSERT INTO `languages` VALUES ('355', 'Tên đối tác 6', 'Partner\'s name 6', 'パートナーの名前6', '파트너 이름 6', '合伙人姓名6', '0', null, null, null);
+INSERT INTO `languages` VALUES ('356', 'Link chuyến đến khi click logo đối tác 6', 'Link to click on partner logo 6', 'パートナーのロゴをクリックするためのリンク6', '파트너 로고를 클릭하여 링크 6', '链接以点击合作伙伴徽标6', '0', null, null, null);
+INSERT INTO `languages` VALUES ('357', 'Ảnh logo đối tác 7 300x200px', 'Image of logo 7 partner 300x200px', 'ロゴ7のパートナーの画像300x200px', '로고 7 파트너 300x200px의 이미지', '徽标7合作伙伴图片300x200px', '0', null, null, null);
+INSERT INTO `languages` VALUES ('358', 'Tên đối tác 7', 'Partner\'s name 7', 'パートナーの名前7', '파트너 이름 7', '合伙人姓名7', '0', null, null, null);
+INSERT INTO `languages` VALUES ('359', 'Link chuyến đến khi click logo đối tác 7', 'Link to click on the partner logo 7', 'パートナーのロゴをクリックするためのリンク7', '파트너 로고를 클릭하여 링크 7', '链接以点击合作伙伴徽标7', '0', null, null, null);
+INSERT INTO `languages` VALUES ('360', 'Ảnh logo đối tác 8 300x200px', 'Photo of partner logo 8 300x200px', 'パートナーロゴの写真8 300x200px', '파트너 로고 8 300x200px의 사진', '合作伙伴徽标照片8 300x200px', '0', null, null, null);
+INSERT INTO `languages` VALUES ('361', 'Tên đối tác 8', 'Partner\'s name 8', 'パートナーの名前8', '파트너 이름 8', '合伙人姓名8', '0', null, null, null);
+INSERT INTO `languages` VALUES ('362', 'Link chuyến đến khi click logo đối tác 8', 'Link to click on partner logo 8', 'パートナーのロゴをクリックするためのリンク8', '파트너 로고를 클릭하여 링크 8', '链接点击合作伙伴徽标8', '0', null, null, null);
+INSERT INTO `languages` VALUES ('363', 'Ảnh logo đối tác 9 300x200px', 'Partner logo image 9 300x200px', 'パートナーのロゴ画像9 300x200px', '파트너 로고 이미지 9300x200px', '合作伙伴徽标图片9 300x200px', '0', null, null, null);
+INSERT INTO `languages` VALUES ('364', 'Tên đối tác 9', 'Partner\'s name 9', 'パートナーの名前9', '파트너 이름 9', '合伙人姓名9', '0', null, null, null);
+INSERT INTO `languages` VALUES ('365', 'Link chuyến đến khi click logo đối tác 9', 'Link to click on partner logo 9', 'パートナーのロゴをクリックするためのリンク9', '파트너 로고를 클릭하여 링크 9', '链接以点击合作伙伴徽标9', '0', null, null, null);
+INSERT INTO `languages` VALUES ('366', 'Ảnh logo đối tác 10 300x200px', 'Image of partner logo 10 300x200px', 'パートナーロゴの画像10 300x200px', '파트너 로고 이미지 10300x200px', '合作伙伴徽标图片10 300x200px', '0', null, null, null);
+INSERT INTO `languages` VALUES ('367', 'Tên đối tác 10', 'Partner\'s name 10', 'パートナーの名前10', '파트너 이름 10', '合伙人的名字10', '0', null, null, null);
+INSERT INTO `languages` VALUES ('368', 'Link chuyến đến khi click logo đối tác 10', 'Link to click on the partner logo 10', 'パートナーのロゴをクリックするためのリンク10', '파트너 로고를 클릭하여 링크 10', '链接以点击伙伴徽标10', '0', null, null, null);
+INSERT INTO `languages` VALUES ('369', 'Ảnh logo đối tác 11 300x200px', 'Image of partner logo 11 300x200px', 'パートナーロゴの画像11 300x200px', '파트너 로고 이미지 11300x200px', '合作伙伴徽标图片11 300x200px', '0', null, null, null);
+INSERT INTO `languages` VALUES ('370', 'Tên đối tác 11', 'Partner\'s name 11', 'パートナーの名前11', '파트너 이름 11', '合伙人姓名11', '0', null, null, null);
+INSERT INTO `languages` VALUES ('371', 'Link chuyến đến khi click logo đối tác 11', 'Link to click on partner logo 11', 'パートナーのロゴをクリックするためのリンク11', '파트너 로고를 클릭하여 링크 11', '链接点击合作伙伴徽标11', '0', null, null, null);
+INSERT INTO `languages` VALUES ('372', 'Ảnh logo đối tác 12 300x200px', 'Partner logo image 12 300x200px', 'パートナーのロゴ画像12 300x200ピクセル', '파트너 로고 이미지 12300x200px', '合作伙伴徽标图片12 300x200px', '0', null, null, null);
+INSERT INTO `languages` VALUES ('373', 'Tên đối tác 12', 'Partner\'s name 12', 'パートナーの名前12', '파트너 이름 12', '合伙人姓名12', '0', null, null, null);
+INSERT INTO `languages` VALUES ('374', 'Link chuyến đến khi click logo đối tác 12', 'Link to click on partner logo 12', 'パートナーのロゴをクリックするためのリンク12', '파트너 로고를 클릭하여 링크 12', '链接点击伙伴徽标12', '0', null, null, null);
+INSERT INTO `languages` VALUES ('375', 'Ảnh logo đối tác 13 300x200px', 'Photo of partner logo 13 300x200px', 'パートナーロゴの写真13 300x200px', '파트너 로고 사진 13 300x200px', '合作伙伴徽标照片13 300x200px', '0', null, null, null);
+INSERT INTO `languages` VALUES ('376', 'Tên đối tác 13', 'Partner\'s name 13', 'パートナーの名前13', '파트너 이름 13', '合伙人姓名13', '0', null, null, null);
+INSERT INTO `languages` VALUES ('377', 'Link chuyến đến khi click logo đối tác 13', 'Link to click on partner logo 13', 'パートナーロゴをクリックするためのリンク13', '파트너 로고 클릭 링크 13', '链接点击伙伴徽标13', '0', null, null, null);
+INSERT INTO `languages` VALUES ('378', 'Ảnh logo đối tác 14 300x200px', 'Partner logo image 14 300x200px', 'パートナーのロゴ画像14300x200ピクセル', '파트너 로고 이미지 14300x200px', '合作伙伴徽标图片14 300x200px', '0', null, null, null);
+INSERT INTO `languages` VALUES ('379', 'Tên đối tác 14', 'Partner\'s name 14', 'パートナーの名前14', '파트너 이름 14', '合伙人姓名14', '0', null, null, null);
+INSERT INTO `languages` VALUES ('380', 'Link chuyến đến khi click logo đối tác 14', 'Link to click on partner logo 14', 'パートナーのロゴをクリックするためのリンク14', '파트너 로고를 클릭하여 링크 14', '链接点击合作伙伴徽标14', '0', null, null, null);
+INSERT INTO `languages` VALUES ('381', 'Ảnh logo đối tác 15 300x200px', 'Partner logo image 15 300x200px', 'パートナーのロゴ画像15300x200px', '파트너 로고 이미지 15300x200px', '合作伙伴徽标图片15 300x200px', '0', null, null, null);
+INSERT INTO `languages` VALUES ('382', 'Tên đối tác 15', 'Partner\'s name 15', 'パートナーの名前15', '파트너 이름 15', '合伙人姓名15', '0', null, null, null);
+INSERT INTO `languages` VALUES ('383', 'Link chuyến đến khi click logo đối tác 15', 'Link to click on partner logo 15', 'パートナーのロゴをクリックするためのリンク15', '파트너 로고 클릭 링크 15', '链接以点击合作伙伴徽标15', '0', null, null, null);
+INSERT INTO `languages` VALUES ('384', 'Ảnh logo đối tác 16 300x200px', 'Image of partner logo 16 300x200px', 'パートナーロゴ16の画像300x200px', '파트너 로고 이미지 16300x200px', '合作伙伴徽标的图片16 300x200px', '0', null, null, null);
+INSERT INTO `languages` VALUES ('385', 'Tên đối tác 16', 'Partner\'s name 16', 'パートナーの名前16', '파트너 이름 16', '合伙人姓名16', '0', null, null, null);
+INSERT INTO `languages` VALUES ('386', 'Link chuyến đến khi click logo đối tác 16', 'Link to click on partner logo 16', 'パートナーロゴをクリックするためのリンク16', '파트너 로고를 클릭하여 링크 16', '链接以点击合作伙伴徽标16', '0', null, null, null);
+INSERT INTO `languages` VALUES ('387', 'Ảnh logo đối tác 17 300x200px', 'Photo of partner logo 17 300x200px', 'パートナーロゴの写真17300x200px', '파트너 로고 사진 17300x200px', '合作伙伴徽标图片17 300x200px', '0', null, null, null);
+INSERT INTO `languages` VALUES ('388', 'Tên đối tác 17', 'Partner\'s name 17', 'パートナーの名前17', '파트너 이름 17', '合伙人姓名17', '0', null, null, null);
+INSERT INTO `languages` VALUES ('389', 'Link chuyến đến khi click logo đối tác 17', 'Link to click to partner logo 17', 'Click to Partnerのロゴへのリンク17', '파트너 로고 클릭 링크 17', '链接到点击链接到合作伙伴徽标17', '0', null, null, null);
+INSERT INTO `languages` VALUES ('390', 'Ảnh logo đối tác 18 300x200px', 'Partner logo image 18 300x200px', 'パートナーロゴ画像18300x200px', '파트너 로고 이미지 18300x200px', '合作伙伴徽标图片18 300x200px', '0', null, null, null);
+INSERT INTO `languages` VALUES ('391', 'Tên đối tác 18', 'Partner\'s name 18', 'パートナーの名前18', '파트너 이름 18', '合伙人姓名18', '0', null, null, null);
+INSERT INTO `languages` VALUES ('392', 'Link chuyến đến khi click logo đối tác 18', 'Link to click to partner logo 18', 'Click to Partnerのロゴへのリンク18', '파트너 로고 클릭 링크 18', '链接到点击以合作伙伴徽标18', '0', null, null, null);
+INSERT INTO `languages` VALUES ('393', 'Ảnh logo đối tác 19 300x200px', 'Image of partner logo 19 300x200px', 'パートナーロゴの画像19 300x200px', '파트너 로고 이미지 19300x200px', '合作伙伴徽标图片19 300x200px', '0', null, null, null);
+INSERT INTO `languages` VALUES ('394', 'Tên đối tác 19', 'Partner\'s name 19', 'パートナーの名前19', '파트너 이름 19', '合伙人姓名19', '0', null, null, null);
+INSERT INTO `languages` VALUES ('395', 'Link chuyến đến khi click logo đối tác 19', 'Link to click on partner logo 19', 'パートナーのロゴをクリックするためのリンク19', '파트너 로고를 클릭하여 링크 19', '链接以点击合作伙伴徽标19', '0', null, null, null);
+INSERT INTO `languages` VALUES ('396', 'Ảnh logo đối tác 20 300x200px', 'Image of partner logo 20 300x200px', 'パートナーのロゴの画像20 300x200px', '파트너 로고 이미지 20300x200px', '合作伙伴徽标图片20 300x200px', '0', null, null, null);
+INSERT INTO `languages` VALUES ('397', 'Tên đối tác 20', 'Partner\'s name 20', 'パートナーの名前20', '파트너 이름 20', '合伙人姓名20', '0', null, null, null);
+INSERT INTO `languages` VALUES ('398', 'Link chuyến đến khi click logo đối tác 20', 'Link to click on partner logo 20', 'パートナーのロゴをクリックするためのリンク20', '파트너 로고를 클릭하여 링크 20', '链接点击合作伙伴徽标20', '0', null, null, null);
+INSERT INTO `languages` VALUES ('399', 'Ảnh logo đối tác 21 300x200px', 'Image of partner logo 21 300x200px', 'パートナーロゴの画像21 300x200px', '파트너 로고 이미지 21300x200px', '合作伙伴徽标21 300x200px的图片', '0', null, null, null);
+INSERT INTO `languages` VALUES ('400', 'Tên đối tác 21', 'Partner\'s name 21', 'パートナーの名前21', '파트너 이름 21', '合伙人姓名21', '0', null, null, null);
+INSERT INTO `languages` VALUES ('401', 'Link chuyến đến khi click logo đối tác 21', 'Link to click on partner logo 21', 'パートナーのロゴをクリックするためのリンク21', '파트너 로고를 클릭하여 링크 21', '链接以点击合作伙伴徽标21', '0', null, null, null);
+INSERT INTO `languages` VALUES ('402', 'Ảnh logo đối tác 22 300x200px', 'Photo of partner logo 22 300x200px', 'パートナーロゴの写真22 300x200px', '파트너 로고 사진 22300x200px', '合作伙伴徽标照片22 300x200px', '0', null, null, null);
+INSERT INTO `languages` VALUES ('403', 'Tên đối tác 22', 'Partner\'s name 22', 'パートナーの名前22', '파트너 이름 22', '合伙人姓名22', '0', null, null, null);
+INSERT INTO `languages` VALUES ('404', 'Link chuyến đến khi click logo đối tác 22', 'Link to click on the partner logo 22', 'パートナーのロゴをクリックするためのリンク22', '파트너 로고를 클릭하여 링크 22', '链接以点击合作伙伴徽标22', '0', null, null, null);
+INSERT INTO `languages` VALUES ('405', 'Ảnh logo đối tác 23 300x200px', 'Image of partner logo 23 300x200px', 'パートナーロゴの画像23 300x200px', '파트너 로고 이미지 23300x200px', '合作伙伴徽标图片23 300x200px', '0', null, null, null);
+INSERT INTO `languages` VALUES ('406', 'Tên đối tác 23', 'Partner\'s name 23', 'パートナーの名前23', '파트너 이름 23', '合伙人姓名23', '0', null, null, null);
+INSERT INTO `languages` VALUES ('407', 'Link chuyến đến khi click logo đối tác 23', 'Link to click on the partner logo 23', 'パートナーのロゴをクリックするためのリンク23', '파트너 로고를 클릭하여 링크 23', '链接以点击合作伙伴徽标23', '0', null, null, null);
+INSERT INTO `languages` VALUES ('408', 'Ảnh logo đối tác 24 300x200px', 'Image of partner logo 24 300x200px', 'パートナーロゴの画像24 300x200px', '파트너 로고 이미지 24300x200px', '合作伙伴徽标图片24 300x200px', '0', null, null, null);
+INSERT INTO `languages` VALUES ('409', 'Tên đối tác 24', 'Partner\'s name 24', 'パートナーの名前24', '파트너 이름 24', '合伙人姓名24', '0', null, null, null);
+INSERT INTO `languages` VALUES ('410', 'Link chuyến đến khi click logo đối tác 24', 'Link to click on the partner logo 24', 'パートナーのロゴをクリックするためのリンク24', '파트너 로고를 클릭하여 링크 24', '链接以点击合作伙伴徽标24', '0', null, null, null);
+INSERT INTO `languages` VALUES ('411', 'Ảnh logo đối tác 25 300x200px', 'Partner logo image 25 300x200px', 'パートナーのロゴ画像25 300x200ピクセル', '파트너 로고 이미지 25300x200px', '合作伙伴徽标图片25300x200px', '0', null, null, null);
+INSERT INTO `languages` VALUES ('412', 'Tên đối tác 25', 'Partner\'s name 25', 'パートナーの名前25', '파트너 이름 25', '合伙人姓名25', '0', null, null, null);
+INSERT INTO `languages` VALUES ('413', 'Link chuyến đến khi click logo đối tác 25', 'Link to click on the partner logo 25', 'パートナーのロゴをクリックするためのリンク25', '파트너 로고를 클릭하여 링크 25', '链接以点击合作伙伴徽标25', '0', null, null, null);
+INSERT INTO `languages` VALUES ('414', 'Ảnh logo đối tác 26 300x200px', 'Image of partner logo 26 300x200px', 'パートナーロゴの画像26 300x200px', '파트너 로고 이미지 26300x200px', '合作伙伴徽标26 300x200px的图片', '0', null, null, null);
+INSERT INTO `languages` VALUES ('415', 'Tên đối tác 26', 'Partner\'s name 26', 'パートナーの名前26', '파트너 이름 26', '合伙人姓名26', '0', null, null, null);
+INSERT INTO `languages` VALUES ('416', 'Link chuyến đến khi click logo đối tác 26', 'Link to click on the partner logo 26', 'パートナーのロゴをクリックするためのリンク26', '파트너 로고를 클릭하여 링크 26', '链接以点击合作伙伴徽标26', '0', null, null, null);
+INSERT INTO `languages` VALUES ('417', 'Ảnh logo đối tác 27 300x200px', 'Partner logo image 27 300x200px', 'パートナーのロゴ画像27 300x200ピクセル', '파트너 로고 이미지 27300x200px', '合作伙伴徽标图片27 300x200px', '0', null, null, null);
+INSERT INTO `languages` VALUES ('418', 'Tên đối tác 27', 'Partner\'s name 27', 'パートナーの名前27', '파트너 이름 27', '合伙人姓名27', '0', null, null, null);
+INSERT INTO `languages` VALUES ('419', 'Link chuyến đến khi click logo đối tác 27', 'Link to click on the partner logo 27', 'パートナーのロゴをクリックするためのリンク27', '파트너 로고를 클릭하여 링크 27', '链接以点击合作伙伴徽标27', '0', null, null, null);
+INSERT INTO `languages` VALUES ('420', 'Ảnh logo đối tác 28 300x200px', 'Partner logo image 28 300x200px', 'パートナーのロゴ画像28 300x200px', '파트너 로고 이미지 28300x200px', '合作伙伴徽标图片28 300x200px', '0', null, null, null);
+INSERT INTO `languages` VALUES ('421', 'Tên đối tác 28', 'Partner\'s name 28', 'パートナーの名前28', '파트너 이름 28', '合伙人姓名28', '0', null, null, null);
+INSERT INTO `languages` VALUES ('422', 'Link chuyến đến khi click logo đối tác 28', 'Link to click on the partner logo 28', 'パートナーのロゴをクリックするためのリンク28', '파트너 로고를 클릭하여 링크 28', '链接以点击合作伙伴徽标28', '0', null, null, null);
+INSERT INTO `languages` VALUES ('423', 'Ảnh logo đối tác 29 300x200px', 'Image of partner logo 29 300x200px', 'パートナーロゴの画像29 300x200px', '파트너 로고 이미지 29300x200px', '合作伙伴徽标图片29 300x200px', '0', null, null, null);
+INSERT INTO `languages` VALUES ('424', 'Tên đối tác 29', 'Partner\'s name 29', 'パートナーの名前29', '파트너 이름 29', '合伙人姓名29', '0', null, null, null);
+INSERT INTO `languages` VALUES ('425', 'Link chuyến đến khi click logo đối tác 29', 'Link to click on the partner logo click 29', 'パートナーロゴをクリックするためのリンクをクリックしてください。', '파트너 로고를 클릭하여 링크 클릭 29', '链接以点击合作伙伴徽标单击29', '0', null, null, null);
+INSERT INTO `languages` VALUES ('426', 'Ảnh logo đối tác 30 300x200px', 'Partner logo image 30 300x200px', 'パートナーのロゴ画像30 300x200px', '파트너 로고 이미지 30300x200px', '合作伙伴徽标图片30300x200px', '0', null, null, null);
+INSERT INTO `languages` VALUES ('427', 'Tên đối tác 30', 'Partner\'s name 30', 'パートナーの名前30', '파트너 이름 30', '合伙人姓名30', '0', null, null, null);
+INSERT INTO `languages` VALUES ('428', 'Link chuyến đến khi click logo đối tác 30', 'Link to click on partner logo 30', 'パートナーロゴをクリックするためのリンク30', '파트너 로고를 클릭하여 링크 30', '链接以点击合作伙伴徽标30', '0', null, null, null);
+INSERT INTO `languages` VALUES ('429', 'Ảnh hiện khi chia sẻ Facebook (800px x 400px), sau khi lưu phải vào trang <a href=\"https://developers.facebook.com/tools/debug/sharing/\" target=\"_blank\">https://developers.facebook.com/tools/debug/sharing/</a> dán link và bấm Thu thập lại để Facebook load ảnh mới', 'Photos currently when sharing Facebook (800px x 400px), after saving must go to <a href=\'https://developers.facebook.com/tools/debug/sharing/\' target=\'_blank\'> https: // developers.facebook.com/tools/debug/sharing/ </a> paste the link and click Redeem to Facebook to load new photos', '現在Facebook（800px x 400px）を共有している写真。保存後、<a href=\'https://developers.facebook.com/tools/debug/sharing/\' target=\'_blank\'> https：//開発者にアクセスする必要があります。 facebook.com/tools/debug/sharing/ </a>リンクを貼り付け、[Facebookで利用]をクリックして新しい写真を読み込みます', 'Facebook (800px x 400px)을 공유 할 때 현재 저장 한 사진은 저장 후 <a href=\'https://developers.facebook.com/tools/debug/sharing/\' target=\'_blank\'> https : // 개발자로 이동해야합니다. facebook.com/tools/debug/sharing/ </a> 링크를 붙여넣고 Facebook에 사용을 클릭하여 새 사진을로드하십시오', '当前共享Facebook（800像素x 400像素）时的照片，保存后必须转到<a href=\'https://developers.facebook.com/tools/debug/sharing/\' target=\'_blank\'> https：//开发人员。 facebook.com/tools/debug/sharing/ </a>粘贴链接，然后单击“兑换到Facebook”以加载新照片', '0', null, null, null);
+INSERT INTO `languages` VALUES ('430', 'Tiêu đề chia sẻ Facebook', 'Headline to share Facebook', 'Facebookを共有するための見出し', '페이스 북 공유 헤드 라인', '标题分享Facebook', '0', null, null, null);
+INSERT INTO `languages` VALUES ('431', 'Mô tả chia sẻ Facebook', 'Description of sharing Facebook', 'Facebookの共有の説明', 'Facebook 공유에 대한 설명', '分享Facebook的描述', '0', null, null, null);
+INSERT INTO `languages` VALUES ('432', 'Xem trang web', 'View website', 'ウェブサイトを見る', '웹 사이트보기', '查看网站', '0', null, null, null);
+INSERT INTO `languages` VALUES ('433', 'Tính năng chặn copy bài viết trên web', 'Feature to block copying articles on the web', 'ウェブ上の記事のコピーをブロックする機能', '웹에서 기사 복사를 차단하는 기능', '阻止在网上复制文章的功能', '0', null, null, null);
+INSERT INTO `languages` VALUES ('434', 'Bật chế độ bảo mật https', 'Turn on https security mode', 'httpsセキュリティモードをオンにする', 'https 보안 모드를 켭니다', '开启https安全模式', '0', null, null, null);
+INSERT INTO `languages` VALUES ('435', 'Hiện số hotline ở cuối trang', 'Show the hotline number at the bottom of the page', 'ページの下部にホットライン番号を表示します', '페이지 하단에 핫라인 번호 표시', '在页面底部显示热线电话号码', '0', null, null, null);
+INSERT INTO `languages` VALUES ('436', 'Hiện nút gọi động ở cuối trang', 'Show the call button dynamically at the bottom of the page', 'ページの下部に動的に通話ボタンを表示する', '페이지 하단에 통화 버튼을 동적으로 표시', '在页面底部动态显示呼叫按钮', '0', null, null, null);
+INSERT INTO `languages` VALUES ('437', 'Hiện thanh liên hệ nhanh ở lề trái', 'Show quick contact bar in the left margin', '左マージンにクイックコンタクトバーを表示する', '왼쪽 여백에 빠른 연락처 표시 줄 표시', '在左边距显示快速联系栏', '0', null, null, null);
+INSERT INTO `languages` VALUES ('438', 'Hiện cột danh mục sản phẩm', 'Show product catalog column', '製品カタログ列を表示', '제품 카탈로그 열 표시', '显示产品目录栏', '0', null, null, null);
+INSERT INTO `languages` VALUES ('439', 'Bật tính năng giỏ hàng', 'Turn on the shopping cart feature', 'ショッピングカート機能をオンにする', '쇼핑 바구니 기능을 켜십시오', '开启购物车功能', '0', null, null, null);
+INSERT INTO `languages` VALUES ('440', 'Trường phân loại 1, ví dụ: Kích cỡ', 'Product Filter field 1, e.g. Size', 'Product Filterフィールド1、たとえばサイズ', '제품 필터 필드 1 (예 : 크기', '产品过滤条件字段1，例如尺寸', '0', null, null, null);
+INSERT INTO `languages` VALUES ('441', 'Trường phân loại 2, ví dụ: Màu sắc', 'Product Filter 2 field, e.g. Color', 'Product Filter 2フィールド。色', '제품 필터 2 필드 (예 : 색깔', '产品过滤器2字段，例如颜色', '0', null, null, null);
+INSERT INTO `languages` VALUES ('442', 'Trường phân loại 3, ví dụ: Thương hiệu', 'Product Filter 3 field, e.g. Brand', 'Product Filter 3フィールド。ブランド', '제품 필터 3 필드 (예 : 상표', '产品过滤器3字段，例如牌', '0', null, null, null);
+INSERT INTO `languages` VALUES ('443', 'Các trạng thái của đơn hàng (ngăn cách bởi dấu phẩy), ví dụ: Chờ xác nhận, Đã thanh toán, Đã vận chuyển', 'The status of the order (separated by commas), for example: Pending, Paid, Shipped', '注文のステータス（カンマ区切り）。例：保留中、支払い済み、発送済み', '주문 상태 (쉼표로 구분) (예 : 보류 중, 유료, 배송 됨)', '订单的状态（以逗号分隔），例如：待处理，已付款，已发货', '0', null, null, null);
+INSERT INTO `languages` VALUES ('444', 'Hiện banner khuyến mãi nổi', 'Show floating promotion banner', 'フローティングプロモーションバナーを表示', '플로팅 프로모션 배너 표시', '显示浮动促销横幅', '0', null, null, null);
+INSERT INTO `languages` VALUES ('445', 'Chỉ hiện banner ở trang chủ', 'Only show banner on the homepage', 'ホームページにバナーのみを表示', '홈페이지에는 배너 만 표시', '仅在首页上显示横幅', '0', null, null, null);
+INSERT INTO `languages` VALUES ('446', 'Luôn hiện banner khi vào trang, kể cả khi người dùng đã tắt banner. Nếu chọn Tắt thì banner sẽ ẩn sau khi người xem bấm tắt và sẽ hiện lại vào ngày hôm sau', 'Always display the banner when accessing the page, even if the user has turned off the banner. If you select Off, the banner will be hidden after the viewer clicked off and will appear again the next day', 'ユーザーがバナーをオフにしている場合でも、ページにアクセスするときは常にバナーを表示します。 [オフ]を選択すると、視聴者がクリックした後にバナーが非表示になり、翌日に再び表示されます', '사용자가 배너를 끈 경우에도 페이지에 액세스 할 때 항상 배너를 표시하십시오. 사용 안함을 선택하면 뷰어를 클릭 한 후 배너가 숨겨지고 다음날 다시 나타납니다.', '即使用户已关闭横幅，在访问页面时也始终显示横幅。如果选择关闭，则横幅将在查看者单击关闭后隐藏，并在第二天再次显示', '0', null, null, null);
+INSERT INTO `languages` VALUES ('447', 'Link chuyển đến khi click vào banner khuyến mãi nổi', 'The link goes to when you click on the floating promotion banner', 'フローティングプロモーションバナーをクリックするとリンクに移動します', '플로팅 프로모션 배너를 클릭하면 링크가 이동합니다', '当您单击浮动促销横幅时，链接将转到', '0', null, null, null);
+INSERT INTO `languages` VALUES ('448', 'Ảnh banner khuyến mãi nổi (600x400)', 'Floating promotion banner image (600x400)', 'フローティングプロモーションのバナー画像（600x400）', '플로팅 프로모션 배너 이미지 (600x400)', '浮动宣传横幅图片（600x400）', '0', null, null, null);
+INSERT INTO `languages` VALUES ('449', 'Đoạn chữ trên banner khuyến mãi nổi', 'Text on floating promotion banner', 'フローティングプロモーションバナーのテキスト', '플로팅 프로모션 배너의 텍스트', '浮动促销横幅上的文字', '0', null, null, null);
+INSERT INTO `languages` VALUES ('450', 'Hiện form điền thông tin trên banner khuyến mãi', 'Show the form to fill in the promotion banner', 'プロモーションバナーに記入するフォームを表示する', '프로모션 배너를 작성할 양식 표시', '显示表格以填写促销横幅', '0', null, null, null);
+INSERT INTO `languages` VALUES ('451', 'Bật', 'On', 'オン', '의 위에', '上', '0', null, null, null);
+INSERT INTO `languages` VALUES ('452', 'Tắt', 'Off', 'オフ', '떨어져서', '关', '0', null, null, null);
+INSERT INTO `languages` VALUES ('455', 'Mã nhúng bản đồ Google Maps', 'Google Maps map embed code', 'Googleマップの埋め込みコード。ここでコードを取得する方法を参照してください：<a href=\'http://ihappy.vn/cach-lay-ma-nhung-google-maps-de-chen-vao-website-p137\' target=\'_blank\'> http ：//ihappy.vn/cach-lay-ma-nhung-google-maps-de-chen-vao-website-p137 </a>', 'Google Maps 맵 임베드 코드. 여기에서 코드를 얻는 방법을 참조하십시오 : <a href=\'http://ihappy.vn/cach-lay-ma-nhung-google-maps-de-chen-vao-website-p137\' target=\'_blank\'> http : //ihappy.vn/cach-lay-ma-nhung-google-maps-de-chen-vao-website-p137 </a>', 'Google Maps地图嵌入代码。在此处查看如何获取代码：<a href=\'http://ihappy.vn/cach-lay-ma-nhung-google-maps-de-chen-vao-website-p137\' target=\'_blank\'> http ：//ihappy.vn/cach-lay-ma-nhung-google-maps-de-chen-vao-website-p137 </a>', '0', null, null, null);
+INSERT INTO `languages` VALUES ('456', 'Vĩ độ (Latitude) nếu có, lấy tại trang này: <a href=\"https://www.latlong.net/\" target=\"_blank\">https://www.latlong.net/</a>', 'Latitude (if applicable), available at this page: <a href=\'https://www.latlong.net/\' target=\'_blank\'> https://www.latlong.net/ </a>', 'Latitude（該当する場合）、このページで利用可能：<a href=\'https://www.latlong.net/\' target=\'_blank\'> https://www.latlong.net/ </a>', '이 페이지에서 사용 가능한 위도 (해당되는 경우) : <a href=\'https://www.latlong.net/\' target=\'_blank\'> https://www.latlong.net/ </a>', '纬度（如果适用），可在以下页面上找到：<a href=\'https://www.latlong.net/\' target=\'_blank\'> https://www.latlong.net/ </a>', '0', null, null, null);
+INSERT INTO `languages` VALUES ('457', 'Kinh độ (Longtitude) nếu có, lấy tại trang này: <a href=\"https://www.latlong.net/\" target=\"_blank\">https://www.latlong.net/</a>', 'Longitude, if available, is available at this site: <a href=\'https://www.latlong.net/\' target=\'_blank\'> https://www.latlong.net/ </a>', '経度は、利用可能な場合、次のサイトで利用できます：<a href=\'https://www.latlong.net/\' target=\'_blank\'> https://www.latlong.net/ </a>', '가능한 경우이 사이트에서 경도를 사용할 수 있습니다 : <a href=\'https://www.latlong.net/\' target=\'_blank\'> https://www.latlong.net/ </a>', '经度（如果可用）可从以下站点获得：<a href=\'https://www.latlong.net/\' target=\'_blank\'> https://www.latlong.net/ </a>', '0', null, null, null);
+INSERT INTO `languages` VALUES ('458', 'Lưu', 'Save', 'セーブ', '저장', '保存', '0', null, null, null);
+INSERT INTO `languages` VALUES ('459', 'Tổng quan website', 'Website overview', 'ウェブサイトの概要', '웹 사이트 개요', '网站总览', '0', null, null, null);
+INSERT INTO `languages` VALUES ('460', 'Số sản phẩm và bài viết', 'Post count', '投稿数', '게시물 수', '帖子数', '0', null, null, null);
+INSERT INTO `languages` VALUES ('461', 'Hãy đăng bài tích cực hơn!', 'Please post more actively!', 'もっと積極的に投稿してください！', '더 적극적으로 게시하십시오!', '请更积极地发表！', '0', null, null, null);
+INSERT INTO `languages` VALUES ('462', 'Số người vào web', 'Visitor count', '訪問者数', '방문자 수', '访客人数', '0', null, null, null);
+INSERT INTO `languages` VALUES ('463', 'Số lượt xem trang', 'Page views count', 'ページビュー数', '페이지 조회수 계산', '页面浏览量', '0', null, null, null);
+INSERT INTO `languages` VALUES ('464', 'lượt trong 30 ngày qua', 'in the last 30 days', '過去30日間', '지난 30 일 동안', '最近30天内', '0', null, null, null);
+INSERT INTO `languages` VALUES ('465', 'Số đơn hàng', 'Order number', '注文番号', '주문 번호', '订单号', '0', null, null, null);
+INSERT INTO `languages` VALUES ('466', 'khách vào trang có 1 đơn hàng', 'visitors has 1 order', '訪問者は1つの注文を持っています', '방문자 1 주문', '访客有1个订单', '0', null, null, null);
+INSERT INTO `languages` VALUES ('467', 'Theo dõi lượng khách vào website', 'Tracking number of visitors to the website', 'ウェブサイトへの訪問者の追跡数', '웹 사이트 방문자 수 추적', '跟踪网站访问者数量', '0', null, null, null);
+INSERT INTO `languages` VALUES ('468', 'Thời gian:', 'Time:', '時間：', '시각:', '时间：', '0', null, null, null);
+INSERT INTO `languages` VALUES ('469', 'TRONG 7 NGÀY QUA', 'IN THE LAST 7 DAYS', '過去7日間', '마지막 7 일', '最近7天内', '0', null, null, null);
+INSERT INTO `languages` VALUES ('470', 'TRONG 7 NGÀY', 'IN 7 DAYS', '7日後', '7 일 후', '7天内', '0', null, null, null);
+INSERT INTO `languages` VALUES ('471', 'TRONG 30 NGÀY QUA', 'IN THE LAST 30 DAYS', '過去30日間', '지난 30 일 동안', '最近30天内', '0', null, null, null);
+INSERT INTO `languages` VALUES ('472', 'lượt khách vào website', 'visitors to the website', 'ウェブサイトへの訪問者', '웹 사이트 방문자', '网站访问者', '0', null, null, null);
+INSERT INTO `languages` VALUES ('473', 'TRONG 30 NGÀY', 'IN 30 DAYS', '30日後', '30 일 후', '在30天内', '0', null, null, null);
+INSERT INTO `languages` VALUES ('474', 'Top bài viết có nhiều lượt xem nhất', 'Top posts with the most views', '再生回数が最も多い上位の投稿', '조회수가 가장 많은 인기 게시물', '观看次数最多的热门帖子', '0', null, null, null);
+INSERT INTO `languages` VALUES ('475', 'ID', 'ID', 'ID', '신분증', 'ID', '0', null, null, null);
+INSERT INTO `languages` VALUES ('476', 'Tiêu đề', 'Title', '題名', '표제', '标题', '0', null, null, null);
+INSERT INTO `languages` VALUES ('477', 'Số lượt xem', 'Number of views', 'ビューの数', '조회수', '观看次数', '0', null, null, null);
+INSERT INTO `languages` VALUES ('478', 'Điểm SEO', 'SEO score', 'SEOスコア', 'SEO 점수', 'SEO分数', '0', null, null, null);
+INSERT INTO `languages` VALUES ('479', 'Viết bài mới', 'Write a new article', '新しい記事を書く', '새로운 기사를 쓰십시오', '写一篇新文章', '0', null, null, null);
+INSERT INTO `languages` VALUES ('480', 'Xem tất cả bài viết', 'View all posts', 'すべての投稿を表示', '모든 게시물보기', '查看所有帖子', '0', null, null, null);
+INSERT INTO `languages` VALUES ('481', 'Chia sẻ kinh nghiệm', 'Share experiences', 'iHappy.vnの体験を共有する', 'iHappy.vn의 경험 공유', '分享iHappy.vn的经验', '0', null, null, null);
+INSERT INTO `languages` VALUES ('482', 'Xem tất cả bài viết của iHappy', 'View all posts by iHappy', 'iHappyの投稿をすべて表示', 'iHappy 모든 게시물보기', '查看iHappy的所有帖子', '0', null, null, null);
+INSERT INTO `languages` VALUES ('483', 'Lượt khách vào web', 'Hit visitors to the web', 'Webへの訪問者をヒット', '웹 방문자 방문', '吸引访问者进入网络', '0', null, null, null);
+INSERT INTO `languages` VALUES ('484', 'Gõ từ khóa để tìm', 'Type the keyword to find', '検索するキーワードを入力してください', '찾을 키워드를 입력하십시오', '输入关键字进行查找', '0', null, null, null);
+INSERT INTO `languages` VALUES ('485', 'Ngày', 'Date', '日付', '데이트', '日期', '0', null, null, null);
+INSERT INTO `languages` VALUES ('486', 'Khách hàng', 'Customer', 'お客様', '고객', '顾客', '0', null, null, null);
+INSERT INTO `languages` VALUES ('487', 'Trạng thái', 'Status', '状態', '상태', '状态', '0', null, null, null);
+INSERT INTO `languages` VALUES ('488', 'Ghi chú Admin', 'Admin notes', '管理メモ', '관리자 메모', '管理员说明', '0', null, null, null);
+INSERT INTO `languages` VALUES ('489', 'Tùy chọn', 'Option', 'オプション', '선택권', '选项', '0', null, null, null);
+INSERT INTO `languages` VALUES ('490', 'Tất cả', 'All', 'すべて', '모두', '所有', '0', null, null, null);
+INSERT INTO `languages` VALUES ('491', 'Chưa có dữ liệu', 'No data yet', 'まだデータはありません', '아직 데이터가 없습니다', '暂无资料', '0', null, null, null);
+INSERT INTO `languages` VALUES ('492', 'Đang hiện', 'Currently showing', '現在表示しています', '현재 게재 중', '目前正在显示', '0', null, null, null);
+INSERT INTO `languages` VALUES ('493', 'đến', 'come', '来る', '왔다', '来', '0', null, null, null);
+INSERT INTO `languages` VALUES ('494', 'trong tổng số', 'in total', '合計で', '전체적으로', '总共', '0', null, null, null);
+INSERT INTO `languages` VALUES ('495', 'kết quả', 'result', '結果', '결과', '结果', '0', null, null, null);
+INSERT INTO `languages` VALUES ('496', 'Hiện', 'Time', '時間', '시각', '时间', '0', null, null, null);
+INSERT INTO `languages` VALUES ('497', 'kết quả mỗi trang', 'Results per page', 'ページ毎の結果', '페이지 당 결과', '每页结果', '0', null, null, null);
+INSERT INTO `languages` VALUES ('498', 'Tìm kiếm:', 'Search:', '探す：', '검색:', '搜索：', '0', null, null, null);
+INSERT INTO `languages` VALUES ('499', 'Không có kết quả nào', 'There is no result', '結果はありません', '결과가 없습니다', '没有结果', '0', null, null, null);
+INSERT INTO `languages` VALUES ('500', 'Trang đầu', 'first page', '一ページ目', '첫 페이지', '第一页', '0', null, null, null);
+INSERT INTO `languages` VALUES ('501', 'Trang cuối', 'Last page', '最後のページ', '마지막 페이지', '最后一页', '0', null, null, null);
+INSERT INTO `languages` VALUES ('502', 'Trang tiếp', 'Next page', '次のページ', '다음 페이지', '下一页', '0', null, null, null);
+INSERT INTO `languages` VALUES ('503', 'Trang trước', 'Previous page', '前のページ', '이전 페이지', '上一页', '0', null, null, null);
+INSERT INTO `languages` VALUES ('504', 'Tất cả danh mục', 'All categories', 'すべてのカテゴリ', '모든 카테고리', '所有类别', '0', null, null, null);
+INSERT INTO `languages` VALUES ('505', 'Đã đăng', 'Published', '公開済み', '게시', '已发表', '0', null, null, null);
+INSERT INTO `languages` VALUES ('506', 'Nháp', 'Draft', 'ドラフト', '초안', '草案', '0', null, null, null);
+INSERT INTO `languages` VALUES ('507', 'Xem', 'View', '見る', '전망', '视图', '0', null, null, null);
+INSERT INTO `languages` VALUES ('508', 'Ngày đăng', 'Created at', 'で作成', '에 만든', '创建于', '0', null, null, null);
+INSERT INTO `languages` VALUES ('509', 'Số lần xem', 'View count', 'ビュー数', '조회수', '查看次数', '0', null, null, null);
+INSERT INTO `languages` VALUES ('510', 'Số lần vào giỏ hàng', 'Cart count', 'カート数', '카트 수', '购物车数量', '0', null, null, null);
+INSERT INTO `languages` VALUES ('511', 'Số lần đặt hàng', 'Order count', '注文数', '주문 횟수', '订单数', '0', null, null, null);
+INSERT INTO `languages` VALUES ('512', 'Sắp xếp', 'Sort', 'ソート', '종류', '分类', '0', null, null, null);
+INSERT INTO `languages` VALUES ('513', 'Thêm', 'Add new', '新しく追加する', '새로운 걸 더하다', '添新', '0', null, null, null);
+INSERT INTO `languages` VALUES ('514', 'Ảnh chi tiết số', 'Detailed photo number', '詳細な写真番号', '자세한 사진 번호', '详细的照片编号', '0', null, null, null);
+INSERT INTO `languages` VALUES ('515', 'Chọn file khác', 'Choose another file', '別のファイルを選択', '다른 파일을 선택하십시오', '选择另一个文件', '0', null, null, null);
+INSERT INTO `languages` VALUES ('516', 'Up thêm ảnh chi tiết', 'Upload more details', '詳細をアップロード', '자세한 내용 업로드', '上传更多详情', '0', null, null, null);
+INSERT INTO `languages` VALUES ('517', 'Thêm danh mục', 'Add categories', 'カテゴリを追加', '카테고리 추가', '添加类别', '0', null, null, null);
+INSERT INTO `languages` VALUES ('518', 'Danh sách bình luận', 'List of comments', 'コメント一覧', '의견 목록', '评论清单', '0', null, null, null);
+INSERT INTO `languages` VALUES ('519', 'Xem sản phẩm', 'View product', '製品を見る', '제품보기', '查看商品', '0', null, null, null);
+INSERT INTO `languages` VALUES ('520', 'Đánh giá (sao)', 'Rating (stars)', '評価（星）', '등급 (별)', '评分（星）', '0', null, null, null);
+INSERT INTO `languages` VALUES ('521', 'Tên', 'Name', '名前', '이름', '名称', '0', null, null, null);
+INSERT INTO `languages` VALUES ('523', 'Có', 'There are', 'がある', '있다', '有', '0', null, null, null);
+INSERT INTO `languages` VALUES ('524', 'bài viết/sản phẩm/trang có điểm SEO dưới trung bình!', 'posts with below average SEO scores!', '平均SEOスコアを下回る投稿！', '평균 SEO 점수 미만의 게시물!', '低于平均SEO分数的帖子！', '0', null, null, null);
+INSERT INTO `languages` VALUES ('525', 'Điểm SEO thấp sẽ làm Google đánh giá thấp website của bạn, vui lòng kiểm tra lại các bài viết, sản phẩm, trang có điểm Kém.', 'A low SEO score will cause Google to underestimate your website, please check the articles, products, pages with Weak scores.', 'SEOスコアが低いと、Googleがあなたのウェブサイトを過小評価します。弱いスコアの記事、製品、ページを確認してください。', 'SEO 점수가 낮 으면 Google에서 웹 사이트를 과소 평가하게되므로 기사, 제품, 점수가 약한 페이지를 확인하십시오.', '较低的SEO分数会导致Google低估您的网站，请检查分数较低的文章，产品，页面。', '0', null, null, null);
+INSERT INTO `languages` VALUES ('527', 'đơn hàng đang chờ bạn xử lý!', 'orders are waiting for you to process!', '注文はあなたが処理するのを待っています！', '주문 처리를 기다리고 있습니다!', '订单正在等待您的处理！', '0', null, null, null);
+INSERT INTO `languages` VALUES ('528', 'Đừng để khách hàng của bạn phải chờ đợi.', 'Do not let your customers wait.', '顧客を待たせないでください。', '고객이 기다리게하지 마십시오.', '不要让您的客户等待。', '0', null, null, null);
+INSERT INTO `languages` VALUES ('529', 'Click vào đây để xem danh sách đơn hàng.', 'Click here to view list of orders.', '注文のリストを表示するには、ここをクリックしてください。', '주문 목록을 보려면 여기를 클릭하십시오.', '单击此处查看订单列表。', '0', null, null, null);
+INSERT INTO `languages` VALUES ('530', 'SĐT', 'Phone', '電話', '전화', '电话', '0', null, null, null);
+INSERT INTO `languages` VALUES ('531', 'ĐC', 'Address', '住所', '주소', '地址', '0', null, null, null);
+INSERT INTO `languages` VALUES ('532', 'Tên SP', 'Product', '製品', '생성물', '产品', '0', null, null, null);
+INSERT INTO `languages` VALUES ('533', 'SL', 'Quantity', '量', '수량', '数量', '0', null, null, null);
+INSERT INTO `languages` VALUES ('534', 'Đơn giá', 'Price', '価格', '가격', '价钱', '0', null, null, null);
+INSERT INTO `languages` VALUES ('535', 'Tổng tiền', 'Total', '合計', '합계', '总', '0', null, null, null);
+INSERT INTO `languages` VALUES ('536', 'Hủy', 'Cancel', 'キャンセル', '취소', '取消', '0', null, null, null);
+INSERT INTO `languages` VALUES ('537', 'Hoàn tất', 'Mark completed', '完了とマーク', '마크 완료', '标记完成', '0', null, null, null);
+INSERT INTO `languages` VALUES ('538', 'Chờ xử lý', 'Pending', '保留中', '대기 중', '待定', '0', null, null, null);
+INSERT INTO `languages` VALUES ('539', 'Đã hoàn tất', 'Completed', '完了しました', '완료', '已完成', '0', null, null, null);
+INSERT INTO `languages` VALUES ('540', 'Đã xóa', 'Deleted', '削除しました', '삭제', '已删除', '0', null, null, null);
+INSERT INTO `languages` VALUES ('541', 'Đã duyệt', 'Approved', '承認済み', '승인', '已批准', '0', null, null, null);
+INSERT INTO `languages` VALUES ('542', 'Chưa duyệt', 'Waiting approvement', '承認待ち', '승인 대기 중', '等待批准', '0', null, null, null);
+INSERT INTO `languages` VALUES ('544', 'THƯ VIỆN', 'GALLERY', 'ギャラリー', '갤러리', '画廊', '0', null, null, null);
+INSERT INTO `languages` VALUES ('545', 'GIAO DIỆN', 'SETTING', '設定', '환경', '设置', '0', null, null, null);
+INSERT INTO `languages` VALUES ('546', 'Quản lý file', 'File management', 'ファイル管理', '파일 관리', '文件管理', '0', null, null, null);
+INSERT INTO `languages` VALUES ('547', 'Đã lưu thành công!', 'Saved successfully!', '正常に保存！', '저장 완료!', '保存成功！', '0', null, null, null);
+INSERT INTO `languages` VALUES ('548', 'Đang lưu', 'Saving', '保存中', '절약', '保存', '0', null, null, null);
+INSERT INTO `languages` VALUES ('549', 'Đã lưu thành công', 'Saved successfully', '正常に保存', '성공적으로 저장 되었음', '保存成功', '0', null, null, null);
+INSERT INTO `languages` VALUES ('550', 'Bạn đồng ý duyệt?', 'Do you want to approve?', '承認しますか？', '승인 하시겠습니까?', '您要批准吗？', '0', null, null, null);
+INSERT INTO `languages` VALUES ('551', 'Duyệt thành công!', 'Successfully!', '成功しました！', '성공적으로!', '成功！', '0', null, null, null);
+INSERT INTO `languages` VALUES ('552', 'Bạn đồng ý bỏ duyệt?', 'Do you want to unapprove?', '承認しませんか？', '승인을 취소 하시겠습니까?', '您要拒绝批准吗？', '0', null, null, null);
+INSERT INTO `languages` VALUES ('553', 'Bỏ duyệt thành công!', 'Successfully!', '成功しました！', '성공적으로!', '成功！', '0', null, null, null);
+INSERT INTO `languages` VALUES ('554', 'Bạn muốn xóa?', 'Do you want to delete?', '削除しますか？', '삭제 하시겠습니까?', '您要删除吗？', '0', null, null, null);
+INSERT INTO `languages` VALUES ('555', 'Xóa thành công!', 'Delete successful!', '削除しました！', '성공적으로 삭제하십시오!', '删除成功！', '0', null, null, null);
+INSERT INTO `languages` VALUES ('556', 'Bạn muốn khôi phục?', 'Do you want to restore?', '復元しますか？', '복원 하시겠습니까?', '您要还原吗？', '0', null, null, null);
+INSERT INTO `languages` VALUES ('557', 'Khôi phục thành công!', 'Successfully restored!', '正常に復元されました！', '성공적으로 복원되었습니다!', '成功恢复！', '0', null, null, null);
+INSERT INTO `languages` VALUES ('558', 'Vui lòng điền tiêu đề', 'Please enter title', 'タイトルを入力してください', '제목을 입력하십시오', '请输入标题', '0', null, null, null);
+INSERT INTO `languages` VALUES ('559', 'Vui lòng chọn danh mục', 'Please select a category', 'カテゴリーを選択してください', '카테고리를 선택하십시오', '请选择一个类别', '0', null, null, null);
+INSERT INTO `languages` VALUES ('560', 'Lưu thành công!', 'Save successfully!', 'セーブに成功！', '성공적으로 저장하십시오!', '保存成功！', '0', null, null, null);
+INSERT INTO `languages` VALUES ('561', 'Vui lòng điền từ khóa chính!', 'Please enter the main keyword!', 'メインキーワードを入力してください！', '주요 키워드를 입력하십시오!', '请输入主要关键字！', '0', null, null, null);
+INSERT INTO `languages` VALUES ('562', 'Đầu trang', 'Header', 'ヘッダ', '머리글', '标头', '0', null, null, null);
+INSERT INTO `languages` VALUES ('563', 'Cuối trang', 'Footer', 'フッター', '보행인', '页脚', '0', null, null, null);
+INSERT INTO `languages` VALUES ('564', 'Ảnh Slide', 'Photo Slide', '写真スライド', '사진 슬라이드', '照片幻灯片', '0', null, null, null);
+INSERT INTO `languages` VALUES ('565', 'Mục nổi bật', 'Featured item', '注目の品', '특색 지어진 품목', '精选物品', '0', null, null, null);
+INSERT INTO `languages` VALUES ('566', 'Giới thiệu', 'Introduce', '導入する', '설명하다', '介绍', '0', null, null, null);
+INSERT INTO `languages` VALUES ('567', 'Đối tác', 'Partners', '相棒', '파트너', '伙伴', '0', null, null, null);
+INSERT INTO `languages` VALUES ('568', 'Tùy chỉnh chia sẻ Facebook', 'Customize Facebook sharing', 'Facebook共有をカスタマイズする', 'Facebook 공유 사용자 정의', '自定义Facebook分享', '0', null, null, null);
+INSERT INTO `languages` VALUES ('569', 'Trang sản phẩm', 'Product page', '製品ページ', '제품 페이지', '产品页面', '0', null, null, null);
+INSERT INTO `languages` VALUES ('570', 'Banner khuyến mãi nổi', 'Floating promotion banner', 'フローティングプロモーションバナー', '플로팅 프로모션 배너', '浮动促销横幅', '0', null, null, null);
+INSERT INTO `languages` VALUES ('571', 'Mã gắn thêm', 'Appended code', '付属コード', '추가 코드', '附加代码', '0', null, null, null);
+INSERT INTO `languages` VALUES ('572', 'Bản đồ', 'Map', '地図', '지도', '地图', '0', null, null, null);
+INSERT INTO `languages` VALUES ('573', 'Tiêu đề (*)', 'Title (*)', '題名 （*）', '제목 (*)', '标题（*）', '0', null, null, null);
+INSERT INTO `languages` VALUES ('574', 'Mô tả ngắn', 'Description', '説明文', '기술', '描述', '0', null, null, null);
+INSERT INTO `languages` VALUES ('575', 'Nội dung bài viết', 'Content', 'コンテンツ', '함유량', '内容', '0', null, null, null);
+INSERT INTO `languages` VALUES ('576', 'Các từ khóa tìm kiếm liên quan (cách nhau bởi dấu phẩy)', 'Related search keywords (separated by commas)', '関連する検索キーワード（カンマ区切り）', '관련 검색 키워드 (쉼표로 구분)', '相关搜索关键字（以逗号分隔）', '0', null, null, null);
+INSERT INTO `languages` VALUES ('577', 'Tiêu đề trên Google', 'Headline on Google', 'Googleの見出し', 'Google 헤드 라인', 'Google标题', '0', null, null, null);
+INSERT INTO `languages` VALUES ('578', 'Mô tả ngắn trên Google', 'Short description on Google', 'Googleでの短い説明', 'Google에 대한 간단한 설명', '在Google上的简短说明', '0', null, null, null);
+INSERT INTO `languages` VALUES ('579', 'Ảnh hiện khi chia sẻ (800x400px)', 'Photos currently shared (800x400px)', '現在共有されている写真（800x400px）', '현재 공유 된 사진 (800x400px)', '当前共享的照片（800x400px）', '0', null, null, null);
+INSERT INTO `languages` VALUES ('580', 'Tiêu đề khi chia sẻ', 'Title when sharing', '共有時のタイトル', '공유시 제목', '分享时的标题', '0', null, null, null);
+INSERT INTO `languages` VALUES ('581', 'Mô tả ngắn khi chia sẻ', 'Short description when sharing', '共有する際の簡単な説明', '공유시 간단한 설명', '分享时的简短说明', '0', null, null, null);
+INSERT INTO `languages` VALUES ('582', 'Link video youtube nếu có', 'Youtube video link if available', '可能であればYouTube動画リンク', '사용 가능한 경우 YouTube 비디오 링크', 'YouTube视频链接（如果有）', '0', null, null, null);
+INSERT INTO `languages` VALUES ('583', 'Ảnh đại diện (600x600px)', 'Profile image (600x600px)', 'プロフィール画像（600x600px）', '프로필 이미지 (600x600px)', '个人资料图片（600x600px）', '0', null, null, null);
+INSERT INTO `languages` VALUES ('584', 'Giá', 'Price', '価格', '가격', '价钱', '0', null, null, null);
+INSERT INTO `languages` VALUES ('585', 'Giá khuyến mãi', 'Promotion price', 'プロモーション価格', '프로모션 가격', '促销价', '0', null, null, null);
+INSERT INTO `languages` VALUES ('586', 'Ảnh đại diện (1000x1000px)', 'Profile image (1000x1000px)', 'プロフィール画像（1000x1000px）', '프로필 이미지 (1000x1000px)', '个人资料图片（1000x1000px）', '0', null, null, null);
+INSERT INTO `languages` VALUES ('587', 'Thứ tự sắp xếp', 'Order number', '注文番号', '주문 번호', '订单号', '0', null, null, null);
+INSERT INTO `languages` VALUES ('588', 'Điền số để sắp xếp bài viết lên đầu, ví dụ bài này bạn điền 0.5, bài khác bạn điền 1 thì bài này sẽ luôn xếp trên bài khác, nếu không điền số, mặc định sẽ là 9999 và bài nào mới hơn thì lên đầu', 'Enter the number to put the article on the top, for example this article you enter 0.5, the other article you enter 1, this article will always rank on the other article, if not enter the number, the default will be 9999 and the newer one is up. head', '番号を入力して記事を上に配置します。たとえば、この記事は0.5と入力し、他の記事は1と入力します。この記事は常に他の記事にランク付けされます。番号を入力しない場合、デフォルトは9999以降です。 1つは稼働しています。 頭', '기사를 맨 위에 놓을 숫자를 입력하십시오 (예 :이 기사에서는 0.5를 입력하고 다른 기사는 1을 입력합니다).이 기사는 항상 다른 기사의 순위를 매기 며, 숫자를 입력하지 않으면 기본값은 9999가됩니다. 하나입니다. 머리', '输入将文章放在顶部的数字，例如，您输入0.5的文章，输入1，的另一篇文章，该文章将始终在另一篇文章上排名，如果不输入数字，则默认值为9999及更高版本一起来。头', '0', null, null, null);
+INSERT INTO `languages` VALUES ('589', 'Tên danh mục (*)', 'Category', 'カテゴリー', '범주', '类别', '0', null, null, null);
+INSERT INTO `languages` VALUES ('590', 'Từ khóa tìm kiếm', 'Search Keyword', '検索語', '키워드 검색', '搜索关键词', '0', null, null, null);
+INSERT INTO `languages` VALUES ('591', 'Ảnh đại diện', 'Profile image', 'プロフィール画像', '프로필 이미지', '个人资料图片', '0', null, null, null);
+INSERT INTO `languages` VALUES ('592', 'Mô tả chi tiết', 'Content', 'コンテンツ', '함유량', '内容', '0', null, null, null);
+INSERT INTO `languages` VALUES ('593', 'Đăng vào', 'Posted at', '投稿日', '에 게시 됨', '发表于', '0', null, null, null);
+INSERT INTO `languages` VALUES ('594', 'Trả lời', 'Reply', '応答', '댓글', '回复', '0', null, null, null);
+INSERT INTO `languages` VALUES ('595', 'Khôi phục', 'Restore', '戻す', '복원', '恢复', '0', null, null, null);
+INSERT INTO `languages` VALUES ('596', 'Duyệt', 'Approve', '承認する', '승인', '批准', '0', null, null, null);
+INSERT INTO `languages` VALUES ('597', 'Bỏ duyệt', 'Unapprove', '不承認', '미승인', '不批准', '0', null, null, null);
+INSERT INTO `languages` VALUES ('600', 'Xem danh mục này', 'View this category', 'このカテゴリーを見る', '이 카테고리보기', '查看此类别', '0', null, null, null);
+INSERT INTO `languages` VALUES ('601', 'Không thể xóa vì vẫn còn sản phẩm/bài viết trong danh mục này', 'You have to delete all posts/products in this category first', '最初にこのカテゴリのすべての投稿/製品を削除する必要があります', '먼저이 카테고리의 모든 게시물 / 제품을 삭제해야합니다', '您必须先删除此类别中的所有帖子/产品', '0', null, null, null);
+INSERT INTO `languages` VALUES ('602', 'Danh mục cha', 'Parent category', '親カテゴリ', '상위 카테고리', '父类别', '0', null, null, null);
+INSERT INTO `languages` VALUES ('605', 'Dịch ngôn ngữ', 'Language Translator', '言語翻訳', '언어 번역기', '语言翻译', '0', null, null, null);
+INSERT INTO `languages` VALUES ('612', 'Bật tính năng chat Facebook', 'Enable Facebook chat', 'Facebookチャットを有効にする', '페이스 북 채팅 사용', '启用Facebook聊天', '0', null, null, null);
+INSERT INTO `languages` VALUES ('613', 'Bật tính năng bình luận', 'Enable commenting', 'コメントを有効にする', '댓글 사용', '启用评论', '0', null, null, null);
+INSERT INTO `languages` VALUES ('614', 'Bật tính năng bình luận bằng Facebook (tương tác tốt hơn, nhưng không cho phép xét duyệt)', 'Enable commenting using Facebook (better interaction, but do not allow review)', 'Facebookを使用したコメントを有効にします（より良い対話ですが、レビューは許可しません）', 'Facebook을 사용하여 댓글 달기 가능', '启用使用Facebook的评论（更好的互动，但不允许评论）', '0', null, null, null);
+INSERT INTO `languages` VALUES ('615', 'Mã gắn thêm thẻ head', 'Embed code in head tag', 'headタグにコードを埋め込む', 'head 태그에 코드 포함', '将代码嵌入head标记中', '0', null, null, null);
+INSERT INTO `languages` VALUES ('616', 'Mã gắn thêm thẻ body', 'Embed code in body tag', 'bodyタグにコードを埋め込む', 'body 태그에 코드 포함', '将代码嵌入body标记中', '0', null, null, null);
+INSERT INTO `languages` VALUES ('617', 'Đã lưu', 'Saved', '保存しました', '저장되었습니다', '已保存', '0', null, null, null);
+INSERT INTO `languages` VALUES ('618', 'lượt xem trang', 'page views', 'ページビュー', '페이지 조회수', '页面浏览量', '0', null, null, null);
+INSERT INTO `languages` VALUES ('619', 'BÀI VIẾT', 'POSTS', '投稿', '게시물', '帖子', '0', null, null, null);
+INSERT INTO `languages` VALUES ('620', 'Đơn hàng', 'Orders', '注文', '주문', '订购', '0', null, null, null);
+INSERT INTO `languages` VALUES ('621', 'Sản phẩm', 'Product', '製品', '생성물', '产品', '0', null, null, null);
+INSERT INTO `languages` VALUES ('622', 'Tin tức', 'News', 'ニュース', '뉴스', '新闻', '0', null, null, null);
+INSERT INTO `languages` VALUES ('623', 'Tuyển dụng', 'Recruitment', '募集', '신병 모집', '招募', '0', null, null, null);
+INSERT INTO `languages` VALUES ('624', 'Liên hệ', 'Contact', '連絡先', '접촉', '联系', '0', null, null, null);
+INSERT INTO `languages` VALUES ('625', 'Cảm nhận khách hàng', 'Customer comments', 'お客様のコメント', '고객 의견', '客户留言', '0', null, null, null);
+INSERT INTO `languages` VALUES ('626', 'Xuất Excel', 'Export Excel', 'Excelをエクスポート', '엑셀 내보내기', '汇出Excel', '0', null, null, null);
+INSERT INTO `languages` VALUES ('627', 'Tên KH', 'Customer name', '顧客名', '고객 이름', '顾客姓名', '0', null, null, null);
+INSERT INTO `languages` VALUES ('628', 'GỬI BÌNH LUẬN', 'SEND COMMENT', 'コメントを送信', '의견 보내기', '发送评论', '0', null, null, null);
+INSERT INTO `languages` VALUES ('629', 'Thanh toán', 'Payment', '支払い', '지불', '付款', '0', null, null, null);
+INSERT INTO `languages` VALUES ('630', 'Hỏi đáp', 'FAQ', 'よくある質問', '자주하는 질문', '常问问题', '0', null, null, null);
+INSERT INTO `languages` VALUES ('631', 'Gửi tin nhắn cho chúng tôi qua Facebook', 'Send us a message via Facebook', 'Facebook経由でメッセージを送ってください', 'Facebook을 통해 메시지 보내기', '通过Facebook给我们发消息', '0', null, null, null);
+INSERT INTO `languages` VALUES ('632', 'Bạn cần hỗ trợ?', 'Do you need support?', 'サポートが必要ですか？', '지원이 필요하십니까?', '需要支援吗？', '0', null, null, null);
+INSERT INTO `languages` VALUES ('633', 'TRONG 3 THÁNG QUA', 'IN THE PAST 3 MONTHS', '過去3か月', '지난 3 개월 동안', '过去3个月', '0', null, null, null);
+INSERT INTO `languages` VALUES ('634', 'Tất cả thư viện ảnh', 'All photo galleries', 'すべての写真ギャラリー', '모든 사진 갤러리', '所有照相馆', '0', null, null, null);
+INSERT INTO `languages` VALUES ('635', 'CÂU HỎI & BÌNH LUẬN', 'QUESTIONS & COMMENTS', '質問とコメント', '질문 및 의견', '问题与评论', '0', null, null, null);
+INSERT INTO `languages` VALUES ('636', 'Danh sách câu hỏi', 'List of questions', '質問一覧', '질문 목록', '问题清单', '0', null, null, null);
+INSERT INTO `languages` VALUES ('637', 'CÀI ĐẶT', 'SETTING', '設定', '환경', '设置', '0', null, null, null);
+INSERT INTO `languages` VALUES ('638', 'Cài đặt chung', 'General settings', '一般設定', '일반 설정', '常规设置', '0', null, null, null);
+INSERT INTO `languages` VALUES ('639', 'Cài đặt trang chủ', 'Home page settings', 'ホームページ設定', '홈페이지 설정', '主页设置', '0', null, null, null);
+INSERT INTO `languages` VALUES ('640', 'Cài đặt nâng cao', 'Advanced settings', '高度な設定', '고급 설정', '高级设置', '0', null, null, null);
+INSERT INTO `languages` VALUES ('641', 'Số Hotline 3 nếu có', 'Hotline number 3 if available', 'ホットライン番号3（利用可能な場合）', '가능한 경우 핫라인 번호 3', '热线电话3（如果有）', '0', null, null, null);
+INSERT INTO `languages` VALUES ('642', 'Bài viết có tối thiểu 100 chữ', 'Posts have at least 100 words', '投稿に100ワード以上ある', '게시물에 최소 100 단어가 있습니다.', '帖子至少有100个字', '0', null, null, null);
+INSERT INTO `languages` VALUES ('643', 'Bài viết chia thành các mục tiêu đề 2', 'The article has heading 2', '記事の見出し2', '기사에 제목 2가 있습니다.', '该文章的标题为2', '0', null, null, null);
+INSERT INTO `languages` VALUES ('644', 'Đã điền mục các từ khóa tìm kiếm liên quan', 'Entered the relevant search keywords', '関連する検索キーワードを入力しました', '관련 검색어를 입력했습니다.', '输入了相关的搜索关键字', '0', null, null, null);
+INSERT INTO `languages` VALUES ('645', 'Xem tất cả', 'View all', 'すべてを見る', '모두보기', '查看全部', '0', null, null, null);
+INSERT INTO `languages` VALUES ('646', 'Tồn kho', 'Inventory', '在庫', '목록', '库存', '0', null, null, null);
+INSERT INTO `languages` VALUES ('647', 'Hiện lên trang chủ', 'Show on home page', 'ホームページに表示', '홈페이지에 표시', '显示在首页上', '0', null, null, null);
+INSERT INTO `languages` VALUES ('648', 'Câu hỏi', 'Question', '質問', '질문', '题', '0', null, null, null);
+INSERT INTO `languages` VALUES ('649', 'Câu trả lời', 'Answer', '回答', '대답', '回答', '0', null, null, null);
+INSERT INTO `languages` VALUES ('699', 'Đăng ký nhận thông tin', 'Sign up to receive information', '情報を受け取るためにサインアップする', '정보를 받으려면 가입하세요', '注册以接收信息', '0', null, null, null);
+INSERT INTO `languages` VALUES ('700', 'Hãy đăng ký để nhận thông tin từ chúng tôi', 'Sign up to receive information from us', '私たちから情報を受け取るためにサインアップしてください', '우리로부터 정보를 받으려면 가입하십시오', '注册以接收我们的信息', '0', null, null, null);
+INSERT INTO `languages` VALUES ('701', 'Chia sẻ kinh nghiệm website', 'Share website experience', 'ウェブサイトの経験を共有する', '웹 사이트 경험 공유', '分享网站经验', '0', null, null, null);
+INSERT INTO `languages` VALUES ('702', 'Website sử dụng phần mềm iHappyCMS - Điện thoại/Zalo hỗ trợ:', 'Website using iHappyCMS software - Phone/Zalo supports:', 'iHappyCMSソフトウェアを使用するWebサイト-Phone / Zaloは以下をサポートします：', 'iHappyCMS 소프트웨어를 사용하는 웹사이트 - Phone/Zalo는 다음을 지원합니다.', '使用 iHappyCMS 软件的网站 - Phone/Zalo 支持：', '0', null, null, null);
+INSERT INTO `languages` VALUES ('703', 'Bạn đồng ý duyệt', 'You agree to browse', '閲覧することに同意します', '검색에 동의합니다.', '您同意浏览', '0', null, null, null);
+INSERT INTO `languages` VALUES ('704', 'Bạn đồng ý bỏ duyệt', 'You agree to unbrowse', '閲覧を解除することに同意します', '탐색 해제에 동의합니다.', '您同意取消浏览', '0', null, null, null);
+INSERT INTO `languages` VALUES ('705', 'Bạn muốn xóa', 'You want to delete', '削除したい', '삭제하고 싶습니다', '你要删除', '0', null, null, null);
+INSERT INTO `languages` VALUES ('706', 'Bạn muốn khôi phục', 'You want to restore', '復元したい', '복원하려는', '你想恢复', '0', null, null, null);
+INSERT INTO `languages` VALUES ('707', 'Số Whatsapp nếu có', 'Whatsapp number if available', '利用可能な場合はWhatsapp番号', '가능한 경우 Whatsapp 번호', 'Whatsapp 号码（如果有）', '0', null, null, null);
+INSERT INTO `languages` VALUES ('708', 'Link m.me chat Facebook', 'Link m.me chat Facebook', 'リンクm.meチャットFacebook', 'm.me 채팅 Facebook 연결', '链接 m.me 聊天 Facebook', '0', null, null, null);
+INSERT INTO `languages` VALUES ('709', 'Link shopee', 'Link shopee', 'リンク買い物客', '링크 쇼피', '友情链接', '0', null, null, null);
+INSERT INTO `languages` VALUES ('710', 'Link sendo', 'Link sendo', 'リンクセンド', '링크 센도', '链接发送', '0', null, null, null);
+INSERT INTO `languages` VALUES ('711', 'Link lazada', 'Link lazada', 'リンクラザダ', '링크 라자 다', '友情链接', '0', null, null, null);
+INSERT INTO `languages` VALUES ('712', 'Link tiki', 'Link tiki', 'リンクティキ', '링크 티키', '友情链接', '0', null, null, null);
+INSERT INTO `languages` VALUES ('713', 'Đoạn mô tả phần ô nổi bật', 'Featured cell description', '注目のセルの説明', '주요 셀 설명', '特色细胞描述', '0', null, null, null);
+INSERT INTO `languages` VALUES ('715', 'Ảnh', 'Image', '画像', '영상', '图像', '0', null, null, null);
+INSERT INTO `languages` VALUES ('716', 'Ảnh cover (1920x630)', 'Cover photo (1920x630)', 'カバー写真（1920x630）', '표지 사진 (1920x630)', '封面照片 (1920x630)', '0', null, null, null);
+INSERT INTO `languages` VALUES ('717', 'Tags', 'Tags', 'タグ', '태그', '标签', '0', null, null, null);
+INSERT INTO `languages` VALUES ('718', 'Sản phẩm bán chạy', 'Selling products', '製品の販売', '제품 판매', '销售产品', '0', null, null, null);
+INSERT INTO `languages` VALUES ('918', 'Ảnh hoặc Link youtube số', 'Photo or Youtube Link No', '写真またはYoutubeリンクいいえ', '사진 또는 유튜브 링크 아니요', '照片或 Youtube 链接 否', '0', null, null, null);
+INSERT INTO `languages` VALUES ('919', 'Từ khóa tìm kiếm Google', 'Google search keywords', 'Google検索キーワード', '구글 검색 키워드', '谷歌搜索关键词', '0', null, null, null);
+INSERT INTO `languages` VALUES ('920', 'Thông tin sản phẩm', 'Product information', '商品情報', '상품 정보', '产品信息', '0', null, null, null);
+INSERT INTO `languages` VALUES ('921', 'Thông tin khách hàng', 'Customer information', '顧客情報', '고객 정보', '客户信息', '0', null, null, null);
+INSERT INTO `languages` VALUES ('922', 'Thông số kĩ thuật', 'Specifications', '仕様', '명세서', '规格', '0', null, null, null);
+
+-- ----------------------------
+-- Table structure for `migrations`
+-- ----------------------------
+DROP TABLE IF EXISTS `migrations`;
+CREATE TABLE `migrations` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `migration` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `batch` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- ----------------------------
+-- Records of migrations
+-- ----------------------------
+INSERT INTO `migrations` VALUES ('1', '2014_10_12_000000_create_users_table', '1');
+INSERT INTO `migrations` VALUES ('2', '2014_10_12_100000_create_password_resets_table', '1');
+INSERT INTO `migrations` VALUES ('3', '2015_06_21_181359_create_kryptonit3_counter_page_table', '1');
+INSERT INTO `migrations` VALUES ('4', '2015_06_21_193003_create_kryptonit3_counter_visitor_table', '1');
+INSERT INTO `migrations` VALUES ('5', '2015_06_21_193059_create_kryptonit3_counter_page_visitor_table', '1');
+INSERT INTO `migrations` VALUES ('6', '2017_04_10_100221_create_sites_table', '1');
+INSERT INTO `migrations` VALUES ('7', '2017_04_10_100253_create_posts_table', '1');
+INSERT INTO `migrations` VALUES ('8', '2017_04_10_100333_create_categories_table', '1');
+INSERT INTO `migrations` VALUES ('9', '2017_11_23_083531_create_comments_table', '1');
+INSERT INTO `migrations` VALUES ('10', '2017_11_23_083531_create_customers_table', '1');
+INSERT INTO `migrations` VALUES ('11', '2017_11_23_083531_create_faqs_table', '1');
+INSERT INTO `migrations` VALUES ('12', '2017_11_23_083531_create_languages_table', '1');
+INSERT INTO `migrations` VALUES ('13', '2017_11_23_083531_create_orders_table', '1');
+INSERT INTO `migrations` VALUES ('14', '2017_11_23_083531_create_slugs_table', '1');
+
+-- ----------------------------
+-- Table structure for `orders`
+-- ----------------------------
+DROP TABLE IF EXISTS `orders`;
+CREATE TABLE `orders` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `code` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `customer` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `product` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `amount` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `payment` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `note` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `admin_note` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `jsondata` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `field1` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `field2` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `field3` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `field4` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `field5` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `field6` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `field7` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `field8` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `field9` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `field10` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `active` tinyint(4) DEFAULT 0,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- ----------------------------
+-- Records of orders
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `password_resets`
+-- ----------------------------
+DROP TABLE IF EXISTS `password_resets`;
+CREATE TABLE `password_resets` (
+  `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  KEY `password_resets_email_index` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- ----------------------------
+-- Records of password_resets
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `posts`
+-- ----------------------------
+DROP TABLE IF EXISTS `posts`;
+CREATE TABLE `posts` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `category` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `desc` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `desc_full` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `price` bigint(20) DEFAULT NULL,
+  `price_promo` bigint(20) DEFAULT NULL,
+  `img` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `img_other` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `img_thumb` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `img_cover` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `img_cover_xs` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `theme` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `main_keyword` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `seo_point` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `sku` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `stock` bigint(20) DEFAULT 9999,
+  `spec` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `video` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `file` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `link` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `order` double(8,2) DEFAULT 9999.00,
+  `variant` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `type1` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `type2` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `type3` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `f1` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `f2` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `f3` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `f4` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `f5` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `f6` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `f7` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `f8` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `f9` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `f10` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `f11` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `f12` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `f13` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `f14` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `f15` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `f16` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `f17` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `f18` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `f19` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `f20` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `f21` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `f22` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `f23` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `f24` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `f25` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `f26` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `f27` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `f28` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `f29` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `f30` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_by` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `edited_by` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `edited_ip` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `facebook_img` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `facebook_title` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `facebook_desc` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `google_title` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `google_desc` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `google_priority` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `google_noindex` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `keyword` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `rating` double(8,2) DEFAULT 4.50,
+  `active` tinyint(4) DEFAULT 1,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- ----------------------------
+-- Records of posts
+-- ----------------------------
+INSERT INTO `posts` VALUES ('1', '1', 'Liên hệ', null, null, null, null, null, null, null, null, null, 'lienhe', null, null, null, '9999', null, null, null, null, '9999.00', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '4.50', '1', '2024-11-22 10:05:20', null, null);
+INSERT INTO `posts` VALUES ('2', '1', 'Giỏ hàng', null, '<p><strong>Lưu ý:</strong> Quý khách có thể chọn thanh toán khi nhận hàng (COD) hoặc thanh toán qua chuyển khoản vào một trong số các tài khoản của chúng tôi.</p><p>Sau khi chuyển khoản, quý khách vui lòng chụp lại màn hình thanh toán và gửi tin nhắn cho chúng tôi vào Zalo hoặc Facebook. Chúng tôi sẽ gửi sản phẩm ngay khi xác nhận thanh toán thành công.</p><p>Xin cảm ơn quý khách đã đặt hàng!</p>', null, null, null, null, null, null, null, 'giohang', null, null, null, '9999', null, null, null, null, '9999.00', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '4.50', '1', '2024-11-22 10:05:20', null, null);
+INSERT INTO `posts` VALUES ('3', '1', 'Gửi thông tin thành công', null, '<p style=\"text-align:center\">Quý khách đã gửi thông tin thành công.<br>Chúng tôi sẽ liên hệ trong thời gian sớm nhất!<br><i>You have successfully sent information. We will contact you as soon as possible!</i></p>', null, null, null, null, null, null, null, 'thanhcong', null, null, null, '9999', null, null, null, null, '9999.00', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '4.50', '1', '2024-11-22 10:05:20', null, null);
+INSERT INTO `posts` VALUES ('4', '1', 'Giới thiệu', null, '<p><span style=\"color: rgb(0, 0, 0);\" data-mce-style=\"color: #000000;\"><em><strong><span style=\"text-decoration: underline;\" data-mce-style=\"text-decoration: underline;\">Kính gửi Quý khách hàng, Quý đối tác!</span></strong></em></span></p><p><span style=\"color: rgb(0, 0, 0);\" data-mce-style=\"color: #000000;\">Công ty Lorem ipsum dolor sit amet xin gửi tới toàn thể Quý khách hàng, Quý đối tác lời chào trân trọng.</span></p><p><span style=\"color: rgb(0, 0, 0);\" data-mce-style=\"color: #000000;\"><strong>Công ty Lorem ipsum dolor sit amet</strong>&nbsp;được thành lập để theo đuổi mục tiêu và sứ mệnh “Công ty&nbsp;cung cấp giải pháp tổng thể về ..... hàng đầu Việt Nam”, góp phần nâng cao chất lượng cuộc sống và đóng góp vào sự phát triển kinh tế đất nước. Nhà máy của chúng tôi được đầu tư từ hạ tầng cơ sở hiện đại đến hệ thống máy móc, trang thiết bị, công nghệ đồng bộ và các quy trình kiểm soát theo đúng tiêu chuẩn Quốc Tế. Chúng tôi đã không ngừng đầu tư và phát triển công nghệ, đổi mới, nâng cao chất lượng, đa dạng hoá sản phẩm dịch vụ để đáp ứng và thoả mãn nhu cầu ngày càng cao của thị trường.</span></p><img src=\"/public/upload/gt.jpg\" alt=\"logo\" data-mce-src=\"/public/upload/gt.jpg\"><p style=\"text-align: center;\" data-mce-style=\"text-align: center;\"><span style=\"color: rgb(0, 0, 0);\" data-mce-style=\"color: #000000;\"></span></p><p class=\"text-green\"><span style=\"color: rgb(0, 0, 0);\" data-mce-style=\"color: #000000;\">Công ty Lorem ipsum dolor sit amet cam kết đem lại nhiều giá trị gia tăng về lợi ích, đáp ứng tối đa sự hài lòng của Quý Khách hàng với phương châm chất lượng trên từng sản phẩm, dịch vụ được tiêu chuẩn hoá và đồng bộ cao.</span></p><p class=\"text-green\"><span style=\"color: rgb(0, 0, 0);\" data-mce-style=\"color: #000000;\">Sứ mệnh của chúng tôi là không ngừng nỗ lực tạo ra những sản phẩm chất lượng cao, mẫu mã đẹp, giá thành cạnh tranh để phục vụ người tiêu dùng trong và ngoài nước; đem về những lợi ích thiết thực cho đối tác và toàn thể nhân viên công ty; chia sẻ các giá trị tốt đẹp với cộng đồng xã hội dựa trên ba giá trị cốt lõi của doanh nghiệp:</span></p><p><span style=\"color: rgb(0, 0, 0);\" data-mce-style=\"color: #000000;\"><strong>UY TÍN - CHẤT LƯỢNG - SÁNG TẠO.</strong></span></p><p><span style=\"color: rgb(0, 0, 0);\" data-mce-style=\"color: #000000;\">Chúng tôi mong muốn có cơ hội hợp tác với Quý khách hàng, Quý đối tác để cùng nắm bắt cơ hội, sáng tạo ra những giá trị mới, thành công mới để hướng tới một tương lai phát triển phồn thịnh, ổn định và bền vững.</span></p><p><span style=\"color: rgb(0, 0, 0);\" data-mce-style=\"color: #000000;\">Chúng tôi hy vọng nhận được sự hợp tác lâu dài, tích cực và toàn diện của Quý khách hàng, Quý đối tác.</span></p><p><span style=\"color: rgb(0, 0, 0);\" data-mce-style=\"color: #000000;\">Trân trọng!</span></p>', null, null, null, null, null, null, null, null, null, null, null, '9999', null, null, null, null, '9999.00', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '4.50', '1', '2024-11-22 10:05:20', null, null);
+INSERT INTO `posts` VALUES ('5', '4', 'Hình ảnh', null, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p><p><img src=\"/upload/gt.jpg\"></p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p><p><img src=\"/upload/gt.jpg\"></p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p><p><img src=\"/upload/gt.jpg\"></p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>', null, null, null, null, null, null, null, null, null, null, null, '9999', null, null, null, null, '9999.00', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '4.50', '1', '2024-11-22 10:05:20', null, null);
+INSERT INTO `posts` VALUES ('6', '1', 'Hỏi đáp', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod', '<p style=\"text-align: center;\" data-mce-style=\"text-align: center;\"><em>Quý khách có thể đăng câu hỏi về sản phẩm hoặc các thông tin khác tại đây cùng với thông tin cá nhân và mật khẩu, chúng tôi sẽ trả lời câu hỏi của quý khách trong vòng một vài ngày làm việc.<br>Quý khách có thể quay lại trang này xem các câu trả lời bằng cách click vào nút đăng nhập và điền email, mật khẩu đã đăng ký.</em></p>', null, null, null, null, null, null, null, 'faq', null, null, null, '9999', null, null, null, null, '9999.00', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '4.50', '1', '2024-11-22 10:05:20', null, '2024-11-22 10:05:20');
+INSERT INTO `posts` VALUES ('7', '8', 'Chị Thanh Tâm', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', null, null, '/public/upload/khach1.jpg', null, null, null, null, null, null, null, null, '9999', null, null, null, null, '9999.00', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '4.50', '1', '2024-11-22 10:05:20', null, '2024-11-22 10:05:20');
+INSERT INTO `posts` VALUES ('8', '8', 'Chị Hoàng Dương', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', null, null, '/public/upload/khach2.jpg', null, null, null, null, null, null, null, null, '9999', null, null, null, null, '9999.00', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '4.50', '1', '2024-11-22 10:05:20', null, '2024-11-22 10:05:20');
+INSERT INTO `posts` VALUES ('9', '8', 'Bạn Lan Anh', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', null, null, '/public/upload/khach3.jpg', null, null, null, null, null, null, null, null, '9999', null, null, null, null, '9999.00', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '4.50', '1', '2024-11-22 10:05:20', null, '2024-11-22 10:05:20');
+INSERT INTO `posts` VALUES ('10', '9', 'Chính sách bảo mật', null, '<p><strong><em>a) Mục đ&iacute;ch v&agrave; phạm vi thu thập</em></strong><br />Việc thu thập dữ liệu chủ yếu tr&ecirc;n website bao gồm: họ t&ecirc;n, email, điện thoại, địa chỉ kh&aacute;ch h&agrave;ng trong mục li&ecirc;n hệ. Đ&acirc;y l&agrave; c&aacute;c th&ocirc;ng tin m&agrave; ch&uacute;ng t&ocirc;i &nbsp;cần th&agrave;nh vi&ecirc;n cung cấp bắt buộc khi gửi th&ocirc;ng tin nhờ tư vấn hay muốn mua sản phẩm v&agrave; để ch&uacute;ng t&ocirc;i &nbsp;&nbsp;li&ecirc;n hệ x&aacute;c nhận lại với kh&aacute;ch h&agrave;ng tr&ecirc;n website nhằm đảm bảo quyền lợi cho cho người ti&ecirc;u d&ugrave;ng.<br />C&aacute;c th&agrave;nh vi&ecirc;n sẽ tự chịu tr&aacute;ch nhiệm về bảo mật v&agrave; lưu giữ mọi hoạt động sử dụng dịch vụ dưới th&ocirc;ng tin m&agrave; m&igrave;nh cung cấp v&agrave; hộp thư điện tử của m&igrave;nh. Ngo&agrave;i ra, th&agrave;nh vi&ecirc;n c&oacute; tr&aacute;ch nhiệm th&ocirc;ng b&aacute;o kịp thời cho webiste ch&uacute;ng t&ocirc;i về những h&agrave;nh vi sử dụng tr&aacute;i ph&eacute;p, lạm dụng, vi phạm bảo mật, lưu giữ t&ecirc;n đăng k&yacute; v&agrave; mật khẩu của b&ecirc;n thứ ba để c&oacute; biện ph&aacute;p giải quyết ph&ugrave; hợp.<br /><strong><em>b) Phạm vi sử dụng th&ocirc;ng tin</em></strong><br />Ch&uacute;ng t&ocirc;i sử dụng th&ocirc;ng tin th&agrave;nh vi&ecirc;n cung cấp để:</p><ul><li>Li&ecirc;n hệ x&aacute;c nhận đơn h&agrave;ng v&agrave; giao h&agrave;ng cho th&agrave;nh vi&ecirc;n khi nhận được y&ecirc;u cầu từ th&agrave;nh vi&ecirc;n;</li><li>Cung cấp th&ocirc;ng tin về sản phẩm đến kh&aacute;ch h&agrave;ng nếu c&oacute; y&ecirc;u cầu từ kh&aacute;ch h&agrave;ng;</li><li>Gửi email tiếp thị, khuyến mại về h&agrave;ng h&oacute;a do ch&uacute;ng t&ocirc;i b&aacute;n;</li><li>Gửi c&aacute;c th&ocirc;ng b&aacute;o về c&aacute;c hoạt động tr&ecirc;n website</li><li>Li&ecirc;n lạc v&agrave; giải quyết với người d&ugrave;ng trong những trường hợp đặc biệt;</li><li>Kh&ocirc;ng sử dụng th&ocirc;ng tin c&aacute; nh&acirc;n của người d&ugrave;ng ngo&agrave;i mục đ&iacute;ch x&aacute;c nhận v&agrave; li&ecirc;n hệ c&oacute; li&ecirc;n quan đến giao dịch</li></ul><p>-&nbsp;&nbsp; Khi c&oacute; y&ecirc;u cầu của cơ quan tư ph&aacute;p bao gồm: Viện kiểm s&aacute;t, t&ograve;a &aacute;n, cơ quan c&ocirc;ng an điều tra li&ecirc;n quan đến h&agrave;nh vi vi phạm ph&aacute;p luật n&agrave;o đ&oacute; của kh&aacute;ch h&agrave;ng.<br />&nbsp;<br /><strong><em>c) Thời gian lưu trữ th&ocirc;ng tin;</em></strong><br />Dữ liệu c&aacute; nh&acirc;n của th&agrave;nh vi&ecirc;n sẽ được lưu trữ cho đến khi c&oacute; y&ecirc;u cầu ban quản trị hủy bỏ. C&ograve;n lại trong mọi trường hợp th&ocirc;ng tin c&aacute; nh&acirc;n th&agrave;nh vi&ecirc;n sẽ được bảo mật tr&ecirc;n m&aacute;y chủ của ch&uacute;ng t&ocirc;i &nbsp;&nbsp;<br />&nbsp;<br /><strong><em>d) Những người hoặc tổ chức c&oacute; thể được tiếp cận với th&ocirc;ng tin đ&oacute;</em></strong><br />Đối tượng được tiếp cận với th&ocirc;ng tin c&aacute; nh&acirc;n của kh&aacute;ch h&agrave;ng thuộc một trong những trường hợp sau:<br />- Nh&acirc;n vi&ecirc;n của c&ocirc;ng ty<br />- C&aacute;c đối t&aacute;c c&oacute; k&yacute; hợp động thực hiện 1 phần dịch vụ của C&ocirc;ng Ty. C&aacute;c đối t&aacute;c n&agrave;y sẽ nhận được những th&ocirc;ng tin theo thỏa thuận hợp đồng (c&oacute; thể 1 phần hoặc to&agrave;n bộ th&ocirc;ng tin tuy theo điều khoản hợp đồng) để tiến h&agrave;nh hỗ trợ người d&ugrave;ng sử dụng dịch vụ do C&ocirc;ng ty cung cấp.<br />&nbsp;<br /><strong><em>đ) Địa chỉ của đơn vị thu thập v&agrave; quản l&yacute; th&ocirc;ng tin, bao gồm c&aacute;ch thức li&ecirc;n lạc để người ti&ecirc;u d&ugrave;ng c&oacute; thể hỏi về hoạt động thu thập, xử l&yacute; th&ocirc;ng tin li&ecirc;n quan đến c&aacute; nh&acirc;n m&igrave;nh;</em></strong></p><p><strong><em>e) Phương thức v&agrave; c&ocirc;ng cụ để người ti&ecirc;u d&ugrave;ng tiếp cận v&agrave; chỉnh sửa dữ liệu c&aacute; nh&acirc;n của m&igrave;nh tr&ecirc;n hệ thống thương mại điện tử của đơn vị thu thập th&ocirc;ng tin.</em></strong><br />Th&agrave;nh vi&ecirc;n c&oacute; quyền tự kiểm tra, cập nhật, điều chỉnh hoặc hủy bỏ th&ocirc;ng tin c&aacute; nh&acirc;n của m&igrave;nh bằng c&aacute;ch li&ecirc;n hệ với ban quản trị website thực hiện việc n&agrave;y.<br />Th&agrave;nh vi&ecirc;n c&oacute; quyền gửi khiếu nại về nội dung bảo mật th&ocirc;ng tin đề nghị li&ecirc;n hệ Ban quản trị của website. Khi tiếp nhận những phản hồi n&agrave;y, ch&uacute;ng t&ocirc;i sẽ x&aacute;c nhận lại th&ocirc;ng tin, trường hợp đ&uacute;ng như phản &aacute;nh của th&agrave;nh vi&ecirc;n t&ugrave;y theo mức độ, ch&uacute;ng t&ocirc;i sẽ c&oacute; những biện ph&aacute;p xử l&yacute; kịp thời.<br /><strong><em>f) Cơ chế tiếp nhận v&agrave; giải quyết khiếu nại của người ti&ecirc;u d&ugrave;ng li&ecirc;n quan đến việc th&ocirc;ng tin c&aacute; nh&acirc;n bị sử dụng sai mục đ&iacute;ch hoặc phạm vi đ&atilde; th&ocirc;ng b&aacute;o.</em></strong><br />Th&ocirc;ng tin c&aacute; nh&acirc;n của th&agrave;nh vi&ecirc;n được cam kết bảo mật tuyệt đối theo ch&iacute;nh s&aacute;ch bảo vệ th&ocirc;ng tin c&aacute; nh&acirc;n. Việc thu thập v&agrave; sử dụng th&ocirc;ng tin của mỗi th&agrave;nh vi&ecirc;n chỉ được thực hiện khi c&oacute; sự đồng &yacute; của kh&aacute;ch h&agrave;ng đ&oacute; trừ những trường hợp ph&aacute;p luật c&oacute; quy định kh&aacute;c.<br />Kh&ocirc;ng sử dụng, kh&ocirc;ng chuyển giao, cung cấp hay tiết lộ cho b&ecirc;n thứ 3 n&agrave;o về th&ocirc;ng tin c&aacute; nh&acirc;n của th&agrave;nh vi&ecirc;n khi kh&ocirc;ng c&oacute; sự cho ph&eacute;p đồng &yacute; từ th&agrave;nh vi&ecirc;n.<br />Trong trường hợp m&aacute;y chủ lưu trữ th&ocirc;ng tin bị hacker tấn c&ocirc;ng dẫn đến mất m&aacute;t dữ liệu c&aacute; nh&acirc;n th&agrave;nh vi&ecirc;n, ch&uacute;ng t&ocirc;i sẽ c&oacute; tr&aacute;ch nhiệm th&ocirc;ng b&aacute;o vụ việc cho cơ quan chức năng điều tra xử l&yacute; kịp thời v&agrave; th&ocirc;ng b&aacute;o cho th&agrave;nh vi&ecirc;n được biết.<br />Bảo mật tuyệt đối mọi th&ocirc;ng tin giao dịch trực tuyến của th&agrave;nh vi&ecirc;n bao gồm th&ocirc;ng tin h&oacute;a đơn kế to&aacute;n chứng từ số h&oacute;a<br />Ban quản l&yacute; y&ecirc;u cầu c&aacute;c c&aacute; nh&acirc;n khi đăng k&yacute;/mua h&agrave;ng phải cung cấp đầy đủ th&ocirc;ng tin c&aacute; nh&acirc;n c&oacute; li&ecirc;n quan như: Họ v&agrave; t&ecirc;n, địa chỉ li&ecirc;n lạc, email, điện thoại,&hellip;., v&agrave; chịu tr&aacute;ch nhiệm về t&iacute;nh ph&aacute;p l&yacute; của những th&ocirc;ng tin tr&ecirc;n. Ban quản l&yacute; kh&ocirc;ng chịu tr&aacute;ch nhiệm cũng như kh&ocirc;ng giải quyết mọi khiếu nại c&oacute; li&ecirc;n quan đến quyền lợi của th&agrave;nh vi&ecirc;n đ&oacute; nếu x&eacute;t thấy tất cả th&ocirc;ng tin c&aacute; nh&acirc;n của th&agrave;nh vi&ecirc;n đ&oacute; cung cấp khi đăng k&yacute; ban đầu l&agrave; kh&ocirc;ng ch&iacute;nh x&aacute;c.</p>', null, null, null, null, null, null, null, null, null, null, null, '9999', null, null, null, null, '9999.00', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '4.50', '1', '2024-11-22 10:05:20', null, '2024-11-22 10:05:20');
+INSERT INTO `posts` VALUES ('11', '9', 'Hướng dẫn mua hàng', null, '<p>Qu&yacute; Kh&aacute;ch h&agrave;ng c&oacute; thể chọn một trong hai c&aacute;ch sau:<br /><br /><strong>C&aacute;ch thứ nhất:&nbsp;</strong>Gọi điện thoại đến số hotline nh&acirc;n vi&ecirc;n của c&ocirc;ng ty sẽ tư vấn v&agrave; hỗ trợ cho kh&aacute;c h&agrave;ng tất cả c&aacute;c th&ocirc;ng tin về sản phẩm v&agrave; dịch vụ..<br /><strong>C&aacute;ch thứ hai:&nbsp;</strong>Đặt h&agrave;ng qua website:&nbsp;<br />Bước 1: Bấm v&agrave;o n&uacute;t &ldquo;mua h&agrave;ng&rdquo; để đưa sản phẩm v&agrave;o giỏ h&agrave;ng sau khi đ&atilde; lựa chọn sản phẩm m&igrave;nh muốn mua<br />Bước 2: Sau khi chọn xong sản phẩm đặt mua, điền c&aacute;c th&ocirc;ng tin theo y&ecirc;u cầu của ch&uacute;ng t&ocirc;i: size, m&agrave;u sắc, số lượng &hellip;.<br />Bước 3: Bấm n&uacute;t &ldquo;Gửi&rdquo;<br />Đơn h&agrave;ng của bạn đ&atilde; ho&agrave;n tất v&agrave; được chuyển tới ch&uacute;ng t&ocirc;i. Ch&uacute;ng t&ocirc;i&nbsp; sẽ xử l&yacute; v&agrave; li&ecirc;n lạc lại với bạn để thực hiện giao dịch.</p>', null, null, null, null, null, null, null, null, null, null, null, '9999', null, null, null, null, '9999.00', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '4.50', '1', '2024-11-22 10:05:20', null, '2024-11-22 10:05:20');
+INSERT INTO `posts` VALUES ('12', '9', 'Chính sách bảo hành', null, '<p><strong><u>Quy định về bảo h&agrave;nh</u></strong><br />-&nbsp;&nbsp;&nbsp;&nbsp; Sản phẩm được bảo h&agrave;nh miễn ph&iacute; nếu sản phẩm đ&oacute; c&ograve;n thời hạn bảo h&agrave;nh được t&iacute;nh kể từ ng&agrave;y giao h&agrave;ng.<br />-&nbsp;&nbsp;&nbsp;&nbsp; Thời hạn bảo h&agrave;nh được ghi tr&ecirc;n Phiếu Bảo H&agrave;nh v&agrave; theo quy định của từng h&atilde;ng sản xuất đối với tất cả c&aacute;c sự cố về mặt kỹ thuật của sản phẩm.<br />-&nbsp;&nbsp;&nbsp;&nbsp; C&oacute; phiếu bảo h&agrave;nh v&agrave; tem bảo h&agrave;nh hợp lệ của c&ocirc;ng ty hoặc của h&atilde;ng sản xuất tr&ecirc;n sản phẩm.<br /><strong><u>Những trường hợp kh&ocirc;ng được bảo h&agrave;nh</u></strong><br />-&nbsp;&nbsp;&nbsp;&nbsp; Sản phẩm đ&atilde; qu&aacute; hạn bảo h&agrave;nh ghi tr&ecirc;n phiếu hoặc mất Phiếu Bảo H&agrave;nh.<br />-&nbsp;&nbsp;&nbsp;&nbsp; Tem ni&ecirc;m phong bảo h&agrave;nh bị r&aacute;ch, vỡ, bị d&aacute;n đ&egrave; hoặc sửa đổi, tẩy x&oacute;a.<br />-&nbsp;&nbsp;&nbsp;&nbsp; Phiếu bảo h&agrave;nh kh&ocirc;ng ghi r&otilde; số Serial v&agrave; ng&agrave;y mua sản phẩm.<br />-&nbsp;&nbsp;&nbsp;&nbsp; Sản phẩm c&oacute; dấu hiệu hư hỏng do chuột bọ hoặc c&ocirc;n tr&ugrave;ng x&acirc;m nhập.</p>', null, null, null, null, null, null, null, null, null, null, null, '9999', null, null, null, null, '9999.00', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '4.50', '1', '2024-11-22 10:05:20', null, '2024-11-22 10:05:20');
+INSERT INTO `posts` VALUES ('13', '9', 'Chính sách đổi trả', null, '<p><strong><u>Những trường hợp được đổi trả:</u></strong><br />-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; H&agrave;ng bị lỗi do nh&agrave; sản xuất<br />-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; H&agrave;ng bị hư hỏng do qu&aacute; tr&igrave;nh vận chuyển h&agrave;ng cho kh&aacute;ch của c&ocirc;ng ty<br />-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; H&agrave;ng giao kh&ocirc;ng đ&uacute;ng mẫu m&atilde;, loại m&agrave; kh&aacute;ch đ&atilde; đặt<br />-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; H&agrave;ng giao bị thiếu<br />Nếu ph&aacute;t hiện những trường hợp tr&ecirc;n, qu&yacute; kh&aacute;ch vui l&ograve;ng kh&ocirc;ng nhận h&agrave;ng v&agrave; y&ecirc;u cầu nh&acirc;n vi&ecirc;n giao nhận của ch&uacute;ng t&ocirc;i x&aacute;c nhận t&igrave;nh trạng h&agrave;ng ngay tại chỗ v&agrave; y&ecirc;u cầu đổi trả. C&ograve;n kh&ocirc;ng kh&aacute;ch h&agrave;ng phải b&aacute;o ngay t&igrave;nh trạng h&agrave;ng bị lỗi về cho ch&uacute;ng t&ocirc;i trong v&ograve;ng 24h kể từ l&uacute;c nhận h&agrave;ng để được hỗ trợ đổi mới, qu&aacute; 24h ch&uacute;ng t&ocirc;i sẽ kh&ocirc;ng hỗ trợ giải quyết v&igrave; mặc định kh&aacute;ch h&agrave;ng đ&atilde; đồng &yacute; với sản phẩm được giao.<br /><strong><u>Điều kiện v&agrave; quy định đổi trả chung:</u></strong><br />-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &ldquo;Một đổi một&rdquo; đối với những sản phẩm b&aacute;n ra trong v&ograve;ng 07 ng&agrave;y nếu c&oacute; vấn đề trục trặc.<br />-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; C&ograve;n đầy đủ tem m&aacute;c, h&oacute;a đơn, kh&ocirc;ng bị trầy xước, m&oacute;p m&eacute;o, hỏng h&oacute;c b&ecirc;n ngo&agrave;i, đổ vỡ..<br />-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Thời gian đổi h&agrave;ng kh&ocirc;ng qu&aacute; 3 ng&agrave;y kể từ khi nhận h&agrave;ng (căn cứ theo h&oacute;a đơn mua h&agrave;ng hoặc bi&ecirc;n lai k&yacute; nhận của b&ecirc;n giao h&agrave;ng).<br />-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; C&oacute; đầy đủ c&aacute;c chứng từ k&egrave;m theo như bi&ecirc;n nhận, h&oacute;a đơn, phiếu giao h&agrave;ng, phiếu bảo h&agrave;nh, catalouge...<br />Tuy nhi&ecirc;n đối với một số sản phẩm ch&uacute;ng t&ocirc;i sẽ kh&ocirc;ng &aacute;p dụng những điều kiện đổi trả giống như tr&ecirc;n, trong qu&aacute; tr&igrave;nh tư vấn b&aacute;n h&agrave;ng ch&uacute;ng t&ocirc;i sẽ tư vấn cụ thể về thời hạn cũng như h&igrave;nh thức đổi trả cho từng sản phẩm để kh&aacute;ch h&agrave;ng tham khảo khi c&oacute; nhu cầu mua sản phẩm đ&oacute;.<br />Lệ ph&iacute; ho&agrave;n trả: ph&iacute; ho&agrave;n trả sẽ ho&agrave;n to&agrave;n do c&ocirc;ng ty chi trả ho&agrave;n to&agrave;n nếu lỗi đ&oacute; thuộc về c&ocirc;ng ty.<br />H&igrave;nh thức ho&agrave;n trả: Sẽ đổi mới sản phẩm cho kh&aacute;ch h&agrave;ng, trường hợp kh&ocirc;ng c&ograve;n sản phẩm h&agrave;ng h&oacute;a đ&oacute; trong kho, c&ocirc;ng ty cam kết ho&agrave;n trả 100% ph&iacute; m&agrave; kh&aacute;ch h&agrave;ng đ&atilde; thanh to&aacute;n cho ch&uacute;ng t&ocirc;i th&ocirc;ng qua c&aacute;c h&igrave;nh thức như: tiền mặt tại c&ocirc;ng ty hoặc chuyển khoản cho kh&aacute;ch h&agrave;ng</p>', null, null, null, null, null, null, null, null, null, null, null, '9999', null, null, null, null, '9999.00', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '4.50', '1', '2024-11-22 10:05:20', null, '2024-11-22 10:05:20');
+INSERT INTO `posts` VALUES ('14', '9', 'Chính sách vận chuyển', null, '<p>Th&ocirc;ng thường sau khi nhận được th&ocirc;ng tin đặt h&agrave;ng ch&uacute;ng t&ocirc;i sẽ xử l&yacute; đơn h&agrave;ng trong v&ograve;ng 24h v&agrave; phản hồi lại th&ocirc;ng tin cho kh&aacute;ch h&agrave;ng về việc thanh to&aacute;n v&agrave; giao nhận.<br />Thời gian giao h&agrave;ng thường trong khoảng từ 3-5 ng&agrave;y kể từ ng&agrave;y chốt đơn h&agrave;ng hoặc theo thỏa thuận với kh&aacute;ch khi đặt h&agrave;ng. Tuy nhi&ecirc;n, cũng c&oacute; trường hợp việc giao h&agrave;ng k&eacute;o d&agrave;i hơn nhưng chỉ xảy ra trong những t&igrave;nh huống bất khả kh&aacute;ng như sau:</p><ul><li>Nh&acirc;n vi&ecirc;n c&ocirc;ng ty sẽ li&ecirc;n lạc với kh&aacute;ch h&agrave;ng qua điện thoại kh&ocirc;ng được n&ecirc;n kh&ocirc;ng thể giao h&agrave;ng.</li><li>Địa chỉ giao h&agrave;ng bạn cung cấp kh&ocirc;ng ch&iacute;nh x&aacute;c hoặc kh&oacute; t&igrave;m.</li><li>Số lượng đơn h&agrave;ng của c&ocirc;ng ty tăng đột biến khiến việc xử l&yacute; đơn h&agrave;ng bị chậm.</li><li>Đối t&aacute;c cung cấp nguy&ecirc;n liệu cho c&ocirc;ng ty chậm hơn dự kiến khiến việc giao h&agrave;ng bị chậm lại hoặc đối t&aacute;c vận chuyển giao h&agrave;ng bị chậm chỉ vận chuyển ph&acirc;n phối cho đại l&yacute; hoặc kh&aacute;ch h&agrave;ng c&oacute; nhu cầu lớn, l&acirc;u d&agrave;i. V&igrave; thế c&ocirc;ng ty&nbsp; đa phần sẽ hỗ trợ chi ph&iacute; vận chuyển như một c&aacute;ch chăm s&oacute;c đại l&yacute; cua m&igrave;nh. Đối với kh&aacute;ch lẻ nếu c&oacute; nhu cầu sử dụng lớn vui l&ograve;ng li&ecirc;n hệ trực tiếp để thỏa thuận hợp đồng cũng như ph&iacute; vận chuyển.</li></ul>', null, null, null, null, null, null, null, null, null, null, null, '9999', null, null, null, null, '9999.00', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '4.50', '1', '2024-11-22 10:05:20', null, '2024-11-22 10:05:20');
+INSERT INTO `posts` VALUES ('15', '6', 'Công nghiệp 4.0 sẽ thay đổi thị trường Việt Nam', 'Làn sóng kết nối mới đang vượt ra ngoài khỏi máy tính xách tay và điện thoại thông minh, nó hướng tới những chiếc xe được kết nối, nhà thông minh, thiết bị đeo được kết nối, đô thị thông minh và chăm sóc sức khỏe được kết nối.', '<span id=\"mainContent\"><p><strong>6 giải pháp để phát triển Công nghiệp 4.0</strong></p><p>Thủ tướng Nguyễn Xuân Phúc cho rằng, cùng sự phát triển bùng nổ của nền kinh tế số, Cách mạng công nghiệp 4.0 tạo ra cả cơ hội lẫn thách thức to lớn đối với sự phát triển của từng quốc gia, các dân tộc cũng như mỗi cộng đồng, cá nhân và doanh nghiệp. Nhận thức sớm điều này, ngày 04/05/2017, Chỉ thị 16 về tăng cường năng lực tiếp cận Cách mạng công nghiệp 4.0 (CMCN 4.0) đã được ban hành. Thủ tướng cho biết, để Việt Nam bắt kịp cuộc CMCN 4.0, cần thực hiện đồng thời 6 giải pháp:</p><p><strong><i>Thứ nhất,</i></strong> tập trung hoàn thiện cơ chế, thể chế, chính sách, pháp luật theo kịp kinh tế số, công nghiệp thông minh.</p><p><strong><i>Thứ hai,</i></strong> xây dựng kết cấu hạ tầng đồng bộ, trong đó, công nghệ thông tin và hạ tầng thông tin đóng vai trò hạ tầng của hạ tầng.</p><p><strong><i>Thứ ba,</i></strong> phát triển nhanh nguồn nhân lực đáp ứng yêu cầu kinh tế số.</p><p><strong><i>Thứ tư,</i></strong> phát triển hệ thống đối mới sáng tạo quốc gia, thúc đẩy khởi nghiệp trong mọi ngành mọi lĩnh vực, có kế hoạch cụ thể và khả thi để phát triển và làm chủ hệ tri thức Việt số hóa, khơi dậy đam mê khát vọng.</p><p><strong><i>Thứ năm,</i></strong> cả hệ thống chính trị, cộng đồng doanh nghiệp, người dân cần chung tay trong đổi mới sáng tạo, chủ động nắm bắt, khai thác có hiệu quả các cơ hội to lớn của CMCN 4.0 mang lại.</p><p><strong><i>Thứ sáu,</i></strong> doanh nghiệp vừa là trung tâm, vừa là động lực của sự phát triển công nghệ mới, ứng dụng khoa học công nghệ vào thực tiến đời sống. Phát triển doanh nghiệp số được xác định là nhiệm vụ trung tâm, lâu dài để phát triển kinh tế số ở Việt Nam.</p><div id=\"admzone480458\" class=\"wp100 fl mgt10\"></div><p>Hiện nay, quan điểm chỉ đạo của Chính phủ là phát triển kinh tế số, công nghiệp thông minh gắn với chuyển đổi, tái cơ cấu nền kinh tế để tăng cường năng lực cạnh tranh quốc gia. Thủ tướng mong muốn nhận được những ý kiến của các đại biểu. Những ý kiến sẽ được tổng hợp để xây dựng chiến lược tổng thể về tiếp cận CMCN 4.0.</p><p>“Cách mạng công nghiệp 4.0 là cơ hội thực hiện khát vọng phồn vinh dân tộc, không thể bỏ lỡ, phát huy lợi thế, phải có ứng xử cởi mở, tạo dựng môi trường thông thoáng, thúc đẩy mô hình mới” - Thủ tướng khẳng định</p><p><strong>Hành trình dài luôn bắt đầu từ hành trình ngắn</strong></p><p>Ông Nguyễn Văn Bình, Trưởng ban Kinh tế Trung ương cho biết, chiến lược 4.0 đã được nhiều nước trên thế giới xây dựng. Không chỉ những nước phát triển như Mỹ, Đức, Nhật, mà một số nước ở châu Phi như Kenya cũng đã ban hành chiến lược 4.0. Trong khu vực, Trung Quốc, Thái Lan, Singapore cũng đã có chiến lược để tiếp cận cuộc cách mạng công nghiệp đang diễn ra.</p><p>Theo Trưởng ban Kinh tế Trung ương, Việt Nam phải tham gia vào cuộc CMCN 4.0 nếu không muốn phải trả giá đắt về sau này. Mỗi người Việt Nam cần vượt qua tư duy cũ, cách làm cũ trong thời gian ngắn để bắt kịp cuộc cách mạng.</p><p>Điều khó khăn đối với Việt Nam là sự phát triển không đồng đều giữa các vùng miền. Có những nơi chỉ đang diễn CMCN 3.0, 2.0,... Tuy vậy, bối cảnh hiện tại đòi hỏi Việt Nam phải bắt kịp 4.0. Do đó, chiến lược sắp được xây dựng cần phải nêu lên từng bước đi phù hợp như Nhật Bản thường nói: “Một hành trình dài luôn bắt đầu từ hành trình ngắn”.</p><div class=\"VCSortableInPreviewMode link-content-footer\" type=\"link-content-footer\"><a draggable=\"false\" href=\"https://cafef.vn/pho-thu-tuong-vuong-dinh-hue-cach-mang-40-la-cuoc-cach-mang-ve-phat-hien-nhu-cau-hon-la-cong-nghe-20171117131625917.chn\" title=\"Phó Thủ tướng Vương Đình Huệ: Cách mạng 4.0 là cuộc cách mạng về phát hiện nhu cầu hơn là công nghệ\"><i class=\"ico-idx3\"></i>Phó Thủ tướng Vương Đình Huệ: Cách mạng 4.0 là cuộc cách mạng về phát hiện nhu cầu hơn là công nghệ</a></div><p> </p></span>', null, null, '/public/upload/tintuc/1.jpg', null, '/public/thumbs/tintuc/1.jpg', null, null, null, null, null, null, '9999', null, null, null, null, '9999.00', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '4.50', '1', '2024-11-22 10:05:20', null, null);
+INSERT INTO `posts` VALUES ('16', '6', 'Công nghiệp 4.0 sẽ thay đổi thị trường Việt Nam', 'Làn sóng kết nối mới đang vượt ra ngoài khỏi máy tính xách tay và điện thoại thông minh, nó hướng tới những chiếc xe được kết nối, nhà thông minh, thiết bị đeo được kết nối, đô thị thông minh và chăm sóc sức khỏe được kết nối.', '<span id=\"mainContent\"><p><strong>6 giải pháp để phát triển Công nghiệp 4.0</strong></p><p>Thủ tướng Nguyễn Xuân Phúc cho rằng, cùng sự phát triển bùng nổ của nền kinh tế số, Cách mạng công nghiệp 4.0 tạo ra cả cơ hội lẫn thách thức to lớn đối với sự phát triển của từng quốc gia, các dân tộc cũng như mỗi cộng đồng, cá nhân và doanh nghiệp. Nhận thức sớm điều này, ngày 04/05/2017, Chỉ thị 16 về tăng cường năng lực tiếp cận Cách mạng công nghiệp 4.0 (CMCN 4.0) đã được ban hành. Thủ tướng cho biết, để Việt Nam bắt kịp cuộc CMCN 4.0, cần thực hiện đồng thời 6 giải pháp:</p><p><strong><i>Thứ nhất,</i></strong> tập trung hoàn thiện cơ chế, thể chế, chính sách, pháp luật theo kịp kinh tế số, công nghiệp thông minh.</p><p><strong><i>Thứ hai,</i></strong> xây dựng kết cấu hạ tầng đồng bộ, trong đó, công nghệ thông tin và hạ tầng thông tin đóng vai trò hạ tầng của hạ tầng.</p><p><strong><i>Thứ ba,</i></strong> phát triển nhanh nguồn nhân lực đáp ứng yêu cầu kinh tế số.</p><p><strong><i>Thứ tư,</i></strong> phát triển hệ thống đối mới sáng tạo quốc gia, thúc đẩy khởi nghiệp trong mọi ngành mọi lĩnh vực, có kế hoạch cụ thể và khả thi để phát triển và làm chủ hệ tri thức Việt số hóa, khơi dậy đam mê khát vọng.</p><p><strong><i>Thứ năm,</i></strong> cả hệ thống chính trị, cộng đồng doanh nghiệp, người dân cần chung tay trong đổi mới sáng tạo, chủ động nắm bắt, khai thác có hiệu quả các cơ hội to lớn của CMCN 4.0 mang lại.</p><p><strong><i>Thứ sáu,</i></strong> doanh nghiệp vừa là trung tâm, vừa là động lực của sự phát triển công nghệ mới, ứng dụng khoa học công nghệ vào thực tiến đời sống. Phát triển doanh nghiệp số được xác định là nhiệm vụ trung tâm, lâu dài để phát triển kinh tế số ở Việt Nam.</p><div id=\"admzone480458\" class=\"wp100 fl mgt10\"></div><p>Hiện nay, quan điểm chỉ đạo của Chính phủ là phát triển kinh tế số, công nghiệp thông minh gắn với chuyển đổi, tái cơ cấu nền kinh tế để tăng cường năng lực cạnh tranh quốc gia. Thủ tướng mong muốn nhận được những ý kiến của các đại biểu. Những ý kiến sẽ được tổng hợp để xây dựng chiến lược tổng thể về tiếp cận CMCN 4.0.</p><p>“Cách mạng công nghiệp 4.0 là cơ hội thực hiện khát vọng phồn vinh dân tộc, không thể bỏ lỡ, phát huy lợi thế, phải có ứng xử cởi mở, tạo dựng môi trường thông thoáng, thúc đẩy mô hình mới” - Thủ tướng khẳng định</p><p><strong>Hành trình dài luôn bắt đầu từ hành trình ngắn</strong></p><p>Ông Nguyễn Văn Bình, Trưởng ban Kinh tế Trung ương cho biết, chiến lược 4.0 đã được nhiều nước trên thế giới xây dựng. Không chỉ những nước phát triển như Mỹ, Đức, Nhật, mà một số nước ở châu Phi như Kenya cũng đã ban hành chiến lược 4.0. Trong khu vực, Trung Quốc, Thái Lan, Singapore cũng đã có chiến lược để tiếp cận cuộc cách mạng công nghiệp đang diễn ra.</p><p>Theo Trưởng ban Kinh tế Trung ương, Việt Nam phải tham gia vào cuộc CMCN 4.0 nếu không muốn phải trả giá đắt về sau này. Mỗi người Việt Nam cần vượt qua tư duy cũ, cách làm cũ trong thời gian ngắn để bắt kịp cuộc cách mạng.</p><p>Điều khó khăn đối với Việt Nam là sự phát triển không đồng đều giữa các vùng miền. Có những nơi chỉ đang diễn CMCN 3.0, 2.0,... Tuy vậy, bối cảnh hiện tại đòi hỏi Việt Nam phải bắt kịp 4.0. Do đó, chiến lược sắp được xây dựng cần phải nêu lên từng bước đi phù hợp như Nhật Bản thường nói: “Một hành trình dài luôn bắt đầu từ hành trình ngắn”.</p><div class=\"VCSortableInPreviewMode link-content-footer\" type=\"link-content-footer\"><a draggable=\"false\" href=\"https://cafef.vn/pho-thu-tuong-vuong-dinh-hue-cach-mang-40-la-cuoc-cach-mang-ve-phat-hien-nhu-cau-hon-la-cong-nghe-20171117131625917.chn\" title=\"Phó Thủ tướng Vương Đình Huệ: Cách mạng 4.0 là cuộc cách mạng về phát hiện nhu cầu hơn là công nghệ\"><i class=\"ico-idx3\"></i>Phó Thủ tướng Vương Đình Huệ: Cách mạng 4.0 là cuộc cách mạng về phát hiện nhu cầu hơn là công nghệ</a></div><p> </p></span>', null, null, '/public/upload/tintuc/2.jpg', null, '/public/thumbs/tintuc/2.jpg', null, null, null, null, null, null, '9999', null, null, null, null, '9999.00', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '4.50', '1', '2024-11-22 10:05:20', null, null);
+INSERT INTO `posts` VALUES ('17', '6', 'Công nghiệp 4.0 sẽ thay đổi thị trường Việt Nam', 'Làn sóng kết nối mới đang vượt ra ngoài khỏi máy tính xách tay và điện thoại thông minh, nó hướng tới những chiếc xe được kết nối, nhà thông minh, thiết bị đeo được kết nối, đô thị thông minh và chăm sóc sức khỏe được kết nối.', '<span id=\"mainContent\"><p><strong>6 giải pháp để phát triển Công nghiệp 4.0</strong></p><p>Thủ tướng Nguyễn Xuân Phúc cho rằng, cùng sự phát triển bùng nổ của nền kinh tế số, Cách mạng công nghiệp 4.0 tạo ra cả cơ hội lẫn thách thức to lớn đối với sự phát triển của từng quốc gia, các dân tộc cũng như mỗi cộng đồng, cá nhân và doanh nghiệp. Nhận thức sớm điều này, ngày 04/05/2017, Chỉ thị 16 về tăng cường năng lực tiếp cận Cách mạng công nghiệp 4.0 (CMCN 4.0) đã được ban hành. Thủ tướng cho biết, để Việt Nam bắt kịp cuộc CMCN 4.0, cần thực hiện đồng thời 6 giải pháp:</p><p><strong><i>Thứ nhất,</i></strong> tập trung hoàn thiện cơ chế, thể chế, chính sách, pháp luật theo kịp kinh tế số, công nghiệp thông minh.</p><p><strong><i>Thứ hai,</i></strong> xây dựng kết cấu hạ tầng đồng bộ, trong đó, công nghệ thông tin và hạ tầng thông tin đóng vai trò hạ tầng của hạ tầng.</p><p><strong><i>Thứ ba,</i></strong> phát triển nhanh nguồn nhân lực đáp ứng yêu cầu kinh tế số.</p><p><strong><i>Thứ tư,</i></strong> phát triển hệ thống đối mới sáng tạo quốc gia, thúc đẩy khởi nghiệp trong mọi ngành mọi lĩnh vực, có kế hoạch cụ thể và khả thi để phát triển và làm chủ hệ tri thức Việt số hóa, khơi dậy đam mê khát vọng.</p><p><strong><i>Thứ năm,</i></strong> cả hệ thống chính trị, cộng đồng doanh nghiệp, người dân cần chung tay trong đổi mới sáng tạo, chủ động nắm bắt, khai thác có hiệu quả các cơ hội to lớn của CMCN 4.0 mang lại.</p><p><strong><i>Thứ sáu,</i></strong> doanh nghiệp vừa là trung tâm, vừa là động lực của sự phát triển công nghệ mới, ứng dụng khoa học công nghệ vào thực tiến đời sống. Phát triển doanh nghiệp số được xác định là nhiệm vụ trung tâm, lâu dài để phát triển kinh tế số ở Việt Nam.</p><div id=\"admzone480458\" class=\"wp100 fl mgt10\"></div><p>Hiện nay, quan điểm chỉ đạo của Chính phủ là phát triển kinh tế số, công nghiệp thông minh gắn với chuyển đổi, tái cơ cấu nền kinh tế để tăng cường năng lực cạnh tranh quốc gia. Thủ tướng mong muốn nhận được những ý kiến của các đại biểu. Những ý kiến sẽ được tổng hợp để xây dựng chiến lược tổng thể về tiếp cận CMCN 4.0.</p><p>“Cách mạng công nghiệp 4.0 là cơ hội thực hiện khát vọng phồn vinh dân tộc, không thể bỏ lỡ, phát huy lợi thế, phải có ứng xử cởi mở, tạo dựng môi trường thông thoáng, thúc đẩy mô hình mới” - Thủ tướng khẳng định</p><p><strong>Hành trình dài luôn bắt đầu từ hành trình ngắn</strong></p><p>Ông Nguyễn Văn Bình, Trưởng ban Kinh tế Trung ương cho biết, chiến lược 4.0 đã được nhiều nước trên thế giới xây dựng. Không chỉ những nước phát triển như Mỹ, Đức, Nhật, mà một số nước ở châu Phi như Kenya cũng đã ban hành chiến lược 4.0. Trong khu vực, Trung Quốc, Thái Lan, Singapore cũng đã có chiến lược để tiếp cận cuộc cách mạng công nghiệp đang diễn ra.</p><p>Theo Trưởng ban Kinh tế Trung ương, Việt Nam phải tham gia vào cuộc CMCN 4.0 nếu không muốn phải trả giá đắt về sau này. Mỗi người Việt Nam cần vượt qua tư duy cũ, cách làm cũ trong thời gian ngắn để bắt kịp cuộc cách mạng.</p><p>Điều khó khăn đối với Việt Nam là sự phát triển không đồng đều giữa các vùng miền. Có những nơi chỉ đang diễn CMCN 3.0, 2.0,... Tuy vậy, bối cảnh hiện tại đòi hỏi Việt Nam phải bắt kịp 4.0. Do đó, chiến lược sắp được xây dựng cần phải nêu lên từng bước đi phù hợp như Nhật Bản thường nói: “Một hành trình dài luôn bắt đầu từ hành trình ngắn”.</p><div class=\"VCSortableInPreviewMode link-content-footer\" type=\"link-content-footer\"><a draggable=\"false\" href=\"https://cafef.vn/pho-thu-tuong-vuong-dinh-hue-cach-mang-40-la-cuoc-cach-mang-ve-phat-hien-nhu-cau-hon-la-cong-nghe-20171117131625917.chn\" title=\"Phó Thủ tướng Vương Đình Huệ: Cách mạng 4.0 là cuộc cách mạng về phát hiện nhu cầu hơn là công nghệ\"><i class=\"ico-idx3\"></i>Phó Thủ tướng Vương Đình Huệ: Cách mạng 4.0 là cuộc cách mạng về phát hiện nhu cầu hơn là công nghệ</a></div><p> </p></span>', null, null, '/public/upload/tintuc/3.jpg', null, '/public/thumbs/tintuc/3.jpg', null, null, null, null, null, null, '9999', null, null, null, null, '9999.00', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '4.50', '1', '2024-11-22 10:05:20', null, null);
+INSERT INTO `posts` VALUES ('18', '6', 'Công nghiệp 4.0 sẽ thay đổi thị trường Việt Nam', 'Làn sóng kết nối mới đang vượt ra ngoài khỏi máy tính xách tay và điện thoại thông minh, nó hướng tới những chiếc xe được kết nối, nhà thông minh, thiết bị đeo được kết nối, đô thị thông minh và chăm sóc sức khỏe được kết nối.', '<span id=\"mainContent\"><p><strong>6 giải pháp để phát triển Công nghiệp 4.0</strong></p><p>Thủ tướng Nguyễn Xuân Phúc cho rằng, cùng sự phát triển bùng nổ của nền kinh tế số, Cách mạng công nghiệp 4.0 tạo ra cả cơ hội lẫn thách thức to lớn đối với sự phát triển của từng quốc gia, các dân tộc cũng như mỗi cộng đồng, cá nhân và doanh nghiệp. Nhận thức sớm điều này, ngày 04/05/2017, Chỉ thị 16 về tăng cường năng lực tiếp cận Cách mạng công nghiệp 4.0 (CMCN 4.0) đã được ban hành. Thủ tướng cho biết, để Việt Nam bắt kịp cuộc CMCN 4.0, cần thực hiện đồng thời 6 giải pháp:</p><p><strong><i>Thứ nhất,</i></strong> tập trung hoàn thiện cơ chế, thể chế, chính sách, pháp luật theo kịp kinh tế số, công nghiệp thông minh.</p><p><strong><i>Thứ hai,</i></strong> xây dựng kết cấu hạ tầng đồng bộ, trong đó, công nghệ thông tin và hạ tầng thông tin đóng vai trò hạ tầng của hạ tầng.</p><p><strong><i>Thứ ba,</i></strong> phát triển nhanh nguồn nhân lực đáp ứng yêu cầu kinh tế số.</p><p><strong><i>Thứ tư,</i></strong> phát triển hệ thống đối mới sáng tạo quốc gia, thúc đẩy khởi nghiệp trong mọi ngành mọi lĩnh vực, có kế hoạch cụ thể và khả thi để phát triển và làm chủ hệ tri thức Việt số hóa, khơi dậy đam mê khát vọng.</p><p><strong><i>Thứ năm,</i></strong> cả hệ thống chính trị, cộng đồng doanh nghiệp, người dân cần chung tay trong đổi mới sáng tạo, chủ động nắm bắt, khai thác có hiệu quả các cơ hội to lớn của CMCN 4.0 mang lại.</p><p><strong><i>Thứ sáu,</i></strong> doanh nghiệp vừa là trung tâm, vừa là động lực của sự phát triển công nghệ mới, ứng dụng khoa học công nghệ vào thực tiến đời sống. Phát triển doanh nghiệp số được xác định là nhiệm vụ trung tâm, lâu dài để phát triển kinh tế số ở Việt Nam.</p><div id=\"admzone480458\" class=\"wp100 fl mgt10\"></div><p>Hiện nay, quan điểm chỉ đạo của Chính phủ là phát triển kinh tế số, công nghiệp thông minh gắn với chuyển đổi, tái cơ cấu nền kinh tế để tăng cường năng lực cạnh tranh quốc gia. Thủ tướng mong muốn nhận được những ý kiến của các đại biểu. Những ý kiến sẽ được tổng hợp để xây dựng chiến lược tổng thể về tiếp cận CMCN 4.0.</p><p>“Cách mạng công nghiệp 4.0 là cơ hội thực hiện khát vọng phồn vinh dân tộc, không thể bỏ lỡ, phát huy lợi thế, phải có ứng xử cởi mở, tạo dựng môi trường thông thoáng, thúc đẩy mô hình mới” - Thủ tướng khẳng định</p><p><strong>Hành trình dài luôn bắt đầu từ hành trình ngắn</strong></p><p>Ông Nguyễn Văn Bình, Trưởng ban Kinh tế Trung ương cho biết, chiến lược 4.0 đã được nhiều nước trên thế giới xây dựng. Không chỉ những nước phát triển như Mỹ, Đức, Nhật, mà một số nước ở châu Phi như Kenya cũng đã ban hành chiến lược 4.0. Trong khu vực, Trung Quốc, Thái Lan, Singapore cũng đã có chiến lược để tiếp cận cuộc cách mạng công nghiệp đang diễn ra.</p><p>Theo Trưởng ban Kinh tế Trung ương, Việt Nam phải tham gia vào cuộc CMCN 4.0 nếu không muốn phải trả giá đắt về sau này. Mỗi người Việt Nam cần vượt qua tư duy cũ, cách làm cũ trong thời gian ngắn để bắt kịp cuộc cách mạng.</p><p>Điều khó khăn đối với Việt Nam là sự phát triển không đồng đều giữa các vùng miền. Có những nơi chỉ đang diễn CMCN 3.0, 2.0,... Tuy vậy, bối cảnh hiện tại đòi hỏi Việt Nam phải bắt kịp 4.0. Do đó, chiến lược sắp được xây dựng cần phải nêu lên từng bước đi phù hợp như Nhật Bản thường nói: “Một hành trình dài luôn bắt đầu từ hành trình ngắn”.</p><div class=\"VCSortableInPreviewMode link-content-footer\" type=\"link-content-footer\"><a draggable=\"false\" href=\"https://cafef.vn/pho-thu-tuong-vuong-dinh-hue-cach-mang-40-la-cuoc-cach-mang-ve-phat-hien-nhu-cau-hon-la-cong-nghe-20171117131625917.chn\" title=\"Phó Thủ tướng Vương Đình Huệ: Cách mạng 4.0 là cuộc cách mạng về phát hiện nhu cầu hơn là công nghệ\"><i class=\"ico-idx3\"></i>Phó Thủ tướng Vương Đình Huệ: Cách mạng 4.0 là cuộc cách mạng về phát hiện nhu cầu hơn là công nghệ</a></div><p> </p></span>', null, null, '/public/upload/tintuc/4.jpg', null, '/public/thumbs/tintuc/4.jpg', null, null, null, null, null, null, '9999', null, null, null, null, '9999.00', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '4.50', '1', '2024-11-22 10:05:20', null, null);
+INSERT INTO `posts` VALUES ('19', '2', 'Lorem ipsum dolor sit amet', null, null, null, null, null, null, null, null, null, null, null, null, null, '9999', null, null, null, null, '9999.00', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '4.50', '1', '2024-11-22 10:05:20', null, null);
+INSERT INTO `posts` VALUES ('20', '2', 'Lorem ipsum dolor sit amet', null, null, null, null, null, null, null, null, null, null, null, null, null, '9999', null, null, null, null, '9999.00', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '4.50', '1', '2024-11-22 10:05:20', null, null);
+INSERT INTO `posts` VALUES ('21', '2', 'Lorem ipsum dolor sit amet', null, null, null, null, null, null, null, null, null, null, null, null, null, '9999', null, null, null, null, '9999.00', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '4.50', '1', '2024-11-22 10:05:20', null, null);
+INSERT INTO `posts` VALUES ('22', '2', 'Lorem ipsum dolor sit amet', null, null, null, null, null, null, null, null, null, null, null, null, null, '9999', null, null, null, null, '9999.00', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '4.50', '1', '2024-11-22 10:05:20', null, null);
+INSERT INTO `posts` VALUES ('23', '2', 'Lorem ipsum dolor sit amet', null, null, null, null, null, null, null, null, null, null, null, null, null, '9999', null, null, null, null, '9999.00', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '4.50', '1', '2024-11-22 10:05:20', null, null);
+INSERT INTO `posts` VALUES ('24', '2', 'Lorem ipsum dolor sit amet', null, null, null, null, null, null, null, null, null, null, null, null, null, '9999', null, null, null, null, '9999.00', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '4.50', '1', '2024-11-22 10:05:20', null, null);
+INSERT INTO `posts` VALUES ('25', '2', 'Lorem ipsum dolor sit amet', null, null, null, null, null, null, null, null, null, null, null, null, null, '9999', null, null, null, null, '9999.00', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '4.50', '1', '2024-11-22 10:05:20', null, null);
+INSERT INTO `posts` VALUES ('26', '2', 'Lorem ipsum dolor sit amet', null, null, null, null, null, null, null, null, null, null, null, null, null, '9999', null, null, null, null, '9999.00', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '4.50', '1', '2024-11-22 10:05:20', null, null);
+
+-- ----------------------------
+-- Table structure for `sites`
+-- ----------------------------
+DROP TABLE IF EXISTS `sites`;
+CREATE TABLE `sites` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `code` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `title` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `value` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `value_type` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `value_ext` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `active` tinyint(4) DEFAULT 1,
+  `created_by` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `edited_by` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `edited_ip` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `sites_code_unique` (`code`)
+) ENGINE=InnoDB AUTO_INCREMENT=471 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- ----------------------------
+-- Records of sites
+-- ----------------------------
+INSERT INTO `sites` VALUES ('1', 'tieu-de-trang', '(Google) Tiêu đề trang', 'Công ty Lorem ipsum dolor sit amet', null, null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('2', 'gioi-thieu-trang', '(Google) Giới thiệu trang', 'Chúng tôi luôn nỗ lực mang đến các sản phẩm, dịch vụ chất lượng tốt nhất đáp ứng sự hài lòng của quý khách hàng.', null, null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('3', 'tu-khoa-trang', '(Google) Từ khóa (ngăn cách bởi dấu phẩy)', 'Công ty Lorem ipsum dolor sit amet', null, null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('4', 'anh-favicon', 'Ảnh icon nhỏ trên tiêu đề trang (100x100px)', '/public/upload/favicon.png', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('5', 'anh-logo', 'Ảnh Logo', '/public/upload/logo.png', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('6', 'so-hotline', 'Số Hotline', '0912.345.678', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('7', 'so-hotline-2', 'Số Hotline 2 nếu có', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('8', 'so-hotline-3', 'Số Hotline 3 nếu có', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('9', 'so-hotline-4', 'Số Hotline 4 nếu có', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('10', 'so-hotline-5', 'Số Hotline 5 nếu có', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('11', 'so-hotline-6', 'Số Hotline 6 nếu có', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('12', 'so-hotline-7', 'Số Hotline 7 nếu có', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('13', 'so-hotline-8', 'Số Hotline 8 nếu có', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('14', 'so-hotline-9', 'Số Hotline 9 nếu có', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('15', 'so-hotline-10', 'Số Hotline 10 nếu có', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('16', 'so-zalo', 'Số Zalo hoặc ID Zalo OA nếu có', '0912.345.678', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('17', 'so-whatsapp', 'Số Whatsapp nếu có', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('18', 'so-wechat', 'Số Wechat nếu có', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('19', 'dia-chi-email', 'Địa chỉ mail liên hệ', 'lorem@gmail.com', null, null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('20', 'dia-chi-email-nhan-thong-bao', 'Địa chỉ mail nhận thông báo khi có đơn hàng (có thể điền nhiều email, ngăn cách bằng dấu phẩy)', 'lorem@gmail.com', null, null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('21', 'link-chat-facebook', 'Link m.me chat Facebook', 'https://www.m.me/lorem', 'link', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('22', 'link-facebook', 'Link Facebook', 'https://www.facebook.com/lorem', 'link', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('23', 'link-youtube', 'Link youtube', '', 'link', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('24', 'link-instagram', 'Link instagram', '', 'link', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('25', 'link-linkedin', 'Link linkedin', '', 'link', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('26', 'link-twitter', 'Link twitter', '', 'link', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('27', 'link-wechat', 'Link wechat', '', 'link', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('28', 'link-pinterest', 'Link pinterest', '', 'link', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('29', 'link-skype', 'Link skype', '', 'link', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('30', 'link-shopee', 'Link shopee', '', 'link', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('31', 'link-sendo', 'Link sendo', '', 'link', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('32', 'link-lazada', 'Link lazada', '', 'link', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('33', 'link-tiki', 'Link tiki', '', 'link', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('34', 'link-zalo', 'Link Zalo OA', '', 'link', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('35', 'link-tiktok', 'Link Tiktok', '', 'link', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('36', 'anh-cover-dau-trang', 'Ảnh cover đầu trang (nếu có)', '/public/upload/bg.jpg', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('37', 'anh-nen-cuoi-trang', 'Ảnh nền cuối trang (nếu có)', '/public/upload/bg.jpg', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('38', 'anh-logo-cuoi-trang', 'Ảnh logo cuối trang (nếu có)', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('39', 'tieu-de-cuoi-trang', 'Tiêu đề cuối trang', '', null, null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('40', 'doan-chu-cuoi-cung-trang', 'Đoạn chữ cuối cùng trang', 'Copyright © 2021. All rights reserved', null, null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('41', 'doan-gioi-thieu-cuoi-trang', 'Giới thiệu cuối trang', '', null, null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('42', 'doan-thong-tin-lien-he', 'Đoạn thông tin liên hệ', '<p><b>Công ty Lorem ipsum dolor sit amet</b><br><b>Địa chỉ:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit<br><b>Điện thoại:</b> <a href=\"tel:0912.345.678\">0912.345.678</a><br><b>Email:</b> <a href=\"mailto:lorem@gmail.com\">lorem@gmail.com</a><br><b>Website:</b> <a href=\"https://happycms.com\">https://happycms.com</a></p>', 'textarea', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('43', 'doan-thong-tin-lien-he-duoi-moi-san-pham', 'Đoạn thông tin liên hệ dưới mỗi sản phẩm', '<p><b><i>Mọi chi tiết xin vui lòng liên hệ</i></b><br><b>Công ty Lorem ipsum dolor sit amet</b><br><b>Địa chỉ:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit<br><b>Điện thoại:</b> <a href=\"tel:0912.345.678\">0912.345.678</a><br><b>Email:</b> <a href=\"mailto:lorem@gmail.com\">lorem@gmail.com</a><br><b>Website:</b> <a href=\"https://happycms.com\">https://happycms.com</a></p>', 'textarea', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('44', 'ma-nhung-ban-do-google-maps', 'Mã nhúng bản đồ Google Maps', '<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d238201.50963042758!2d105.95941602110642!3d21.116608897828126!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31350a5d26af7a51%3A0xe55920c0c6558f70!2sBac%20Ninh%20Province%2C%20Vietnam!5e0!3m2!1sen!2s!4v1587895540769!5m2!1sen!2s\" width=\"600\" height=\"450\" frameborder=\"0\" style=\"border:0;\" allowfullscreen=\"\" aria-hidden=\"false\" tabindex=\"0\"></iframe>', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('45', 'lat-google-maps', 'Vĩ độ (Latitude) nếu có, lấy tại trang này: <a href=\"https://www.latlong.net/\" target=\"_blank\">https://www.latlong.net/</a>', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('46', 'long-google-maps', 'Kinh độ (Longtitude) nếu có, lấy tại trang này: <a href=\"https://www.latlong.net/\" target=\"_blank\">https://www.latlong.net/</a>', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('47', 'anh-chia-se-facebook', 'Ảnh hiện khi chia sẻ Facebook (1200px x 630px), sau khi lưu phải vào trang <a href=\"https://developers.facebook.com/tools/debug/sharing/\" target=\"_blank\">https://developers.facebook.com/tools/debug/sharing/</a> dán link và bấm Thu thập lại để Facebook load ảnh mới', '/public/upload/gt.jpg', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('48', 'tieu-de-chia-se-facebook', 'Tiêu đề chia sẻ Facebook', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('49', 'mo-ta-chia-se-facebook', 'Mô tả chia sẻ Facebook', '', 'notextarea', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('50', 'ma-google-facebook', 'Mã gắn thêm thẻ head (Mã Google Tag, Facebook Pixel,...)', '', 'notextarea', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('51', 'ma-google-facebook-2', 'Mã gắn thêm thẻ body (Mã Google Tag, Facebook Pixel,...)', '', 'notextarea', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('52', 'ma-google-facebook-3', 'Mã gắn thêm chân trang (Mã Histas, Plugin chat...)', '', 'notextarea', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('53', 'bat-tinh-nang-gio-hang', 'Bật tính năng giỏ hàng', '0', 'onoff', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('54', 'bat-tinh-nang-binh-luan', 'Bật tính năng bình luận', '1', 'onoff', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('55', 'bat-tinh-nang-chat-facebook', 'Bật tính năng chat Facebook', '1', 'onoff', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('56', 'bat-tinh-nang-binh-luan-facebook', 'Bật tính năng bình luận bằng Facebook (tương tác tốt hơn, nhưng không cho phép xét duyệt)', '0', 'onoff', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('57', 'bat-che-do-bao-tri', 'Bật chế độ bảo trì (khách vào xem sẽ hiện chữ website đang bảo trì, chỉ có admin đã đăng nhập mới xem được web đầy đủ)', '0', 'onoff', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('58', 'tieu-de-che-do-bao-tri', 'Tiêu đề chế độ bảo trì', 'Website đang cập nhật', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('59', 'che-do-bao-mat-https', 'Bật chế độ bảo mật https', '0', 'onoff', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('60', 'hien-so-hotline-o-cuoi-trang', 'Hiện số hotline ở cuối trang', '1', 'onoff', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('61', 'hien-nut-goi-rung-ring', 'Hiện nút gọi động ở cuối trang', '1', 'onoff', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('62', 'hien-thanh-lien-he-nhanh', 'Hiện thanh liên hệ nhanh ở lề trái', '0', 'onoff', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('63', 'chong-copy-bai-viet', 'Tính năng chặn copy bài viết trên web', '0', 'onoff', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('64', 'hien-cot-danh-muc-trang-san-pham', 'Hiện cột danh mục sản phẩm', '1', 'onoff', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('65', 'truong-phan-loai-1', 'Trường phân loại 1, ví dụ: Kích cỡ', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('66', 'truong-phan-loai-2', 'Trường phân loại 2, ví dụ: Màu sắc', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('67', 'truong-phan-loai-3', 'Trường phân loại 3, ví dụ: Thương hiệu', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('68', 'danh-sach-trang-thai', 'Các trạng thái của đơn hàng (ngăn cách bởi dấu phẩy), ví dụ: Chờ xác nhận, Đã thanh toán, Đã vận chuyển', 'Chờ xác nhận, Đã thanh toán, Đã vận chuyển', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('69', 'chay-banner-khuyen-mai', 'Hiện banner khuyến mãi nổi', '0', 'onoff', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('70', 'so-giay-hien-ra-banner-neu-khong-dien-thi-hien-ngay-khi-vao', 'Số giây trước khi hiện banner, điền số ví dụ 30 thì sau 30s mới hiện banner. Nếu để trống thì banner sẽ hiện ngay khi vào', '0', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('71', 'link-chuyen-den-khi-click-banner-khuyen-mai', 'Link chuyển đến khi click vào banner khuyến mãi nổi', '', 'link', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('72', 'anh-banner-khuyen-mai', 'Ảnh banner khuyến mãi nổi (1000x1000)', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('73', 'anh-banner-khuyen-mai-mobile', 'Ảnh banner khuyến mãi trên mobile nếu có, không có thì vẫn sẽ hiện ảnh trên (1000x1000)', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('74', 'doan-chu-tren-banner-khuyen-mai', 'Đoạn chữ trên banner khuyến mãi nổi', '', 'textarea', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('75', 'hien-form-dien-thong-tin-tren-banner-khuyen-mai', 'Hiện form điền thông tin trên banner khuyến mãi', '1', 'onoff', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('76', 'luon-hien-khi-vao-trang', 'Lựa chọn: Bật: Luôn hiện banner khi vào trang, kể cả khi người dùng đã tắt banner <br>Tắt: Banner sẽ không hiện lại sau khi người xem bấm tắt, hôm sau mới hiện lại', '1', 'onoff', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('77', 'chi-hien-o-trang-chu', 'Lựa chọn: Bật: chỉ hiện banner ở trang chủ <br>Tắt: vào các trang con cũng hiện', '1', 'onoff', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('78', 'tieu-de-gioi-thieu-trang-chu', 'Tiêu đề giới thiệu trang chủ', 'Giới thiệu', null, null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('79', 'doan-gioi-thieu-trang-chu', 'Đoạn giới thiệu trang chủ', '<p class=\"text-justify\">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore  orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore  orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore </p>', 'textarea', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('80', 'anh-gioi-thieu-trang-chu', 'Ảnh giới thiệu trang chủ 1000x700px', '/public/upload/gt.jpg', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('81', 'link-video-youtube-gioi-thieu-trang-chu', 'Link video youtube giới thiệu trang chủ (Nếu điền sẽ không hiện ảnh nữa)', '', 'link', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('82', 'tieu-de-phan-o-noi-bat', 'Tiêu đề phần ô nổi bật', '', null, null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('83', 'doan-mo-ta-phan-o-noi-bat', 'Đoạn mô tả phần ô nổi bật', '', null, null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('84', 'link-chuyen-den-khi-click-anh-icon-o-noi-bat-1', 'Link chuyển đến khi click ảnh icon ô nổi bật 1', '', 'link', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('85', 'anh-icon-o-noi-bat-1', 'Ảnh icon ô nổi bật 1', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('86', 'tieu-de-o-noi-bat-1', 'Tiêu đề ô nổi bật 1', '', null, null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('87', 'noi-dung-o-noi-bat-1', 'Nội dung ô nổi bật 1', '', null, null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('88', 'link-chuyen-den-khi-click-anh-icon-o-noi-bat-2', 'Link chuyển đến khi click ảnh icon ô nổi bật 2', '', 'link', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('89', 'anh-icon-o-noi-bat-2', 'Ảnh icon ô nổi bật 2', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('90', 'tieu-de-o-noi-bat-2', 'Tiêu đề ô nổi bật 2', '', null, null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('91', 'noi-dung-o-noi-bat-2', 'Nội dung ô nổi bật 2', '', null, null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('92', 'link-chuyen-den-khi-click-anh-icon-o-noi-bat-3', 'Link chuyển đến khi click ảnh icon ô nổi bật 3', '', 'link', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('93', 'anh-icon-o-noi-bat-3', 'Ảnh icon ô nổi bật 3', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('94', 'tieu-de-o-noi-bat-3', 'Tiêu đề ô nổi bật 3', '', null, null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('95', 'noi-dung-o-noi-bat-3', 'Nội dung ô nổi bật 3', '', null, null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('96', 'link-chuyen-den-khi-click-anh-icon-o-noi-bat-4', 'Link chuyển đến khi click ảnh icon ô nổi bật 4', '', 'link', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('97', 'anh-icon-o-noi-bat-4', 'Ảnh icon ô nổi bật 4', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('98', 'tieu-de-o-noi-bat-4', 'Tiêu đề ô nổi bật 4', '', null, null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('99', 'noi-dung-o-noi-bat-4', 'Nội dung ô nổi bật 4', '', null, null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('100', 'link-chuyen-den-khi-click-anh-icon-o-noi-bat-5', 'Link chuyển đến khi click ảnh icon ô nổi bật 5', '', 'link', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('101', 'anh-icon-o-noi-bat-5', 'Ảnh icon ô nổi bật 5', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('102', 'tieu-de-o-noi-bat-5', 'Tiêu đề ô nổi bật 5', '', null, null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('103', 'noi-dung-o-noi-bat-5', 'Nội dung ô nổi bật 5', '', null, null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('104', 'link-chuyen-den-khi-click-anh-icon-o-noi-bat-6', 'Link chuyển đến khi click ảnh icon ô nổi bật 6', '', 'link', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('105', 'anh-icon-o-noi-bat-6', 'Ảnh icon ô nổi bật 6', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('106', 'tieu-de-o-noi-bat-6', 'Tiêu đề ô nổi bật 6', '', null, null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('107', 'noi-dung-o-noi-bat-6', 'Nội dung ô nổi bật 6', '', null, null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('108', 'link-chuyen-den-khi-click-anh-icon-o-noi-bat-7', 'Link chuyển đến khi click ảnh icon ô nổi bật 7', '', 'link', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('109', 'anh-icon-o-noi-bat-7', 'Ảnh icon ô nổi bật 7', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('110', 'tieu-de-o-noi-bat-7', 'Tiêu đề ô nổi bật 7', '', null, null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('111', 'noi-dung-o-noi-bat-7', 'Nội dung ô nổi bật 7', '', null, null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('112', 'link-chuyen-den-khi-click-anh-icon-o-noi-bat-8', 'Link chuyển đến khi click ảnh icon ô nổi bật 8', '', 'link', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('113', 'anh-icon-o-noi-bat-8', 'Ảnh icon ô nổi bật 8', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('114', 'tieu-de-o-noi-bat-8', 'Tiêu đề ô nổi bật 8', '', null, null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('115', 'noi-dung-o-noi-bat-8', 'Nội dung ô nổi bật 8', '', null, null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('116', 'link-chuyen-den-khi-click-anh-icon-o-noi-bat-9', 'Link chuyển đến khi click ảnh icon ô nổi bật 9', '', 'link', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('117', 'anh-icon-o-noi-bat-9', 'Ảnh icon ô nổi bật 9', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('118', 'tieu-de-o-noi-bat-9', 'Tiêu đề ô nổi bật 9', '', null, null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('119', 'noi-dung-o-noi-bat-9', 'Nội dung ô nổi bật 9', '', null, null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('120', 'link-chuyen-den-khi-click-anh-icon-o-noi-bat-10', 'Link chuyển đến khi click ảnh icon ô nổi bật 10', '', 'link', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('121', 'anh-icon-o-noi-bat-10', 'Ảnh icon ô nổi bật 10', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('122', 'tieu-de-o-noi-bat-10', 'Tiêu đề ô nổi bật 10', '', null, null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('123', 'noi-dung-o-noi-bat-10', 'Nội dung ô nổi bật 10', '', null, null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('124', 'link-chuyen-den-khi-click-anh-icon-o-noi-bat-11', 'Link chuyển đến khi click ảnh icon ô nổi bật 11', '', 'link', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('125', 'anh-icon-o-noi-bat-11', 'Ảnh icon ô nổi bật 11', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('126', 'tieu-de-o-noi-bat-11', 'Tiêu đề ô nổi bật 11', '', null, null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('127', 'noi-dung-o-noi-bat-11', 'Nội dung ô nổi bật 11', '', null, null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('128', 'link-chuyen-den-khi-click-anh-icon-o-noi-bat-12', 'Link chuyển đến khi click ảnh icon ô nổi bật 12', '', 'link', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('129', 'anh-icon-o-noi-bat-12', 'Ảnh icon ô nổi bật 12', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('130', 'tieu-de-o-noi-bat-12', 'Tiêu đề ô nổi bật 12', '', null, null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('131', 'noi-dung-o-noi-bat-12', 'Nội dung ô nổi bật 12', '', null, null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('132', 'link-chuyen-den-khi-click-anh-icon-o-noi-bat-13', 'Link chuyển đến khi click ảnh icon ô nổi bật 13', '', 'link', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('133', 'anh-icon-o-noi-bat-13', 'Ảnh icon ô nổi bật 13', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('134', 'tieu-de-o-noi-bat-13', 'Tiêu đề ô nổi bật 13', '', null, null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('135', 'noi-dung-o-noi-bat-13', 'Nội dung ô nổi bật 13', '', null, null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('136', 'link-chuyen-den-khi-click-anh-icon-o-noi-bat-14', 'Link chuyển đến khi click ảnh icon ô nổi bật 14', '', 'link', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('137', 'anh-icon-o-noi-bat-14', 'Ảnh icon ô nổi bật 14', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('138', 'tieu-de-o-noi-bat-14', 'Tiêu đề ô nổi bật 14', '', null, null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('139', 'noi-dung-o-noi-bat-14', 'Nội dung ô nổi bật 14', '', null, null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('140', 'link-chuyen-den-khi-click-anh-icon-o-noi-bat-15', 'Link chuyển đến khi click ảnh icon ô nổi bật 15', '', 'link', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('141', 'anh-icon-o-noi-bat-15', 'Ảnh icon ô nổi bật 15', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('142', 'tieu-de-o-noi-bat-15', 'Tiêu đề ô nổi bật 15', '', null, null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('143', 'noi-dung-o-noi-bat-15', 'Nội dung ô nổi bật 15', '', null, null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('144', 'link-chuyen-den-khi-click-anh-icon-o-noi-bat-16', 'Link chuyển đến khi click ảnh icon ô nổi bật 16', '', 'link', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('145', 'anh-icon-o-noi-bat-16', 'Ảnh icon ô nổi bật 16', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('146', 'tieu-de-o-noi-bat-16', 'Tiêu đề ô nổi bật 16', '', null, null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('147', 'noi-dung-o-noi-bat-16', 'Nội dung ô nổi bật 16', '', null, null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('148', 'toc-do-slide', 'Thời gian chuyển slide (điền số giây)', '5', null, null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('149', 'link-banner-1', 'Link chuyển đến khi click vào banner 1', '', 'link', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('150', 'link-banner-2', 'Link chuyển đến khi click vào banner 2', '', 'link', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('151', 'link-banner-3', 'Link chuyển đến khi click vào banner 3', '', 'link', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('152', 'link-banner-4', 'Link chuyển đến khi click vào banner 4', '', 'link', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('153', 'link-banner-5', 'Link chuyển đến khi click vào banner 5', '', 'link', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('154', 'link-banner-6', 'Link chuyển đến khi click vào banner 6', '', 'link', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('155', 'link-banner-7', 'Link chuyển đến khi click vào banner 7', '', 'link', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('156', 'link-banner-8', 'Link chuyển đến khi click vào banner 8', '', 'link', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('157', 'link-banner-9', 'Link chuyển đến khi click vào banner 9', '', 'link', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('158', 'link-banner-10', 'Link chuyển đến khi click vào banner 10', '', 'link', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('159', 'link-banner-11', 'Link chuyển đến khi click vào banner 11', '', 'link', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('160', 'link-banner-12', 'Link chuyển đến khi click vào banner 12', '', 'link', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('161', 'link-banner-13', 'Link chuyển đến khi click vào banner 13', '', 'link', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('162', 'link-banner-14', 'Link chuyển đến khi click vào banner 14', '', 'link', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('163', 'link-banner-15', 'Link chuyển đến khi click vào banner 15', '', 'link', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('164', 'link-banner-16', 'Link chuyển đến khi click vào banner 16', '', 'link', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('165', 'link-banner-17', 'Link chuyển đến khi click vào banner 17', '', 'link', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('166', 'link-banner-18', 'Link chuyển đến khi click vào banner 18', '', 'link', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('167', 'link-banner-19', 'Link chuyển đến khi click vào banner 19', '', 'link', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('168', 'link-banner-20', 'Link chuyển đến khi click vào banner 20', '', 'link', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('169', 'anh-banner-1', 'Ảnh banner PC 1', '/upload/gt.jpg', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('170', 'anh-banner-2', 'Ảnh banner PC 2', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('171', 'anh-banner-3', 'Ảnh banner PC 3', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('172', 'anh-banner-4', 'Ảnh banner PC 4', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('173', 'anh-banner-5', 'Ảnh banner PC 5', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('174', 'anh-banner-6', 'Ảnh banner PC 6', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('175', 'anh-banner-7', 'Ảnh banner PC 7', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('176', 'anh-banner-8', 'Ảnh banner PC 8', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('177', 'anh-banner-9', 'Ảnh banner PC 9', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('178', 'anh-banner-10', 'Ảnh banner PC 10', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('179', 'anh-banner-11', 'Ảnh banner PC 11', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('180', 'anh-banner-12', 'Ảnh banner PC 12', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('181', 'anh-banner-13', 'Ảnh banner PC 13', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('182', 'anh-banner-14', 'Ảnh banner PC 14', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('183', 'anh-banner-15', 'Ảnh banner PC 15', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('184', 'anh-banner-16', 'Ảnh banner PC 16', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('185', 'anh-banner-17', 'Ảnh banner PC 17', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('186', 'anh-banner-18', 'Ảnh banner PC 18', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('187', 'anh-banner-19', 'Ảnh banner PC 19', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('188', 'anh-banner-20', 'Ảnh banner PC 20', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('189', 'anh-banner-mobile-1', 'Ảnh banner Mobile 1 (nếu có, không điền sẽ tự động lấy ảnh banner PC)', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('190', 'anh-banner-mobile-2', 'Ảnh banner Mobile 2 (nếu có, không điền sẽ tự động lấy ảnh banner PC)', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('191', 'anh-banner-mobile-3', 'Ảnh banner Mobile 3 (nếu có, không điền sẽ tự động lấy ảnh banner PC)', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('192', 'anh-banner-mobile-4', 'Ảnh banner Mobile 4 (nếu có, không điền sẽ tự động lấy ảnh banner PC)', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('193', 'anh-banner-mobile-5', 'Ảnh banner Mobile 5 (nếu có, không điền sẽ tự động lấy ảnh banner PC)', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('194', 'anh-banner-mobile-6', 'Ảnh banner Mobile 6 (nếu có, không điền sẽ tự động lấy ảnh banner PC)', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('195', 'anh-banner-mobile-7', 'Ảnh banner Mobile 7 (nếu có, không điền sẽ tự động lấy ảnh banner PC)', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('196', 'anh-banner-mobile-8', 'Ảnh banner Mobile 8 (nếu có, không điền sẽ tự động lấy ảnh banner PC)', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('197', 'anh-banner-mobile-9', 'Ảnh banner Mobile 9 (nếu có, không điền sẽ tự động lấy ảnh banner PC)', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('198', 'anh-banner-mobile-10', 'Ảnh banner Mobile 10 (nếu có, không điền sẽ tự động lấy ảnh banner PC)', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('199', 'anh-banner-mobile-11', 'Ảnh banner Mobile 11 (nếu có, không điền sẽ tự động lấy ảnh banner PC)', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('200', 'anh-banner-mobile-12', 'Ảnh banner Mobile 12 (nếu có, không điền sẽ tự động lấy ảnh banner PC)', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('201', 'anh-banner-mobile-13', 'Ảnh banner Mobile 13 (nếu có, không điền sẽ tự động lấy ảnh banner PC)', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('202', 'anh-banner-mobile-14', 'Ảnh banner Mobile 14 (nếu có, không điền sẽ tự động lấy ảnh banner PC)', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('203', 'anh-banner-mobile-15', 'Ảnh banner Mobile 15 (nếu có, không điền sẽ tự động lấy ảnh banner PC)', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('204', 'anh-banner-mobile-16', 'Ảnh banner Mobile 16 (nếu có, không điền sẽ tự động lấy ảnh banner PC)', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('205', 'anh-banner-mobile-17', 'Ảnh banner Mobile 17 (nếu có, không điền sẽ tự động lấy ảnh banner PC)', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('206', 'anh-banner-mobile-18', 'Ảnh banner Mobile 18 (nếu có, không điền sẽ tự động lấy ảnh banner PC)', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('207', 'anh-banner-mobile-19', 'Ảnh banner Mobile 19 (nếu có, không điền sẽ tự động lấy ảnh banner PC)', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('208', 'anh-banner-mobile-20', 'Ảnh banner Mobile 20 (nếu có, không điền sẽ tự động lấy ảnh banner PC)', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('209', 'thu-tu-sap-xep-banner-1', 'Thứ tự sắp xếp banner 1 (điền số, banner sẽ hiển thị theo thứ tự số tăng dần)', '1', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('210', 'thu-tu-sap-xep-banner-2', 'Thứ tự sắp xếp banner 2 (điền số, banner sẽ hiển thị theo thứ tự số tăng dần)', '2', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('211', 'thu-tu-sap-xep-banner-3', 'Thứ tự sắp xếp banner 3 (điền số, banner sẽ hiển thị theo thứ tự số tăng dần)', '3', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('212', 'thu-tu-sap-xep-banner-4', 'Thứ tự sắp xếp banner 4 (điền số, banner sẽ hiển thị theo thứ tự số tăng dần)', '4', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('213', 'thu-tu-sap-xep-banner-5', 'Thứ tự sắp xếp banner 5 (điền số, banner sẽ hiển thị theo thứ tự số tăng dần)', '5', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('214', 'thu-tu-sap-xep-banner-6', 'Thứ tự sắp xếp banner 6 (điền số, banner sẽ hiển thị theo thứ tự số tăng dần)', '6', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('215', 'thu-tu-sap-xep-banner-7', 'Thứ tự sắp xếp banner 7 (điền số, banner sẽ hiển thị theo thứ tự số tăng dần)', '7', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('216', 'thu-tu-sap-xep-banner-8', 'Thứ tự sắp xếp banner 8 (điền số, banner sẽ hiển thị theo thứ tự số tăng dần)', '8', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('217', 'thu-tu-sap-xep-banner-9', 'Thứ tự sắp xếp banner 9 (điền số, banner sẽ hiển thị theo thứ tự số tăng dần)', '9', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('218', 'thu-tu-sap-xep-banner-10', 'Thứ tự sắp xếp banner 10 (điền số, banner sẽ hiển thị theo thứ tự số tăng dần)', '10', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('219', 'thu-tu-sap-xep-banner-11', 'Thứ tự sắp xếp banner 11 (điền số, banner sẽ hiển thị theo thứ tự số tăng dần)', '11', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('220', 'thu-tu-sap-xep-banner-12', 'Thứ tự sắp xếp banner 12 (điền số, banner sẽ hiển thị theo thứ tự số tăng dần)', '12', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('221', 'thu-tu-sap-xep-banner-13', 'Thứ tự sắp xếp banner 13 (điền số, banner sẽ hiển thị theo thứ tự số tăng dần)', '13', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('222', 'thu-tu-sap-xep-banner-14', 'Thứ tự sắp xếp banner 14 (điền số, banner sẽ hiển thị theo thứ tự số tăng dần)', '14', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('223', 'thu-tu-sap-xep-banner-15', 'Thứ tự sắp xếp banner 15 (điền số, banner sẽ hiển thị theo thứ tự số tăng dần)', '15', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('224', 'thu-tu-sap-xep-banner-16', 'Thứ tự sắp xếp banner 16 (điền số, banner sẽ hiển thị theo thứ tự số tăng dần)', '16', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('225', 'thu-tu-sap-xep-banner-17', 'Thứ tự sắp xếp banner 17 (điền số, banner sẽ hiển thị theo thứ tự số tăng dần)', '17', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('226', 'thu-tu-sap-xep-banner-18', 'Thứ tự sắp xếp banner 18 (điền số, banner sẽ hiển thị theo thứ tự số tăng dần)', '18', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('227', 'thu-tu-sap-xep-banner-19', 'Thứ tự sắp xếp banner 19 (điền số, banner sẽ hiển thị theo thứ tự số tăng dần)', '19', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('228', 'thu-tu-sap-xep-banner-20', 'Thứ tự sắp xếp banner 20 (điền số, banner sẽ hiển thị theo thứ tự số tăng dần)', '20', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('229', 'dong-tieu-de-1-tren-banner-1', 'Dòng Tiêu đề 1 trên banner 1', '', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('230', 'dong-tieu-de-1-tren-banner-2', 'Dòng Tiêu đề 1 trên banner 2', '', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('231', 'dong-tieu-de-1-tren-banner-3', 'Dòng Tiêu đề 1 trên banner 3', '', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('232', 'dong-tieu-de-1-tren-banner-4', 'Dòng Tiêu đề 1 trên banner 4', '', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('233', 'dong-tieu-de-1-tren-banner-5', 'Dòng Tiêu đề 1 trên banner 5', '', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('234', 'dong-tieu-de-1-tren-banner-6', 'Dòng Tiêu đề 1 trên banner 6', '', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('235', 'dong-tieu-de-1-tren-banner-7', 'Dòng Tiêu đề 1 trên banner 7', '', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('236', 'dong-tieu-de-1-tren-banner-8', 'Dòng Tiêu đề 1 trên banner 8', '', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('237', 'dong-tieu-de-1-tren-banner-9', 'Dòng Tiêu đề 1 trên banner 9', '', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('238', 'dong-tieu-de-1-tren-banner-10', 'Dòng Tiêu đề 1 trên banner 10', '', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('239', 'dong-tieu-de-1-tren-banner-11', 'Dòng Tiêu đề 1 trên banner 11', '', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('240', 'dong-tieu-de-1-tren-banner-12', 'Dòng Tiêu đề 1 trên banner 12', '', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('241', 'dong-tieu-de-1-tren-banner-13', 'Dòng Tiêu đề 1 trên banner 13', '', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('242', 'dong-tieu-de-1-tren-banner-14', 'Dòng Tiêu đề 1 trên banner 14', '', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('243', 'dong-tieu-de-1-tren-banner-15', 'Dòng Tiêu đề 1 trên banner 15', '', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('244', 'dong-tieu-de-1-tren-banner-16', 'Dòng Tiêu đề 1 trên banner 16', '', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('245', 'dong-tieu-de-1-tren-banner-17', 'Dòng Tiêu đề 1 trên banner 17', '', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('246', 'dong-tieu-de-1-tren-banner-18', 'Dòng Tiêu đề 1 trên banner 18', '', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('247', 'dong-tieu-de-1-tren-banner-19', 'Dòng Tiêu đề 1 trên banner 19', '', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('248', 'dong-tieu-de-1-tren-banner-20', 'Dòng Tiêu đề 1 trên banner 20', '', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('249', 'dong-tieu-de-2-tren-banner-1', 'Dòng Tiêu đề 2 trên banner 1', '', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('250', 'dong-tieu-de-2-tren-banner-2', 'Dòng Tiêu đề 2 trên banner 2', '', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('251', 'dong-tieu-de-2-tren-banner-3', 'Dòng Tiêu đề 2 trên banner 3', '', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('252', 'dong-tieu-de-2-tren-banner-4', 'Dòng Tiêu đề 2 trên banner 4', '', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('253', 'dong-tieu-de-2-tren-banner-5', 'Dòng Tiêu đề 2 trên banner 5', '', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('254', 'dong-tieu-de-2-tren-banner-6', 'Dòng Tiêu đề 2 trên banner 6', '', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('255', 'dong-tieu-de-2-tren-banner-7', 'Dòng Tiêu đề 2 trên banner 7', '', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('256', 'dong-tieu-de-2-tren-banner-8', 'Dòng Tiêu đề 2 trên banner 8', '', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('257', 'dong-tieu-de-2-tren-banner-9', 'Dòng Tiêu đề 2 trên banner 9', '', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('258', 'dong-tieu-de-2-tren-banner-10', 'Dòng Tiêu đề 2 trên banner 10', '', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('259', 'dong-tieu-de-2-tren-banner-11', 'Dòng Tiêu đề 2 trên banner 11', '', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('260', 'dong-tieu-de-2-tren-banner-12', 'Dòng Tiêu đề 2 trên banner 12', '', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('261', 'dong-tieu-de-2-tren-banner-13', 'Dòng Tiêu đề 2 trên banner 13', '', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('262', 'dong-tieu-de-2-tren-banner-14', 'Dòng Tiêu đề 2 trên banner 14', '', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('263', 'dong-tieu-de-2-tren-banner-15', 'Dòng Tiêu đề 2 trên banner 15', '', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('264', 'dong-tieu-de-2-tren-banner-16', 'Dòng Tiêu đề 2 trên banner 16', '', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('265', 'dong-tieu-de-2-tren-banner-17', 'Dòng Tiêu đề 2 trên banner 17', '', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('266', 'dong-tieu-de-2-tren-banner-18', 'Dòng Tiêu đề 2 trên banner 18', '', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('267', 'dong-tieu-de-2-tren-banner-19', 'Dòng Tiêu đề 2 trên banner 19', '', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('268', 'dong-tieu-de-2-tren-banner-20', 'Dòng Tiêu đề 2 trên banner 20', '', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('269', 'dong-tieu-de-3-tren-banner-1', 'Dòng Tiêu đề 3 trên banner 1', '', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('270', 'dong-tieu-de-3-tren-banner-2', 'Dòng Tiêu đề 3 trên banner 2', '', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('271', 'dong-tieu-de-3-tren-banner-3', 'Dòng Tiêu đề 3 trên banner 3', '', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('272', 'dong-tieu-de-3-tren-banner-4', 'Dòng Tiêu đề 3 trên banner 4', '', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('273', 'dong-tieu-de-3-tren-banner-5', 'Dòng Tiêu đề 3 trên banner 5', '', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('274', 'dong-tieu-de-3-tren-banner-6', 'Dòng Tiêu đề 3 trên banner 6', '', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('275', 'dong-tieu-de-3-tren-banner-7', 'Dòng Tiêu đề 3 trên banner 7', '', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('276', 'dong-tieu-de-3-tren-banner-8', 'Dòng Tiêu đề 3 trên banner 8', '', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('277', 'dong-tieu-de-3-tren-banner-9', 'Dòng Tiêu đề 3 trên banner 9', '', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('278', 'dong-tieu-de-3-tren-banner-10', 'Dòng Tiêu đề 3 trên banner 10', '', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('279', 'dong-tieu-de-3-tren-banner-11', 'Dòng Tiêu đề 3 trên banner 11', '', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('280', 'dong-tieu-de-3-tren-banner-12', 'Dòng Tiêu đề 3 trên banner 12', '', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('281', 'dong-tieu-de-3-tren-banner-13', 'Dòng Tiêu đề 3 trên banner 13', '', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('282', 'dong-tieu-de-3-tren-banner-14', 'Dòng Tiêu đề 3 trên banner 14', '', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('283', 'dong-tieu-de-3-tren-banner-15', 'Dòng Tiêu đề 3 trên banner 15', '', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('284', 'dong-tieu-de-3-tren-banner-16', 'Dòng Tiêu đề 3 trên banner 16', '', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('285', 'dong-tieu-de-3-tren-banner-17', 'Dòng Tiêu đề 3 trên banner 17', '', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('286', 'dong-tieu-de-3-tren-banner-18', 'Dòng Tiêu đề 3 trên banner 18', '', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('287', 'dong-tieu-de-3-tren-banner-19', 'Dòng Tiêu đề 3 trên banner 19', '', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('288', 'dong-tieu-de-3-tren-banner-20', 'Dòng Tiêu đề 3 trên banner 20', '', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('289', 'tieu-de-doi-tac', 'Tiêu đề đối tác', '', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('290', 'anh-logo-doi-tac-1-300x200', 'Ảnh logo đối tác 1 300x200px', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('291', 'anh-logo-doi-tac-2-300x200', 'Ảnh logo đối tác 2 300x200px', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('292', 'anh-logo-doi-tac-3-300x200', 'Ảnh logo đối tác 3 300x200px', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('293', 'anh-logo-doi-tac-4-300x200', 'Ảnh logo đối tác 4 300x200px', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('294', 'anh-logo-doi-tac-5-300x200', 'Ảnh logo đối tác 5 300x200px', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('295', 'anh-logo-doi-tac-6-300x200', 'Ảnh logo đối tác 6 300x200px', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('296', 'anh-logo-doi-tac-7-300x200', 'Ảnh logo đối tác 7 300x200px', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('297', 'anh-logo-doi-tac-8-300x200', 'Ảnh logo đối tác 8 300x200px', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('298', 'anh-logo-doi-tac-9-300x200', 'Ảnh logo đối tác 9 300x200px', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('299', 'anh-logo-doi-tac-10-300x200', 'Ảnh logo đối tác 10 300x200px', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('300', 'anh-logo-doi-tac-11-300x200', 'Ảnh logo đối tác 11 300x200px', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('301', 'anh-logo-doi-tac-12-300x200', 'Ảnh logo đối tác 12 300x200px', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('302', 'anh-logo-doi-tac-13-300x200', 'Ảnh logo đối tác 13 300x200px', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('303', 'anh-logo-doi-tac-14-300x200', 'Ảnh logo đối tác 14 300x200px', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('304', 'anh-logo-doi-tac-15-300x200', 'Ảnh logo đối tác 15 300x200px', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('305', 'anh-logo-doi-tac-16-300x200', 'Ảnh logo đối tác 16 300x200px', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('306', 'anh-logo-doi-tac-17-300x200', 'Ảnh logo đối tác 17 300x200px', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('307', 'anh-logo-doi-tac-18-300x200', 'Ảnh logo đối tác 18 300x200px', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('308', 'anh-logo-doi-tac-19-300x200', 'Ảnh logo đối tác 19 300x200px', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('309', 'anh-logo-doi-tac-20-300x200', 'Ảnh logo đối tác 20 300x200px', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('310', 'anh-logo-doi-tac-21-300x200', 'Ảnh logo đối tác 21 300x200px', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('311', 'anh-logo-doi-tac-22-300x200', 'Ảnh logo đối tác 22 300x200px', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('312', 'anh-logo-doi-tac-23-300x200', 'Ảnh logo đối tác 23 300x200px', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('313', 'anh-logo-doi-tac-24-300x200', 'Ảnh logo đối tác 24 300x200px', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('314', 'anh-logo-doi-tac-25-300x200', 'Ảnh logo đối tác 25 300x200px', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('315', 'anh-logo-doi-tac-26-300x200', 'Ảnh logo đối tác 26 300x200px', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('316', 'anh-logo-doi-tac-27-300x200', 'Ảnh logo đối tác 27 300x200px', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('317', 'anh-logo-doi-tac-28-300x200', 'Ảnh logo đối tác 28 300x200px', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('318', 'anh-logo-doi-tac-29-300x200', 'Ảnh logo đối tác 29 300x200px', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('319', 'anh-logo-doi-tac-30-300x200', 'Ảnh logo đối tác 30 300x200px', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('320', 'ten-doi-tac-1', 'Tên đối tác 1', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('321', 'ten-doi-tac-2', 'Tên đối tác 2', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('322', 'ten-doi-tac-3', 'Tên đối tác 3', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('323', 'ten-doi-tac-4', 'Tên đối tác 4', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('324', 'ten-doi-tac-5', 'Tên đối tác 5', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('325', 'ten-doi-tac-6', 'Tên đối tác 6', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('326', 'ten-doi-tac-7', 'Tên đối tác 7', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('327', 'ten-doi-tac-8', 'Tên đối tác 8', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('328', 'ten-doi-tac-9', 'Tên đối tác 9', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('329', 'ten-doi-tac-10', 'Tên đối tác 10', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('330', 'ten-doi-tac-11', 'Tên đối tác 11', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('331', 'ten-doi-tac-12', 'Tên đối tác 12', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('332', 'ten-doi-tac-13', 'Tên đối tác 13', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('333', 'ten-doi-tac-14', 'Tên đối tác 14', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('334', 'ten-doi-tac-15', 'Tên đối tác 15', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('335', 'ten-doi-tac-16', 'Tên đối tác 16', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('336', 'ten-doi-tac-17', 'Tên đối tác 17', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('337', 'ten-doi-tac-18', 'Tên đối tác 18', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('338', 'ten-doi-tac-19', 'Tên đối tác 19', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('339', 'ten-doi-tac-20', 'Tên đối tác 20', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('340', 'ten-doi-tac-21', 'Tên đối tác 21', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('341', 'ten-doi-tac-22', 'Tên đối tác 22', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('342', 'ten-doi-tac-23', 'Tên đối tác 23', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('343', 'ten-doi-tac-24', 'Tên đối tác 24', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('344', 'ten-doi-tac-25', 'Tên đối tác 25', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('345', 'ten-doi-tac-26', 'Tên đối tác 26', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('346', 'ten-doi-tac-27', 'Tên đối tác 27', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('347', 'ten-doi-tac-28', 'Tên đối tác 28', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('348', 'ten-doi-tac-29', 'Tên đối tác 29', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('349', 'ten-doi-tac-30', 'Tên đối tác 30', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('350', 'link-tro-den-khi-click-logo-doi-tac-1', 'Link chuyến đến khi click logo đối tác 1', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('351', 'link-tro-den-khi-click-logo-doi-tac-2', 'Link chuyến đến khi click logo đối tác 2', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('352', 'link-tro-den-khi-click-logo-doi-tac-3', 'Link chuyến đến khi click logo đối tác 3', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('353', 'link-tro-den-khi-click-logo-doi-tac-4', 'Link chuyến đến khi click logo đối tác 4', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('354', 'link-tro-den-khi-click-logo-doi-tac-5', 'Link chuyến đến khi click logo đối tác 5', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('355', 'link-tro-den-khi-click-logo-doi-tac-6', 'Link chuyến đến khi click logo đối tác 6', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('356', 'link-tro-den-khi-click-logo-doi-tac-7', 'Link chuyến đến khi click logo đối tác 7', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('357', 'link-tro-den-khi-click-logo-doi-tac-8', 'Link chuyến đến khi click logo đối tác 8', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('358', 'link-tro-den-khi-click-logo-doi-tac-9', 'Link chuyến đến khi click logo đối tác 9', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('359', 'link-tro-den-khi-click-logo-doi-tac-10', 'Link chuyến đến khi click logo đối tác 10', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('360', 'link-tro-den-khi-click-logo-doi-tac-11', 'Link chuyến đến khi click logo đối tác 11', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('361', 'link-tro-den-khi-click-logo-doi-tac-12', 'Link chuyến đến khi click logo đối tác 12', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('362', 'link-tro-den-khi-click-logo-doi-tac-13', 'Link chuyến đến khi click logo đối tác 13', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('363', 'link-tro-den-khi-click-logo-doi-tac-14', 'Link chuyến đến khi click logo đối tác 14', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('364', 'link-tro-den-khi-click-logo-doi-tac-15', 'Link chuyến đến khi click logo đối tác 15', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('365', 'link-tro-den-khi-click-logo-doi-tac-16', 'Link chuyến đến khi click logo đối tác 16', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('366', 'link-tro-den-khi-click-logo-doi-tac-17', 'Link chuyến đến khi click logo đối tác 17', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('367', 'link-tro-den-khi-click-logo-doi-tac-18', 'Link chuyến đến khi click logo đối tác 18', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('368', 'link-tro-den-khi-click-logo-doi-tac-19', 'Link chuyến đến khi click logo đối tác 19', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('369', 'link-tro-den-khi-click-logo-doi-tac-20', 'Link chuyến đến khi click logo đối tác 20', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('370', 'link-tro-den-khi-click-logo-doi-tac-21', 'Link chuyến đến khi click logo đối tác 21', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('371', 'link-tro-den-khi-click-logo-doi-tac-22', 'Link chuyến đến khi click logo đối tác 22', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('372', 'link-tro-den-khi-click-logo-doi-tac-23', 'Link chuyến đến khi click logo đối tác 23', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('373', 'link-tro-den-khi-click-logo-doi-tac-24', 'Link chuyến đến khi click logo đối tác 24', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('374', 'link-tro-den-khi-click-logo-doi-tac-25', 'Link chuyến đến khi click logo đối tác 25', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('375', 'link-tro-den-khi-click-logo-doi-tac-26', 'Link chuyến đến khi click logo đối tác 26', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('376', 'link-tro-den-khi-click-logo-doi-tac-27', 'Link chuyến đến khi click logo đối tác 27', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('377', 'link-tro-den-khi-click-logo-doi-tac-28', 'Link chuyến đến khi click logo đối tác 28', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('378', 'link-tro-den-khi-click-logo-doi-tac-29', 'Link chuyến đến khi click logo đối tác 29', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('379', 'link-tro-den-khi-click-logo-doi-tac-30', 'Link chuyến đến khi click logo đối tác 30', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('380', 'tieu-de-khach-hang', 'Tiêu đề khách hàng', '', '', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('381', 'anh-logo-khach-hang-1-300x200', 'Ảnh logo khách hàng 1 300x200px', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('382', 'anh-logo-khach-hang-2-300x200', 'Ảnh logo khách hàng 2 300x200px', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('383', 'anh-logo-khach-hang-3-300x200', 'Ảnh logo khách hàng 3 300x200px', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('384', 'anh-logo-khach-hang-4-300x200', 'Ảnh logo khách hàng 4 300x200px', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('385', 'anh-logo-khach-hang-5-300x200', 'Ảnh logo khách hàng 5 300x200px', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('386', 'anh-logo-khach-hang-6-300x200', 'Ảnh logo khách hàng 6 300x200px', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('387', 'anh-logo-khach-hang-7-300x200', 'Ảnh logo khách hàng 7 300x200px', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('388', 'anh-logo-khach-hang-8-300x200', 'Ảnh logo khách hàng 8 300x200px', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('389', 'anh-logo-khach-hang-9-300x200', 'Ảnh logo khách hàng 9 300x200px', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('390', 'anh-logo-khach-hang-10-300x200', 'Ảnh logo khách hàng 10 300x200px', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('391', 'anh-logo-khach-hang-11-300x200', 'Ảnh logo khách hàng 11 300x200px', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('392', 'anh-logo-khach-hang-12-300x200', 'Ảnh logo khách hàng 12 300x200px', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('393', 'anh-logo-khach-hang-13-300x200', 'Ảnh logo khách hàng 13 300x200px', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('394', 'anh-logo-khach-hang-14-300x200', 'Ảnh logo khách hàng 14 300x200px', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('395', 'anh-logo-khach-hang-15-300x200', 'Ảnh logo khách hàng 15 300x200px', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('396', 'anh-logo-khach-hang-16-300x200', 'Ảnh logo khách hàng 16 300x200px', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('397', 'anh-logo-khach-hang-17-300x200', 'Ảnh logo khách hàng 17 300x200px', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('398', 'anh-logo-khach-hang-18-300x200', 'Ảnh logo khách hàng 18 300x200px', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('399', 'anh-logo-khach-hang-19-300x200', 'Ảnh logo khách hàng 19 300x200px', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('400', 'anh-logo-khach-hang-20-300x200', 'Ảnh logo khách hàng 20 300x200px', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('401', 'anh-logo-khach-hang-21-300x200', 'Ảnh logo khách hàng 21 300x200px', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('402', 'anh-logo-khach-hang-22-300x200', 'Ảnh logo khách hàng 22 300x200px', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('403', 'anh-logo-khach-hang-23-300x200', 'Ảnh logo khách hàng 23 300x200px', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('404', 'anh-logo-khach-hang-24-300x200', 'Ảnh logo khách hàng 24 300x200px', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('405', 'anh-logo-khach-hang-25-300x200', 'Ảnh logo khách hàng 25 300x200px', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('406', 'anh-logo-khach-hang-26-300x200', 'Ảnh logo khách hàng 26 300x200px', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('407', 'anh-logo-khach-hang-27-300x200', 'Ảnh logo khách hàng 27 300x200px', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('408', 'anh-logo-khach-hang-28-300x200', 'Ảnh logo khách hàng 28 300x200px', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('409', 'anh-logo-khach-hang-29-300x200', 'Ảnh logo khách hàng 29 300x200px', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('410', 'anh-logo-khach-hang-30-300x200', 'Ảnh logo khách hàng 30 300x200px', '', 'img', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('411', 'ten-khach-hang-1', 'Tên khách hàng 1', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('412', 'ten-khach-hang-2', 'Tên khách hàng 2', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('413', 'ten-khach-hang-3', 'Tên khách hàng 3', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('414', 'ten-khach-hang-4', 'Tên khách hàng 4', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('415', 'ten-khach-hang-5', 'Tên khách hàng 5', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('416', 'ten-khach-hang-6', 'Tên khách hàng 6', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('417', 'ten-khach-hang-7', 'Tên khách hàng 7', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('418', 'ten-khach-hang-8', 'Tên khách hàng 8', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('419', 'ten-khach-hang-9', 'Tên khách hàng 9', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('420', 'ten-khach-hang-10', 'Tên khách hàng 10', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('421', 'ten-khach-hang-11', 'Tên khách hàng 11', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('422', 'ten-khach-hang-12', 'Tên khách hàng 12', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('423', 'ten-khach-hang-13', 'Tên khách hàng 13', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('424', 'ten-khach-hang-14', 'Tên khách hàng 14', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('425', 'ten-khach-hang-15', 'Tên khách hàng 15', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('426', 'ten-khach-hang-16', 'Tên khách hàng 16', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('427', 'ten-khach-hang-17', 'Tên khách hàng 17', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('428', 'ten-khach-hang-18', 'Tên khách hàng 18', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('429', 'ten-khach-hang-19', 'Tên khách hàng 19', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('430', 'ten-khach-hang-20', 'Tên khách hàng 20', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('431', 'ten-khach-hang-21', 'Tên khách hàng 21', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('432', 'ten-khach-hang-22', 'Tên khách hàng 22', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('433', 'ten-khach-hang-23', 'Tên khách hàng 23', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('434', 'ten-khach-hang-24', 'Tên khách hàng 24', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('435', 'ten-khach-hang-25', 'Tên khách hàng 25', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('436', 'ten-khach-hang-26', 'Tên khách hàng 26', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('437', 'ten-khach-hang-27', 'Tên khách hàng 27', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('438', 'ten-khach-hang-28', 'Tên khách hàng 28', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('439', 'ten-khach-hang-29', 'Tên khách hàng 29', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('440', 'ten-khach-hang-30', 'Tên khách hàng 30', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('441', 'link-tro-den-khi-click-logo-khach-hang-1', 'Link chuyến đến khi click logo khách hàng 1', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('442', 'link-tro-den-khi-click-logo-khach-hang-2', 'Link chuyến đến khi click logo khách hàng 2', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('443', 'link-tro-den-khi-click-logo-khach-hang-3', 'Link chuyến đến khi click logo khách hàng 3', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('444', 'link-tro-den-khi-click-logo-khach-hang-4', 'Link chuyến đến khi click logo khách hàng 4', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('445', 'link-tro-den-khi-click-logo-khach-hang-5', 'Link chuyến đến khi click logo khách hàng 5', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('446', 'link-tro-den-khi-click-logo-khach-hang-6', 'Link chuyến đến khi click logo khách hàng 6', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('447', 'link-tro-den-khi-click-logo-khach-hang-7', 'Link chuyến đến khi click logo khách hàng 7', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('448', 'link-tro-den-khi-click-logo-khach-hang-8', 'Link chuyến đến khi click logo khách hàng 8', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('449', 'link-tro-den-khi-click-logo-khach-hang-9', 'Link chuyến đến khi click logo khách hàng 9', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('450', 'link-tro-den-khi-click-logo-khach-hang-10', 'Link chuyến đến khi click logo khách hàng 10', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('451', 'link-tro-den-khi-click-logo-khach-hang-11', 'Link chuyến đến khi click logo khách hàng 11', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('452', 'link-tro-den-khi-click-logo-khach-hang-12', 'Link chuyến đến khi click logo khách hàng 12', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('453', 'link-tro-den-khi-click-logo-khach-hang-13', 'Link chuyến đến khi click logo khách hàng 13', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('454', 'link-tro-den-khi-click-logo-khach-hang-14', 'Link chuyến đến khi click logo khách hàng 14', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('455', 'link-tro-den-khi-click-logo-khach-hang-15', 'Link chuyến đến khi click logo khách hàng 15', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('456', 'link-tro-den-khi-click-logo-khach-hang-16', 'Link chuyến đến khi click logo khách hàng 16', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('457', 'link-tro-den-khi-click-logo-khach-hang-17', 'Link chuyến đến khi click logo khách hàng 17', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('458', 'link-tro-den-khi-click-logo-khach-hang-18', 'Link chuyến đến khi click logo khách hàng 18', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('459', 'link-tro-den-khi-click-logo-khach-hang-19', 'Link chuyến đến khi click logo khách hàng 19', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('460', 'link-tro-den-khi-click-logo-khach-hang-20', 'Link chuyến đến khi click logo khách hàng 20', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('461', 'link-tro-den-khi-click-logo-khach-hang-21', 'Link chuyến đến khi click logo khách hàng 21', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('462', 'link-tro-den-khi-click-logo-khach-hang-22', 'Link chuyến đến khi click logo khách hàng 22', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('463', 'link-tro-den-khi-click-logo-khach-hang-23', 'Link chuyến đến khi click logo khách hàng 23', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('464', 'link-tro-den-khi-click-logo-khach-hang-24', 'Link chuyến đến khi click logo khách hàng 24', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('465', 'link-tro-den-khi-click-logo-khach-hang-25', 'Link chuyến đến khi click logo khách hàng 25', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('466', 'link-tro-den-khi-click-logo-khach-hang-26', 'Link chuyến đến khi click logo khách hàng 26', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('467', 'link-tro-den-khi-click-logo-khach-hang-27', 'Link chuyến đến khi click logo khách hàng 27', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('468', 'link-tro-den-khi-click-logo-khach-hang-28', 'Link chuyến đến khi click logo khách hàng 28', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('469', 'link-tro-den-khi-click-logo-khach-hang-29', 'Link chuyến đến khi click logo khách hàng 29', '', 'text', null, '1', null, null, null, null, null, null);
+INSERT INTO `sites` VALUES ('470', 'link-tro-den-khi-click-logo-khach-hang-30', 'Link chuyến đến khi click logo khách hàng 30', '', 'text', null, '1', null, null, null, null, null, null);
+
+-- ----------------------------
+-- Table structure for `slugs`
+-- ----------------------------
+DROP TABLE IF EXISTS `slugs`;
+CREATE TABLE `slugs` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `link` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `type` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `item` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `field1` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `field2` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `field3` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `field4` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `field5` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `field6` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `field7` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `field8` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `field9` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `field10` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `active` tinyint(4) DEFAULT 0,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- ----------------------------
+-- Records of slugs
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `users`
+-- ----------------------------
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE `users` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `password` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `role` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `active` tinyint(4) DEFAULT 1,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- ----------------------------
+-- Records of users
+-- ----------------------------
+INSERT INTO `users` VALUES ('1', 'iHappy', 'ihappy.asia@gmail.com', '$2y$10$QMg8XEpHmyjl8duRggDaWO10lcBOkZBVjBCkAsx7z3ZtYm/jXjZmS', 'admin', null, '1', null, null, null);
+INSERT INTO `users` VALUES ('2', 'Admin', 'admin@website.com', '$2y$10$oE4m1fWZAUnnU5GNLdQ1pulyQ4wcJO.jPK/XzrTKFffdlK7uW5SmW', 'admin', null, '1', null, null, null);
+INSERT INTO `users` VALUES ('3', 'Sale 1', 'sale1@website.com', '$2y$10$IDz69ShS9MdnnKgGGzUmAufBX1BLRefaYPFMQWVsHpdNtX8InRULK', 'sale', null, '1', null, null, null);
+INSERT INTO `users` VALUES ('4', 'Sale 2', 'sale2@website.com', '$2y$10$tsYtAOueVsuOwPytBvnZceeQ8vg2Pa9cALHjXDPOUBczus5v9FTjm', 'sale', null, '1', null, null, null);
+INSERT INTO `users` VALUES ('5', 'Sale 3', 'sale3@website.com', '$2y$10$eQMP.p5fYbtfPFgxG.5KsupV0MYwcaKzEJp8x21q2fcm5JRqftrS.', 'sale', null, '1', null, null, null);
+INSERT INTO `users` VALUES ('6', 'Content 1', 'content1@website.com', '$2y$10$qbCsYGxMJX2SAh/f8K6u7.uSl6yxIkBgRk32TvBX0mtzNLivqx8qW', 'content', null, '1', null, null, null);
+INSERT INTO `users` VALUES ('7', 'Content 2', 'content2@website.com', '$2y$10$qC7dfl8Q1tfEJwHC0ow0He3lGnXfUOGPYkgkFFeZAccTnQuiBPP4K', 'content', null, '1', null, null, null);
+INSERT INTO `users` VALUES ('8', 'Content 3', 'content3@website.com', '$2y$10$FMfQo2iiZeU3elObD.fnUuYothpx5NtOb9kc9bRT4.MVmw15IIdVG', 'content', null, '1', null, null, null);
+INSERT INTO `users` VALUES ('9', 'Reset', 'reset@website.com', '$2y$10$aD5RZOEvUealjICuE5O56.FHMsBFwf8bJxV77vLBy1cpP9fyx45p.', 'reset', null, '1', null, null, null);
